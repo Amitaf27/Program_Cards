@@ -1,0 +1,67 @@
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+public class Menu extends JFrame{
+	 
+	private static final long serialVersionUID = 1L;
+	    JButton botao;
+    	ImageIcon image = new ImageIcon("ilhaiinicial.png");
+	    JMenuBar barrinha;
+	    JMenu opcao;
+	    JMenuItem ilhas, config, sair;
+	public Menu() {
+		
+		JMenu opcao = new JMenu("Opcoes");
+		  barrinha = new JMenuBar();
+		
+		  
+		  JMenuItem ilhas = new JMenuItem("Ilhas"); 
+		  JMenuItem config = new JMenuItem("Configuracoes");
+		   opcao.add(config); 
+		  JMenuItem sair = new JMenuItem("Sair");
+		   opcao.add(sair);
+		  
+		opcao.add(ilhas);   
+		botao = new JButton("MINI_BOI");
+		botao.setBackground(Color.WHITE);
+		botao.setForeground(Color.BLACK);
+		
+		AcionaBotao c = new AcionaBotao();
+		 botao.addActionListener(c);
+		 
+	    Container cont = getContentPane();
+		cont.setBackground(new Color(137, 54, 150));
+	   	cont.add(botao);
+		
+		setLayout(null);
+		botao.setBounds(600,600,800,25);
+		
+		
+		setSize(1920, 1080);
+		setVisible(true);
+		
+	} 
+	    
+	 private class AcionaBotao implements ActionListener {
+
+         public void actionPerformed(ActionEvent e){
+       	 new TelaNiveis();
+       	  
+   }
+   }
+	public static void main(String[]args) {
+		
+		Menu menu = new Menu();
+		menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+}
+
