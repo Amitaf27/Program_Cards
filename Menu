@@ -1,5 +1,3 @@
-package aulapoo;
-
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -21,29 +19,45 @@ public class Menu extends JFrame{
     	ImageIcon image = new ImageIcon("ilha1.png");
 	    JMenuBar barrinha;
 	    JMenu opcao;
-	    JMenuItem ilhas, config, sair;
-            Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
-
+	    JMenuItem config, sair;
+	    Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
+        Color ouro = new Color(238,201,0);
+        Color ouroclaro = new Color(238,232,170);
+    
 	  public Menu() {
 		
-	     JMenu opcao = new JMenu("Opcoes");
+	        setTitle("ILHAS");
 		  barrinha = new JMenuBar();
+		  
+		  setJMenuBar(barrinha);
+		  
+		  opcao = new JMenu("Opções");
 		
+		  config = new JMenuItem("Configurações");
+		  sair = new JMenuItem("sair");
 		  
-		  JMenuItem ilhas = new JMenuItem("Ilhas"); 
-		  JMenuItem config = new JMenuItem("Configuracoes");
-		   opcao.add(config); 
-		  JMenuItem sair = new JMenuItem("Sair");
-		   opcao.add(sair);
+		  barrinha.add(opcao);
+		  barrinha.setBackground(ouro);
 		  
-		opcao.add(ilhas);   
+		
+		  opcao.add(config);
+		  opcao.add(sair);	
+		  opcao.setBackground(ouro);
+		  
+		  
+		  config.setBackground(ouroclaro);
+		  config.setForeground(Color.black);
+		  
+		  sair.setBackground(ouroclaro);
+		  sair.setForeground(Color.black);
+	   
 		ilha1 = new JButton(image);
 		ilha1. setOpaque(false);
         ilha1.setFocusable(false);
         ilha1.setContentAreaFilled(false);
         ilha1.setBorderPainted(false);
 		
-                ilha2 = new JButton("MINI_BOI");
+        ilha2 = new JButton("MINI_BOI");
 		ilha2.setBackground(Color.WHITE);
 		ilha2.setForeground(Color.BLACK);
 
@@ -92,4 +106,3 @@ public class Menu extends JFrame{
 		menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }
-
