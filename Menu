@@ -1,5 +1,9 @@
+package aulapoo;
+
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -12,7 +16,7 @@ import javax.swing.JMenuItem;
 
 public class Menu extends JFrame{
 	 
-	private static final long serialVersionUID = 1L;
+   	private static final long serialVersionUID = 1L;
 	    JButton ilha1,ilha2,ilha3,livre;
     	ImageIcon image = new ImageIcon("ilha1.png");
 	    JMenuBar barrinha;
@@ -20,9 +24,9 @@ public class Menu extends JFrame{
 	    JMenuItem ilhas, config, sair;
             Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
 
-	public Menu() {
+	  public Menu() {
 		
-		JMenu opcao = new JMenu("Opcoes");
+	     JMenu opcao = new JMenu("Opcoes");
 		  barrinha = new JMenuBar();
 		
 		  
@@ -34,6 +38,10 @@ public class Menu extends JFrame{
 		  
 		opcao.add(ilhas);   
 		ilha1 = new JButton(image);
+		ilha1. setOpaque(false);
+        ilha1.setFocusable(false);
+        ilha1.setContentAreaFilled(false);
+        ilha1.setBorderPainted(false);
 		
                 ilha2 = new JButton("MINI_BOI");
 		ilha2.setBackground(Color.WHITE);
@@ -61,10 +69,10 @@ public class Menu extends JFrame{
                 cont.add(livre);
 		
 		setLayout(null);
-		botao.setBounds(300,300,300,300);
-		botao.setBounds(700,300,300,300);
-		botao.setBounds(1100,300,300,300);
-		botao.setBounds(1500,300,300,300);
+		ilha1.setBounds(300,300,300,300);
+		ilha2.setBounds(700,300,300,300);
+		ilha3.setBounds(1100,300,300,300);
+		livre.setBounds(1500,300,300,300);
 
                 setSize(dimensao);
 		setVisible(true);
@@ -74,7 +82,7 @@ public class Menu extends JFrame{
 	 private class AcionaBotao implements ActionListener {
 
          public void actionPerformed(ActionEvent e){
-       	 new TelaNiveis();
+      // 	 new TelaNiveis();
        	  
    }
    }
