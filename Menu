@@ -13,11 +13,13 @@ import javax.swing.JMenuItem;
 public class Menu extends JFrame{
 	 
 	private static final long serialVersionUID = 1L;
-	    JButton botao;
-    	ImageIcon image = new ImageIcon("ilhaiinicial.png");
+	    JButton ilha1,ilha2,ilha3,livre;
+    	ImageIcon image = new ImageIcon("ilha1.png");
 	    JMenuBar barrinha;
 	    JMenu opcao;
 	    JMenuItem ilhas, config, sair;
+            Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
+
 	public Menu() {
 		
 		JMenu opcao = new JMenu("Opcoes");
@@ -31,22 +33,40 @@ public class Menu extends JFrame{
 		   opcao.add(sair);
 		  
 		opcao.add(ilhas);   
-		botao = new JButton("MINI_BOI");
-		botao.setBackground(Color.WHITE);
-		botao.setForeground(Color.BLACK);
+		ilha1 = new JButton(image);
 		
+                ilha2 = new JButton("MINI_BOI");
+		ilha2.setBackground(Color.WHITE);
+		ilha2.setForeground(Color.BLACK);
+
+                ilha3 = new JButton("MINI_BOI");
+		ilha3.setBackground(Color.WHITE);
+		ilha3.setForeground(Color.BLACK);      
+     
+                livre = new JButton("MINI_BOI");
+		livre.setBackground(Color.WHITE);
+		livre.setForeground(Color.BLACK);
+                   
 		AcionaBotao c = new AcionaBotao();
-		 botao.addActionListener(c);
-		 
+		 ilha1.addActionListener(c);
+		 ilha2.addActionListener(c);
+                 ilha3.addActionListener(c);
+                 livre.addActionListener(c);
+
 	    Container cont = getContentPane();
 		cont.setBackground(new Color(137, 54, 150));
-	   	cont.add(botao);
+	   	cont.add(ilha1);
+                cont.add(ilha2);
+                cont.add(ilha3);
+                cont.add(livre);
 		
 		setLayout(null);
-		botao.setBounds(600,600,800,25);
-		
-		
-		setSize(1920, 1080);
+		botao.setBounds(300,300,300,300);
+		botao.setBounds(700,300,300,300);
+		botao.setBounds(1100,300,300,300);
+		botao.setBounds(1500,300,300,300);
+
+                setSize(dimensao);
 		setVisible(true);
 		
 	} 
