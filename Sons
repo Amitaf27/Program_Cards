@@ -1,0 +1,16 @@
+import java.applet.Applet;
+import java.applet.AudioClip;
+import java.net.URL;
+
+public class Sons{
+
+    URL url= Sons.class.getResource("Clip"+".wav");
+    AudioClip audio= Applet.newAudioClip(url);
+    
+    public static void main(String[] args){
+      
+      audio.play();
+      
+    }
+       
+}
