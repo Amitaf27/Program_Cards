@@ -16,7 +16,8 @@ public class Menu extends JFrame{
 	 
    	private static final long serialVersionUID = 1L;
 	    JButton ilha1,ilha2,ilha3,livre;
-    	ImageIcon image = new ImageIcon("ilha1.png");
+    	ImageIcon image = new ImageIcon("C://Users/Aluno/Downloads/ilha1.png");
+    	ImageIcon image2 = new ImageIcon("C://Users/Aluno/Downloads/ilha2.png");
 	    JMenuBar barrinha;
 	    JMenu opcao;
 	    JMenuItem config, sair;
@@ -58,6 +59,13 @@ public class Menu extends JFrame{
         ilha1.setBorderPainted(false);
 		
         ilha2 = new JButton("MINI_BOI");
+        ilha2 = new JButton(image2);
+		ilha2. setOpaque(false);
+        ilha2.setFocusable(false);
+        ilha2.setContentAreaFilled(false);
+        ilha2.setBorderPainted(false);
+        
+        
 		ilha2.setBackground(Color.WHITE);
 		ilha2.setForeground(Color.BLACK);
 
@@ -96,7 +104,10 @@ public class Menu extends JFrame{
 	 private class AcionaBotao implements ActionListener {
 
          public void actionPerformed(ActionEvent e){
-      // 	 new TelaNiveis();
+        	 
+         Sons.main(null);	 
+       	 new TelaNiveis();
+       	 dispose();
        	  
    }
    }
