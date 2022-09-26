@@ -20,7 +20,7 @@ public class TelaCadastro extends JFrame {
 	JTextField text1, text2, text3, text4;
 	Font fonte1 = new Font("Arial", Font.BOLD, 14);
 	Font fonte2 = new Font("Arial", Font.BOLD, 30);
-	Border b = BorderFactory.createLineBorder(Color.black, 2);
+	Border b = BorderFactory.createLineBorder(Color.black, 3);
 	JPanel painel = new JPanel();
 
 	public TelaCadastro() {
@@ -33,34 +33,34 @@ public class TelaCadastro extends JFrame {
         text1 = new JTextField("Nome");
         text1.setFont(fonte1);
         text1.setBorder(b);
-        text1.setBackground(new Color(123, 22, 112));
-        text1.setForeground(Color.WHITE);
+        text1.setBackground(new Color(0, 191, 225));
+        text1.setForeground(Color.white);
         
         text2 = new JTextField("NickName");
         text2.setFont(fonte1);
         text2.setBorder(b);
-        text2.setBackground(new Color(123, 22, 112));
+        text2.setBackground(new Color(0, 191, 225));
         text2.setForeground(Color.WHITE);
         
         text3 = new JTextField("Idade");
         text3.setFont(fonte1);
         text3.setBorder(b);
-        text3.setBackground(new Color(123, 22, 112));
+        text3.setBackground(new Color(0, 191, 225));
         text3.setForeground(Color.WHITE);
         
         text4 = new JTextField("Senha");
         text4.setFont(fonte1);
         text4.setBorder(b);
-        text4.setBackground(new Color(123, 22, 112));
+        text4.setBackground(new Color(0, 191, 225));
         text4.setForeground(Color.WHITE);
         
-        painel.setBackground(new Color(124, 70, 176));
+        painel.setBackground(new Color(65, 105, 225));
         painel.setBorder(b);
         
         
          
           botao = new JButton("Confirmar");
-          botao.setBackground(new Color(52, 168, 83));
+          botao.setBackground(new Color(0, 187, 45));
           botao.setFont(fonte1);
           botao.setForeground(Color.WHITE);
           botao.setBorder(b);
@@ -70,14 +70,16 @@ public class TelaCadastro extends JFrame {
    				
    				public void actionPerformed(ActionEvent e) {
    					
+   					Sons.main(null);
    					new TelaLogin();
-   					setVisible(false);
+   					dispose();
+   					
    				} 
      	        });
 
           
           Container cont = getContentPane();
-          cont.setBackground(new Color(137, 54, 150));
+          cont.setBackground(new Color(25, 25, 112));
          
           
           botao1 = new JButton("Já possui cadastro? Clique aqui");
@@ -92,8 +94,9 @@ public class TelaCadastro extends JFrame {
       				
       				public void actionPerformed(ActionEvent e) {
       					
+      					Sons.main(null);
       					new TelaLogin();
-      					setVisible(false);
+      					dispose();
       				} 
         	        });
 
