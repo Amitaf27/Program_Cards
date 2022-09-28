@@ -1,0 +1,30 @@
+package classes;
+
+public class Questionario {
+	private String resultado, perguntas;
+
+	public Questionario() {
+		
+	}
+	
+	//get e set
+	 public String getResultado() {
+		return resultado;
+	 }
+
+	 public void setResultado(String resultado) {
+		this.resultado = resultado;
+	 }
+
+	 public String getPerguntas() {
+		return perguntas;
+	 }
+
+	 public void setPerguntas(String perguntas) {
+		this.perguntas = perguntas;
+	 }
+	 
+	 void responder() {
+		 
+	 }
+}
