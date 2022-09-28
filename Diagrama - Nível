@@ -1,0 +1,36 @@
+package classes;
+
+public class Nível {
+	private int nivel;
+	private Carta cartas;
+	
+	//construtor
+	 public Nível() {
+		 
+	 }
+	
+	//get e set
+	 public int getNivel() {
+		return nivel;
+	 }
+	
+	 public void setNivel(int nivel) {
+		this.nivel = nivel;
+	 }
+
+	 public Carta getCartas() {
+		return cartas;
+	 }
+
+	 public void setCartas(Carta cartas) {
+		this.cartas = cartas;
+	 }
+	 
+	 void desafio() {
+		 
+	 }
+	 
+	 void verificarCodigo() {
+		 
+	 }
+}
