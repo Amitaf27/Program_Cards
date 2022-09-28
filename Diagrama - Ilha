@@ -1,0 +1,41 @@
+package classes;
+
+public class Ilha {
+	private Nível nivel;
+	private Usuário tipoUsuario;
+	private String modoJogo;
+	
+	//construtor
+	 public Ilha() {
+		
+	 }
+ 
+	//get e set
+	 public Nível getNivel() {
+		return nivel;
+	 }
+
+	 public void setNivel(Nível nivel) {
+		this.nivel = nivel;
+	 }
+
+	 public Usuário getTipoUsuario() {
+		return tipoUsuario;
+	 }
+
+	 public void setTipoUsuario(Usuário tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	 }
+
+	 public String getModoJogo() {
+		return modoJogo;
+	 }
+
+	 public void setModoJogo(String modoJogo) {
+		this.modoJogo = modoJogo;
+	 }
+
+	void acessarNivel() {
+		
+	 }
+}
