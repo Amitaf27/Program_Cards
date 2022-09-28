@@ -1,0 +1,46 @@
+package classes;
+
+public class Usuário {
+	public String nickName;
+	protected String nome, sobrenome, email;
+	private int senha;
+	private Questionario nivel;
+	
+   //construtor
+	public Usuário() {
+		
+	}
+	
+	//get e set
+	 public int getSenha() {
+		return senha;
+	 }
+	
+	 public void setSenha(int senha) {
+		this.senha = senha;
+	 }
+
+	 public Questionario getNivel() {
+		return nivel;
+	 }
+
+	 public void setNivel(Questionario nivel) {
+		this.nivel = nivel;
+	 }
+	 
+	 void editarNickname() {
+		 
+	 }
+	 
+	 void completarNivel() {
+		 
+	 }
+	 
+	 void cadastrarUsuario() {
+		 
+	 }
+	 
+	 void excluirConta() {
+		 
+	 }
+}
