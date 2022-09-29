@@ -1,3 +1,14 @@
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Toolkit;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JProgressBar;
+
 public class TelaEntrada extends JFrame {
     private static final long serialVersionUID = 1L;
         JProgressBar barra = new JProgressBar();
@@ -29,7 +40,7 @@ public class TelaEntrada extends JFrame {
          
             cont.add(barra);
 
-            nome.setBounds(810,200,200,250);
+            nome.setBounds(710,100,800,250);
             logo.setBounds(860,460,200,200);
             barra.setBounds(710,670,500,50);
 
@@ -41,7 +52,7 @@ public class TelaEntrada extends JFrame {
 }
              public class Temporizador extends Thread {
                   public void run(){
-                      while(barra.getValue()<1000>){
+                      while(barra.getValue()<1000){
                  try{
                      sleep(100);
                      barra.setValue(barra.getValue()+10);
@@ -49,10 +60,11 @@ public class TelaEntrada extends JFrame {
                    e.printStackTrace();
         }
      }
-                 new TelaLogin();
+                    new TelaLogin();
                  setVisible(false);
     }
-                 public static void main(String []args){
+             }
+                  public static void main(String[] args) {
                    TelaEntrada ex = new TelaEntrada();
      }
 }
