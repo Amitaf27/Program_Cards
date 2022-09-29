@@ -28,22 +28,24 @@ private static final long serialVersionUID = 1L;
           JTextField text1;
           JPasswordField senha;
           JButton cadastrar;          
-	      ImageIcon imagem2,imagem1;
-	      JPanel painel = new JPanel();
+	  ImageIcon imagem2,imagem1;
+	  JPanel painel = new JPanel();
+          Color azul = new Color(25,25,112);
+          Color azulc = new Color(65,105,225);
+          Color ouro = new Color(238,201,0);
+          Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
           
          
           public TelaLogin() {
         
-           painel.setBackground(Color.BLUE);
+           painel.setBackground(azulc);
            loginT =  new JLabel("LOGIN");
-               loginT.setForeground(Color.WHITE);//mudar cor do texto da label
+           loginT.setForeground(Color.WHITE);//mudar cor do texto da label
            loginT.setFont(new Font("Arial",Font.BOLD,30));//alterar fonte do label
            rotulo2 = new JLabel();
            rotulo3 = new JLabel();
            cadas  = new JLabel("Novo aqui?");
            cadas.setForeground(Color.WHITE);//mudar cor do texto da label
-           imagem1 = new ImageIcon("xx.png");
-           ima = new JLabel(imagem1);
            text1 = new JTextField("Email ou senha de Usuário");
            senha = new JPasswordField();
        
@@ -57,11 +59,7 @@ private static final long serialVersionUID = 1L;
            botao2.addActionListener(evento);
            AcionaSair sair1 = new AcionaSair();
            botao2.addActionListener(sair1);
-          
-           botao2. setOpaque(false);
-           botao2.setFocusable(false);
-           botao2.setContentAreaFilled(false);
-           botao2.setBorderPainted(false);
+           botao2.setBackground(ouro);
           
            AcionaCadastro cad = new AcionaCadastro();
            cadastrar = new JButton("Cadastre-se");
@@ -77,12 +75,11 @@ private static final long serialVersionUID = 1L;
            cadastrar.setMnemonic('c');
           
            Container cont = getContentPane();
-           cont.setBackground(new Color(137, 54, 150));
+           cont.setBackground(azul);
          
            setLayout(null);
           
            cont.add(botao2);
-        //  cont.add(ima);
           
            cont.add(loginT);
       
@@ -101,7 +98,6 @@ private static final long serialVersionUID = 1L;
            cont.add(painel);
          
            botao2.setBounds(10,10, 100, 50);
-      //   ima.setBounds(0,0,50,50);
          
            loginT.setBounds(920, 250, 300, 25 );
            rotulo2.setBounds(820, 330, 280, 25);
@@ -114,11 +110,10 @@ private static final long serialVersionUID = 1L;
            cadas.setBounds(890,930,200,25);
            cadastrar.setBounds(890,930,200,25);
            painel.setBounds(715, 150, 500, 500);
-           painel.setBackground(new Color(124, 70, 176));
            painel.setBorder(b);
 
          
-           setSize(1920, 1080 );
+           setSize(dimensao);
            setVisible(true);
          
        }
@@ -127,7 +122,7 @@ private static final long serialVersionUID = 1L;
              public void actionPerformed(ActionEvent e) {
       
             	String senha1 = new String(senha.getPassword()).trim();
-      //  
+       
                   if (text1.getText().equalsIgnoreCase("mestreAndre") && senha1.equalsIgnoreCase("andre123")){
     	
                     new Menu();
