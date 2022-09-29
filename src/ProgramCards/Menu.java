@@ -1,5 +1,6 @@
 package ProgramCards;
 
+
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -20,6 +21,8 @@ public class Menu extends JFrame{
 	    JButton ilha1,ilha2,ilha3,livre;
     	ImageIcon image = new ImageIcon("F:/ilha1.png");
     	ImageIcon image2 = new ImageIcon("F:/ilha2.png");
+    	ImageIcon image3 = new ImageIcon("F:/ilha3.png");
+    	ImageIcon image4 = new ImageIcon("F:/livre.png");
 	    JMenuBar barrinha;
 	    JMenu opcao;
 	    JMenuItem config, sair;
@@ -35,9 +38,9 @@ public class Menu extends JFrame{
 		  
 		  setJMenuBar(barrinha);
 		  
-		  opcao = new JMenu("Opções");
+		  opcao = new JMenu("OpÃ§Ãµes");
 		
-		  config = new JMenuItem("Configurações");
+		  config = new JMenuItem("ConfiguraÃ§Ãµes");
 		  sair = new JMenuItem("sair");
 		  
 		  barrinha.add(opcao);
@@ -54,6 +57,9 @@ public class Menu extends JFrame{
 		  
 		  sair.setBackground(ouroclaro);
 		  sair.setForeground(Color.black);
+		  
+		     Sair s = new Sair();
+		  sair.addActionListener(s);
 	   
 		ilha1 = new JButton(image);
 		ilha1. setOpaque(false);
@@ -61,9 +67,8 @@ public class Menu extends JFrame{
                 ilha1.setContentAreaFilled(false);
                 ilha1.setBorderPainted(false);
 		
-                ilha2 = new JButton("MINI_BOI");
                 ilha2 = new JButton(image2);
-		ilha2. setOpaque(false);
+		        ilha2. setOpaque(false);
                 ilha2.setFocusable(false);
                 ilha2.setContentAreaFilled(false);
                 ilha2.setBorderPainted(false);
@@ -72,19 +77,25 @@ public class Menu extends JFrame{
 		ilha2.setBackground(Color.WHITE);
 		ilha2.setForeground(Color.BLACK);
 
-                ilha3 = new JButton("MINI_BOI");
+                ilha3 = new JButton(image3);
 		ilha3.setBackground(Color.WHITE);
-		ilha3.setForeground(Color.BLACK);      
+		ilha3.setForeground(Color.BLACK); 
+		ilha3. setOpaque(false);
+        ilha3.setFocusable(false);
+        ilha3.setContentAreaFilled(false);
+        ilha3.setBorderPainted(false);
      
-                livre = new JButton("MINI_BOI");
-		livre.setBackground(Color.WHITE);
-		livre.setForeground(Color.BLACK);
+                livre = new JButton(image4);
+                livre. setOpaque(false);
+                livre.setFocusable(false);
+                livre.setContentAreaFilled(false);
+                livre.setBorderPainted(false);
                    
 		AcionaBotao c = new AcionaBotao();
 		 ilha1.addActionListener(c);
 		 ilha2.addActionListener(c);
-                 ilha3.addActionListener(c);
-                 livre.addActionListener(c);
+         ilha3.addActionListener(c);
+              livre.addActionListener(c);
 
 	    Container cont = getContentPane();
 		cont.setBackground(azul);
@@ -94,10 +105,10 @@ public class Menu extends JFrame{
                 cont.add(livre);
 		
 		setLayout(null);
-		ilha1.setBounds(300,300,300,300);
-		ilha2.setBounds(700,300,300,300);
-		ilha3.setBounds(1100,300,300,300);
-		livre.setBounds(1500,300,300,300);
+		ilha1.setBounds(200,300,400,400);
+		ilha2.setBounds(700,300,400,400);
+		ilha3.setBounds(1100,300,400,400);
+		livre.setBounds(1500,300,400,400);
 
                 setSize(dimensao);
 		setVisible(true);
@@ -109,8 +120,16 @@ public class Menu extends JFrame{
          public void actionPerformed(ActionEvent e){
         	 
          Sons.main(null);	 
-       	 new TelaNiveis();
-       	 dispose();
+      	 new TelaNiveis();
+       	   dispose();
+       	  
+   }
+   }
+	 private class Sair implements ActionListener {
+
+         public void actionPerformed(ActionEvent e){
+        	 
+             System.exit(0);
        	  
    }
    }
