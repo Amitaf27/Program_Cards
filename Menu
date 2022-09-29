@@ -24,7 +24,8 @@ public class Menu extends JFrame{
 	    Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
         Color ouro = new Color(238,201,0);
         Color ouroclaro = new Color(238,232,170);
-    
+        Color azul = new Color(25,25,112);
+
 	  public Menu() {
 		
 	        setTitle("ILHAS");
@@ -54,16 +55,16 @@ public class Menu extends JFrame{
 	   
 		ilha1 = new JButton(image);
 		ilha1. setOpaque(false);
-        ilha1.setFocusable(false);
-        ilha1.setContentAreaFilled(false);
-        ilha1.setBorderPainted(false);
+                ilha1.setFocusable(false);
+                ilha1.setContentAreaFilled(false);
+                ilha1.setBorderPainted(false);
 		
-        ilha2 = new JButton("MINI_BOI");
-        ilha2 = new JButton(image2);
+                ilha2 = new JButton("MINI_BOI");
+                ilha2 = new JButton(image2);
 		ilha2. setOpaque(false);
-        ilha2.setFocusable(false);
-        ilha2.setContentAreaFilled(false);
-        ilha2.setBorderPainted(false);
+                ilha2.setFocusable(false);
+                ilha2.setContentAreaFilled(false);
+                ilha2.setBorderPainted(false);
         
         
 		ilha2.setBackground(Color.WHITE);
@@ -84,7 +85,7 @@ public class Menu extends JFrame{
                  livre.addActionListener(c);
 
 	    Container cont = getContentPane();
-		cont.setBackground(new Color(137, 54, 150));
+		cont.setBackground(azul);
 	   	cont.add(ilha1);
                 cont.add(ilha2);
                 cont.add(ilha3);
