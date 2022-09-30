@@ -20,7 +20,7 @@ public class TelaEntrada extends JFrame {
         Color azulc = new Color(65,105,225);
         Color ouro = new Color(238,201,0);
         Font font = new Font("Arial",Font.BOLD,70);
-        ImageIcon image = new ImageIcon("F:/Logo.png");
+        ImageIcon image = new ImageIcon(getClass().getResource ("Logo.png"));
         Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
         
         public TelaEntrada(){
