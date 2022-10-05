@@ -1,3 +1,4 @@
+package poo;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -6,29 +7,33 @@ import java.awt.Toolkit;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollBar;
 
 public class Questionario extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	JButton finalizar,cancelar;
-	JRadioButton op1, op2, op3, op4, op5;
-	JLabel perg, titulo;
-	Color azul = new Color(18,10,143);
-    Color azulc = new Color(65,105,225);
-    Color ouro = new Color(238,201,0);
-    Color branco = new Color(255,255,255);
-    Font font = new Font("Arial",Font.BOLD,20);
-    Font font1 = new Font("Arial",Font.BOLD,30);
-    Font font2 = new Font("Arial",Font.BOLD,14);
-    Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
-    RadioButtonHandler handler;
-    JPanel painel ;
+	private JButton finalizar,cancelar;
+	private JRadioButton op1, op2, op3, op4, op5;
+	private JLabel perg, titulo;
+	private Color azul = new Color(18,10,143);
+	private Color azulc = new Color(65,105,225);
+	private Color ouro = new Color(238,201,0);
+	private Color branco = new Color(255,255,255);
+	private Font font = new Font("Arial",Font.BOLD,20);
+	private Font font1 = new Font("Arial",Font.BOLD,30);
+    private Font font2 = new Font("Arial",Font.BOLD,14);
+    private Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
+    private RadioButtonHandler handler;
+    private JPanel painel ;
+    private ButtonGroup grupodebotao;
+    private JScrollBar brrolagem;
     
 	public Questionario() {
 		handler = new RadioButtonHandler();
@@ -36,9 +41,12 @@ public class Questionario extends JFrame {
 		finalizar.setFont(font);
 		cancelar = new JButton("Cancelar");
 		cancelar.setFont(font);
+		brrolagem = new JScrollBar(JScrollBar.VERTICAL , 0, 60,0 , 200);
+		
 		painel = new JPanel();
 		painel.setBackground(azulc);
-		
+		painel.setSize(1000,600);
+		brrolagem.add(painel);
 		
 		titulo = new JLabel("QUESTIONARIO");
 		titulo.setFont(font1);
@@ -47,11 +55,19 @@ public class Questionario extends JFrame {
 		perg.setFont(font);
 		perg.setForeground(branco);
 		
+		
 		op1 = new JRadioButton("Coca-Cola",false);
 		op2 = new JRadioButton("Guarana Antartica",false);
 		op3 = new JRadioButton("Fanta",false);
 		op4 = new JRadioButton("Regente",false);
 		op5 = new JRadioButton("Pepsi",false);
+		
+		grupodebotao = new ButtonGroup();
+		grupodebotao.add(op1);
+		grupodebotao.add(op2);
+		grupodebotao.add(op3);
+		grupodebotao.add(op4);
+		grupodebotao.add(op5);
 		
 		op1.setBackground(azulc);
 		op1.setForeground(branco);
@@ -75,14 +91,18 @@ public class Questionario extends JFrame {
 		
 		cont.add(titulo);
 		
+		//adicionando elementos ao painel
+		painel.add(perg);
+		painel.add(op1);
+		painel.add(op2);
+		painel.add(op3);
+		painel.add(op4);
+		painel.add(op5);
+		
+		
 		cont.add(painel);
-		cont.add(perg);
-		cont.add(op1);
-		cont.add(op2);
-		cont.add(op3);
-		cont.add(op4);
-		cont.add(op5);
-		cont.add(painel);
+		cont.add(finalizar);
+		cont.add(cancelar);
 		
 		titulo.setBounds(810,80,300,100);
 		perg.setBounds(550,200,400,100);
@@ -90,9 +110,12 @@ public class Questionario extends JFrame {
 		op2.setBounds(600,350,300,50);
 		op3.setBounds(600,400,300,50);
 		op4.setBounds(600,450,300,50);
-		op5.setBounds(600,500,300,50);
+		op5.setBounds(300,600,300,50);
+		
 		painel.setBounds(460,200,1000,600);
-	
+		brrolagem.setBounds(990,200,50,1000);
+	    finalizar.setBounds(670,840,250,50);
+	    cancelar.setBounds(950,840,250,50);
 		
 		op1.addItemListener(handler);
 		
@@ -106,7 +129,7 @@ public class Questionario extends JFrame {
 
 			public void itemStateChanged(ItemEvent arg0) {
 			   if(op1.isSelected()) {
-				   JOptionPane.showMessageDialog(null, "Parabéns pelo bom gosto!");
+				   JOptionPane.showMessageDialog(null, "ParabÃ©ns pelo bom gosto!");
 			   }
 				
 			}
