@@ -1,28 +1,21 @@
 
-import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.border.AbstractBorder;
 import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
 
 public class Menu extends JFrame{
 	 
@@ -31,11 +24,20 @@ public class Menu extends JFrame{
      	
     
 	    JButton ilha1,ilha2,ilha3,livre;
+	    
 	    JButton btSom, btSom2, btNome, btVoltar, btConfirmar;
     	ImageIcon image = new ImageIcon(getClass().getResource("ilhas1.png"));
     	ImageIcon image2 = new ImageIcon(getClass().getResource("ilhas2.png"));
     	ImageIcon image3 = new ImageIcon(getClass().getResource("ilhas3.png"));
     	ImageIcon image4 = new ImageIcon("F:/livre.png");
+    	ImageIcon image5 = new ImageIcon(getClass().getResource("Música_ligada.png"));
+    	ImageIcon image6 = new ImageIcon(getClass().getResource("Música_desligada.png"));
+    	ImageIcon image7 = new ImageIcon(getClass().getResource("Efeito_ligado.png"));
+    	ImageIcon image8 = new ImageIcon(getClass().getResource("Efeito_desligado.png"));
+    	ImageIcon image9 = new ImageIcon(getClass().getResource("designPanel.png"));
+    	JLabel label = new JLabel(image9);
+    	
+    	
 	    JMenuBar barrinha;
 	    JMenu opcao;
 	    JMenuItem config, sair;
@@ -69,8 +71,26 @@ public class Menu extends JFrame{
 		  opcao.setBackground(ouro);
 		  
 		  //configurando os botões do panel
-		  btSom = new JButton();
-		  btSom2 = new JButton();
+
+	
+	                
+		  btSom = new JButton(image5);
+		  btSom.setBorder(borda);
+		  btSom.setOpaque(false);
+		  btSom.setFocusable(false);
+		  btSom.setContentAreaFilled(false);
+		//.setBorderPainted(false);
+		  
+          btSom2 = new JButton(image7);
+          btSom2.setBorder(borda);
+	      btSom2. setOpaque(false);
+	      btSom2.setFocusable(false);
+	      btSom2.setContentAreaFilled(false);
+	    //  btSom2.setBorderPainted(false);
+		  
+	      
+	      
+	      
 		  btConfirmar = new JButton("Confirmar");
 		  btNome = new JButton("Mudar NickName");
 		  btVoltar = new JButton("Voltar");
@@ -82,6 +102,8 @@ public class Menu extends JFrame{
 		  
 		  panel.setLayout(null);
 		  panel.setBounds(750, 250, 400, 500);
+		  panel.add(label);
+		  label.setBounds(0, 0, 80, 60);
 		  panel.setVisible(ativo);
 		
 		  panel.setBackground(azulclaro);
