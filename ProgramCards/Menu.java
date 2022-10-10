@@ -1,59 +1,48 @@
 
-import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
+import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.border.AbstractBorder;
-import javax.swing.border.LineBorder;
+import javax.swing.border.Border;
 
 public class Menu extends JFrame{
 	 
-   	private static final long serialVersionUID = 1L;   	
+   	private static final long serialVersionUID = 1L;
+		
      	
-     	private class BordaCantoArredondado extends AbstractBorder {
-            
-            private final BasicStroke CONTORNO = new BasicStroke( 30 );
-                    
-            @Override
-            public void paintBorder( Component c, Graphics g, int x, int y, int width, int height ) {
-                
-                super.paintBorder( c, g, x, y, width, height );
-                
-                Graphics2D g2d = (Graphics2D) g.create();
-                g2d.setRenderingHint( RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON );
-                g2d.setStroke( CONTORNO );
-                
-                g2d.setColor( Color.BLACK );
-                g2d.drawRoundRect( x, y, width-1, height-1, 80, 40 );
-                
-                g2d.dispose();
-                
-            }
-            
-        }
-     	
-    
+     	boolean on1 = true, on2 = true;
 	    JButton ilha1,ilha2,ilha3,livre;
-	    JButton btSom, btSom2, btNome, btVoltar, btConfirmar;
+	    
+	    JButton btSom, btSom2, btNome, btConfirmar;
     	ImageIcon image = new ImageIcon(getClass().getResource("ilhas1.png"));
     	ImageIcon image2 = new ImageIcon(getClass().getResource("ilhas2.png"));
     	ImageIcon image3 = new ImageIcon(getClass().getResource("ilhas3.png"));
-    	ImageIcon image4 = new ImageIcon("F:/livre.png");
+    	ImageIcon image4 = new ImageIcon(getClass().getResource("ilha livre.png"));
+    	ImageIcon image5 = new ImageIcon(getClass().getResource("Música_ligada.png"));
+    	ImageIcon image6 = new ImageIcon(getClass().getResource("Música_desligada.png"));
+    	ImageIcon image7 = new ImageIcon(getClass().getResource("Efeito_ligado.png"));
+    	ImageIcon image8 = new ImageIcon(getClass().getResource("Efeito_desligado.png"));
+    	
+    	JLabel label, label2, label3;
+    	Font tituto = new Font("Arial", Font.BOLD, 30);
+    	Font texto= new Font("Arial", Font.BOLD, 14);
+    	//ImageIcon image9 = new ImageIcon(getClass().getResource("designPanel.png"));
+    	//JLabel label = new JLabel(image9);
+    	
+    	
 	    JMenuBar barrinha;
 	    JMenu opcao;
 	    JMenuItem config, sair;
@@ -64,6 +53,7 @@ public class Menu extends JFrame{
         Color ouro = new Color(238,201,0);
         Color ouroclaro = new Color(238,232,170);
         Color azul = new Color(25,25,112);
+        Border borda = BorderFactory.createLineBorder(Color.black, 4);
 
 	  public Menu() {
 		
@@ -72,9 +62,9 @@ public class Menu extends JFrame{
 		  
 		  setJMenuBar(barrinha);
 		  
-		  opcao = new JMenu("Op��es");
+		  opcao = new JMenu("Opções");
 		
-		  config = new JMenuItem("Configura��es");
+		  config = new JMenuItem("Configurações");
 		  sair = new JMenuItem("sair");
 		  
 		  barrinha.add(opcao);
@@ -85,36 +75,135 @@ public class Menu extends JFrame{
 		  opcao.add(sair);	
 		  opcao.setBackground(ouro);
 		  
-		  //configurando os bot�es do panel
-		  btSom = new JButton();
-		  btSom2 = new JButton();
-		  btConfirmar = new JButton("Confirmar");
-		  btNome = new JButton("Mudar NickName");
-		  btVoltar = new JButton("Voltar");
+		  //configurando os botões do panel
+
+	
+	                
+		  btSom = new JButton(image5);
+		  btSom.setBorder(borda);
+		  btSom.setOpaque(false);
+		  btSom.setFocusable(false);
+		  btSom.setContentAreaFilled(false);
+		//.setBorderPainted(false);
 		  
+          btSom2 = new JButton(image7);
+          btSom2.setBorder(borda);
+	      btSom2. setOpaque(false);
+	      btSom2.setFocusable(false);
+	      btSom2.setContentAreaFilled(false);
+	    //  btSom2.setBorderPainted(false);		  
+		  btNome = new JButton("Mudar NickName");
+		  btNome.setFont(new Font("Arial", Font.BOLD, 14));
+		  
+		  
+		  btConfirmar = new JButton("Confirmar");
+		  btConfirmar.setFont(new Font("Arial", Font.BOLD, 14));
 		  
 		  
 		  //configurando o panel de configuracoes
+		  label = new JLabel("Configurações");
+		  label.setFont(tituto);
+		  label.setForeground(Color.BLACK);
+		  
+		  label2 = new JLabel("Música");
+		  label2.setForeground(Color.BLACK);
+		  label2.setFont(texto);
+		  
+		  label3 = new JLabel("Efeito Sonoro");
+		  label3.setFont(texto);
+		  label3.setForeground(new Color(27, 27, 74));
+		
 		  add(panel);
+		  panel.add(label);
+		  label.setBounds(95, 0, 400, 100);
+		  
+		  
 		  
 		  panel.setLayout(null);
 		  panel.setBounds(750, 250, 400, 500);
+		//  panel.add(label);
+		//  label.setBounds(0, 0, 80, 60);
 		  panel.setVisible(ativo);
-		  panel.setBorder( new BordaCantoArredondado() );
-		  panel.setBackground(azulclaro);
+		
+		  panel.setBackground(new Color(161, 220, 255));
+		  panel.setBorder(borda);
 		  
 		  panel.add(btSom);
+		  panel.add(label2);
+		  label2.setBounds(110, 135, 100, 100);
+		  
+		  
 		  panel.add(btSom2);
+		  panel.add(label3);
+		  label3.setBounds(215, 135, 100, 100);
+		  
+		  
+		  
 		  panel.add(btNome);
-		  panel.add(btVoltar);
 		  panel.add(btConfirmar);
 		  
 		  btSom.setBounds(90, 80, 90, 90);
-		  btSom2.setBounds(215, 80, 90, 90);
-		  btNome.setBounds(125, 270, 150, 50);
-		  btVoltar.setBounds(125, 330, 150, 50);
-		  btConfirmar.setBounds(125, 390, 150, 50);
+		  btSom.addActionListener(
+     	    	 new ActionListener(){
+
+   				
+   				public void actionPerformed(ActionEvent e) {
+   					
+   		
+   					
+   					if (on1  == true) {
+   						
+   						btSom.setIcon(image6);
+   						on1 = false;
+   					} else {
+   						
+   						btSom.setIcon(image5);
+   						on1 = true;
+   					}
+   					
+   					
+   				//	Sons2.main(null);
+   				
+   				} 
+     	        });
 		  
+		  btSom2.setBounds(215, 80, 90, 90);
+		  btSom2.addActionListener(
+	     	    	 new ActionListener(){
+
+	   				
+	   				public void actionPerformed(ActionEvent e) {
+	   					
+	   		
+	   					
+	   					if (on2) {
+	   						
+	   						btSom2.setIcon(image8);
+	   						on2 = false;
+	   					} else {
+	   						
+	   						btSom2.setIcon(image7);
+	   						on2 = true;
+	   					}
+	   					
+	   					
+	   				//	Sons2.main(null);
+	   				
+	   				} 
+	     	        });
+			  
+		  
+		  
+		  btNome.setBounds(125, 270, 150, 50);
+		  btNome.setBackground(new Color(182, 196, 250));
+		  btNome.setBorder(borda);
+		  btNome.setForeground(Color.black);
+		  
+		  btConfirmar.setBounds(125, 330, 150, 50);
+		  btConfirmar.setBackground(new Color(182, 196, 250));
+		  btConfirmar.setBorder(borda);
+		  btConfirmar.setForeground(Color.black);
+	
 		  
 		  config.setBackground(ouroclaro);
 		  config.setForeground(Color.black);
@@ -124,6 +213,21 @@ public class Menu extends JFrame{
    				
    				public void actionPerformed(ActionEvent e) {
    					
+   				 //   Sons.main(null);	 
+   				    ativo = !ativo;
+   					panel.setVisible(ativo);
+   					
+   				
+   				} 
+     	        });
+		  
+		  btConfirmar.addActionListener(
+     	    	 new ActionListener(){
+
+   				
+   				public void actionPerformed(ActionEvent e) {
+   					
+   				   // Sons.main(null);	 
    				    ativo = !ativo;
    					panel.setVisible(ativo);
    					
@@ -131,10 +235,6 @@ public class Menu extends JFrame{
    				} 
      	        });
 
-		  
-		  
-		  sair.setBackground(ouroclaro);
-		  sair.setForeground(Color.black);
 		  
 		     Sair s = new Sair();
 		  sair.addActionListener(s);
@@ -198,8 +298,8 @@ public class Menu extends JFrame{
 
          public void actionPerformed(ActionEvent e){
         	 
-   //      Sons.main(null);	 
-   //   	 new TelaNiveis();
+             // Sons.main(null);	 
+             // new TelaNiveis();
        	   dispose();
        	  
    }
