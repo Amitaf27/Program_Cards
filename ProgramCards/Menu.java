@@ -1,12 +1,17 @@
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.io.File;
+import java.io.IOException;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -22,11 +27,15 @@ public class Menu extends JFrame{
 	 
    	private static final long serialVersionUID = 1L;
 		
-     	
+  
      	boolean on1 = true, on2 = true;
 	    JButton ilha1,ilha2,ilha3,livre;
+	   
+
+
 	    
 	    JButton btSom, btSom2, btNome, btConfirmar;
+	    ImageIcon fundo = new ImageIcon(getClass().getResource("FundoIlhas.png"));
     	ImageIcon image = new ImageIcon(getClass().getResource("ilhas1.png"));
     	ImageIcon image2 = new ImageIcon(getClass().getResource("ilhas2.png"));
     	ImageIcon image3 = new ImageIcon(getClass().getResource("ilhas3.png"));
@@ -36,6 +45,7 @@ public class Menu extends JFrame{
     	ImageIcon image7 = new ImageIcon(getClass().getResource("Efeito_ligado.png"));
     	ImageIcon image8 = new ImageIcon(getClass().getResource("Efeito_desligado.png"));
     	
+    
     	JLabel label, label2, label3;
     	Font tituto = new Font("Arial", Font.BOLD, 30);
     	Font texto= new Font("Arial", Font.BOLD, 14);
@@ -54,17 +64,19 @@ public class Menu extends JFrame{
         Color ouroclaro = new Color(238,232,170);
         Color azul = new Color(25,25,112);
         Border borda = BorderFactory.createLineBorder(Color.black, 4);
-
+        
 	  public Menu() {
+		  
+	
 		
 	        setTitle("ILHAS");
 		  barrinha = new JMenuBar();
 		  
 		  setJMenuBar(barrinha);
 		  
-		  opcao = new JMenu("Opções");
+		  opcao = new JMenu("OpÃ§Ãµes");
 		
-		  config = new JMenuItem("Configurações");
+		  config = new JMenuItem("ConfiguraÃ§Ãµes");
 		  sair = new JMenuItem("sair");
 		  
 		  barrinha.add(opcao);
@@ -75,7 +87,7 @@ public class Menu extends JFrame{
 		  opcao.add(sair);	
 		  opcao.setBackground(ouro);
 		  
-		  //configurando os botões do panel
+		  //configurando os botÃµes do panel
 
 	
 	                
@@ -101,11 +113,11 @@ public class Menu extends JFrame{
 		  
 		  
 		  //configurando o panel de configuracoes
-		  label = new JLabel("Configurações");
+		  label = new JLabel("ConfiguraÃ§Ãµes");
 		  label.setFont(tituto);
 		  label.setForeground(Color.BLACK);
 		  
-		  label2 = new JLabel("Música");
+		  label2 = new JLabel("MÃºsica");
 		  label2.setForeground(Color.BLACK);
 		  label2.setFont(texto);
 		  
@@ -154,10 +166,15 @@ public class Menu extends JFrame{
    					if (on1  == true) {
    						
    						btSom.setIcon(image6);
+   						
+   						Sons2.tocarSounds();
    						on1 = false;
    					} else {
    						
    						btSom.setIcon(image5);
+   						
+   						Sons2.tocarSounds();
+
    						on1 = true;
    					}
    					
@@ -273,16 +290,22 @@ public class Menu extends JFrame{
 		 ilha1.addActionListener(c);
 		 ilha2.addActionListener(c);
          ilha3.addActionListener(c);
-              livre.addActionListener(c);
+         livre.addActionListener(c);
+              
+             
+ 
+                                              
+                                              
 
 	    Container cont = getContentPane();
-		cont.setBackground(azul);
 	   	cont.add(ilha1);
                 cont.add(ilha2);
                 cont.add(ilha3);
                 cont.add(livre);
 		
 		setLayout(null);
+		
+    	
 		 ilha1.setBounds(200,200,400,400);
          ilha2.setBounds(610,200,400,400);
          ilha3.setBounds(1020,200,400,400);
@@ -293,6 +316,8 @@ public class Menu extends JFrame{
 		
 	} 
 	  
+	  
+	  
 	    
 	 private class AcionaBotao implements ActionListener {
 
@@ -302,19 +327,31 @@ public class Menu extends JFrame{
              // new TelaNiveis();
        	   dispose();
        	  
-   }
-   }
+        }
+     }
 	 private class Sair implements ActionListener {
 
          public void actionPerformed(ActionEvent e){
         	 
              System.exit(0);
        	  
+        }
    }
-   }
+	    
+	    
+	    
+  
+	 
 	public static void main(String[]args) {
 		
+	
 		Menu menu = new Menu();
 		menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
+		
+		
+
+    
+}
+	
+	
 }
