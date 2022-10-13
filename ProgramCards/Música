@@ -1,4 +1,12 @@
-public class Music {
+import java.io.File;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.TargetDataLine;
+import javax.swing.JOptionPane;
+
+public class Musica {
 
 
    Clip clip;
@@ -7,19 +15,18 @@ public class Music {
      
      try{
        
-       File file = new File(fileName);
-       AudioInputStream sound = new AudioSystem.getAudioInputStream(file);
+       File Music = new File(fileName);
+       AudioInputStream sound = AudioSystem.getAudioInputStream(Music);
        clip = AudioSystem.getClip();
        clip.open(sound);
          
-       }
-       
-       
      } catch (Exception e){
        
-       
+    	 JOptionPane.showMessageDialog(null, "aa");
       
      }
+     
+   }
      
      
      public void play(){
@@ -29,7 +36,7 @@ public class Music {
      }
      public void loop(){
        
-       clip.loop(LOOP_CONTINUOUSLY);
+      
      }
      public void stop(){
        
@@ -40,5 +47,4 @@ public class Music {
      
      
      
-   }
 }
