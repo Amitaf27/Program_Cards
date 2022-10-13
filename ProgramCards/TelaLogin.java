@@ -1,5 +1,4 @@
 
-
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -23,7 +22,7 @@ public class TelaLogin extends JFrame {
 
 private static final long serialVersionUID = 1L;
 //declaracao de atributos,objetos e variaveis
-          JButton botao, botao2;
+          JButton botaoLogin, botao2;
           Font fonte1 = new Font("Arial", Font.BOLD, 14);
       	  Font fonte2 = new Font("Arial", Font.BOLD, 30);
       	  Border b = BorderFactory.createLineBorder(Color.black, 2);
@@ -50,14 +49,14 @@ private static final long serialVersionUID = 1L;
            rotulo3 = new JLabel();
            cadas  = new JLabel("Novo aqui?");
            cadas.setForeground(Color.WHITE);//mudar cor do texto da label
-           text1 = new JTextField("Email ou senha de Usu·rio");
+           text1 = new JTextField("Email ou senha de Usu√°rio");
            senha = new JPasswordField();
        
            AcionaBotao evento = new AcionaBotao();
           
-           botao = new JButton("LOGIN");
-           botao.addActionListener(evento);
-           botao.setBackground(Color.GREEN);
+           botaoLogin = new JButton("LOGIN");
+           botaoLogin.addActionListener(evento);
+           botaoLogin.setBackground(Color.GREEN);
           
            botao2 = new JButton(imagem1);
            
@@ -100,7 +99,7 @@ private static final long serialVersionUID = 1L;
            cont.add(senha);
   
          
-           cont.add(botao);
+           cont.add(botaoLogin);
 
            cont.add(cadas);
            cont.add(cadastrar);
@@ -114,7 +113,7 @@ private static final long serialVersionUID = 1L;
            text1.setBounds(825, 330, 280, 25);
            senha.setBounds(825, 360, 280,25);
          
-           botao.setBounds(825, 390, 280, 25);
+           botaoLogin.setBounds(825, 390, 280, 25);
 
            cadas.setBounds(890,930,200,25);
            cadastrar.setBounds(890,930,200,25);
