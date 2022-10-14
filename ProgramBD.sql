@@ -6,3 +6,5 @@ create table Usuario (
     senha CHAR(6) primary key not null,
     nome VARCHAR(50)
 );
+
+select * from Usuario;
