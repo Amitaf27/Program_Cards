@@ -23,7 +23,7 @@ public class TelaPartida extends JFrame {
     Color azulc = new Color(65,105,225);
     Color ouro = new Color(238,201,0);
     Font fonte1 = new Font("Arial", Font.BOLD, 24);
-    int cont = 1;
+    int cont;
     boolean mouseP = false;
     
      public TelaPartida(){
@@ -53,9 +53,13 @@ public class TelaPartida extends JFrame {
     	 imaPrintf.addMouseListener(new MouseListener(){
 
 			public void mouseClicked(MouseEvent arg0) {
-				cont++;
+				cont=1;
 				imaPrintf.setBounds(1235,740-100,170,300);
-				
+				cont++;
+                                    if (cont =>2){
+                                  imaPrintf.setBounds(1235,740,170,300);
+                             }
+
 			}
 
 			@Override
@@ -79,7 +83,9 @@ public class TelaPartida extends JFrame {
 			public void mouseReleased(MouseEvent arg0) {
 				// TODO Auto-generated method stub
 				mouseP = false;
-				imaPrintf.setBounds(1235,740-100,170,300);
+				imaPrintf.setBounds(875,540,170,300);
+
+                                
 			}
     		 
     		 
