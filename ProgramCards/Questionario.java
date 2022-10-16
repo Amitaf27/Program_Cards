@@ -46,12 +46,14 @@ import java.awt.Color;
                  painel = new JPanel(); 
                  painel.setBackground(azulc); 
                  painel.setSize(1000,600); 
+                 painel.setLayout(null);
+                 painel.setPreferredSize(new Dimension(1000,1000);
                 // brrolagem.add(painel); 
  
  
-                 scroll.setPreferredSize(New Dimension(464, 439));
-                 scroll.setViewportView(painel);
-                 painel.add(scroll);
+                // scroll.setPreferredSize(New Dimension(464, 439));
+                /// scroll.setViewportView(painel);
+                 ///painel.add(scroll);
                   
                  titulo = new JLabel("QUESTIONARIO"); 
                  titulo.setFont(font1); 
