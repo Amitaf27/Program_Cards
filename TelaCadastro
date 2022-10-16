@@ -12,6 +12,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 
+import BancoDados.Usuario;
+import BancoDados.UsuarioBD;
+
 public class TelaCadastro extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -36,7 +39,7 @@ public class TelaCadastro extends JFrame {
         text1.setBackground(new Color(0, 191, 225));
         text1.setForeground(Color.white);
         
-        text2 = new JTextField("NickName");
+        text2 = new JTextField("Nome de Usuário");
         text2.setFont(fonte1);
         text2.setBorder(b);
         text2.setBackground(new Color(0, 191, 225));
@@ -56,9 +59,7 @@ public class TelaCadastro extends JFrame {
         
         painel.setBackground(new Color(65, 105, 225));
         painel.setBorder(b);
-        
-        
-         
+       
           botao = new JButton("Confirmar");
           botao.setBackground(new Color(0, 187, 45));
           botao.setFont(fonte1);
@@ -67,15 +68,37 @@ public class TelaCadastro extends JFrame {
           botao.addActionListener(
      	    	 new ActionListener(){
 
-   				
-   				public void actionPerformed(ActionEvent e) {
+   				public void actionPerformed(ActionEvent evt) {
    					
-   					Sons.main(null);
-   					new TelaLogin();
-   					dispose();
+   					String nickName, nome, senha, idade;
+   					 nome = text1.getText();
+   					 nickName = text2.getText();
+   					 idade = text3.getText();
+   					 senha = text4.getText();
+   					 
+   					Usuario usuario = new Usuario();
+   					 usuario.setNome(nome);
+   					 usuario.setNomeUsuario(nickName);
+   					 usuario.setIdade(idade);
+   					 usuario.setSenha(senha);
+   					 
+   					UsuarioBD usuario1 = new UsuarioBD();
+   					 usuario1.cadastrar(usuario);
    					
    				} 
      	        });
+          
+          botao.addActionListener(
+        		 new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Sons.main(null);
+					new TelaLogin();
+					dispose();
+			}
+        	  
+         });
 
           
           Container cont = getContentPane();
@@ -141,6 +164,5 @@ public class TelaCadastro extends JFrame {
 		TelaCadastro cad = new TelaCadastro();
 		
 	}
-
 
 }
