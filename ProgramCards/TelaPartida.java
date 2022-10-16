@@ -23,7 +23,7 @@ public class TelaPartida extends JFrame {
     Color azulc = new Color(65,105,225);
     Color ouro = new Color(238,201,0);
     Font fonte1 = new Font("Arial", Font.BOLD, 24);
-    int cont;
+    int cont=0;
     boolean mouseP = false;
     
      public TelaPartida(){
@@ -39,23 +39,184 @@ public class TelaPartida extends JFrame {
     	 
     	 imFor = new ImageIcon(getClass().getResource("for.png"));
     	 imaFor = new JLabel(imFor);
+         imaFor.addMouseListener(new MouseListener(){
+
+			public void mouseClicked(MouseEvent arg0) {
+				cont++;
+				imaFor.setBounds(1235,740-100,170,300);
+	
+                                    if (cont =>2){
+                                  imaFor.setBounds(1235,740,170,300);
+                             }
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				mouseP = true;
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				mouseP = false;
+				imaFor.setBounds(875,540,170,300);
+
+                                
+			}
+    		 
+    		 
+    	 });
     	 
     	 imif = new ImageIcon(getClass().getResource("if.png"));
     	 imaIf = new JLabel(imif);
+         imaIf.addMouseListener(new MouseListener(){
+
+			public void mouseClicked(MouseEvent arg0) {
+				cont++;
+				imaIf.setBounds(1235,740-100,170,300);
+	
+                                    if (cont =>2){
+                                  imaIf.setBounds(1235,740,170,300);
+                             }
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				mouseP = true;
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				mouseP = false;
+				imaIf.setBounds(875,540,170,300);
+
+                                
+			}
+    		 
+    		 
+    	 });
     	 
     	 include = new ImageIcon(getClass().getResource("include.png"));
     	 imaInclude = new JLabel(include);
+         imaInclude.addMouseListener(new MouseListener(){
+
+			public void mouseClicked(MouseEvent arg0) {
+				cont++;
+				imaInclude.setBounds(1235,740-100,170,300);
+	
+                                    if (cont =>2){
+                                  imaInclude.setBounds(1235,740,170,300);
+                             }
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				mouseP = true;
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				mouseP = false;
+				imaInclude.setBounds(875,540,170,300);
+
+                                
+			}
+    		 
+    		 
+    	 });
+
     	 scanf = new ImageIcon(getClass().getResource("scanf.png"));
     	 imaScanf = new JLabel(scanf);
+         imaScanf.addMouseListener(new MouseListener(){
+
+			public void mouseClicked(MouseEvent arg0) {
+				cont++;
+				imaScanf.setBounds(1235,740-100,170,300);
+	
+                                    if (cont =>2){
+                                  imaScanf.setBounds(1235,740,170,300);
+                             }
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				mouseP = true;
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				mouseP = false;
+				imaScanf.setBounds(875,540,170,300);
+
+                                
+			}
+    		 
+    		 
+    	 });
     	 
     	 imPrintf = new ImageIcon(getClass().getResource("printf.png"));
     	 imaPrintf = new JLabel(imPrintf);
     	 imaPrintf.addMouseListener(new MouseListener(){
 
 			public void mouseClicked(MouseEvent arg0) {
-				cont=1;
-				imaPrintf.setBounds(1235,740-100,170,300);
 				cont++;
+				imaPrintf.setBounds(1235,740-100,170,300);
+	
                                     if (cont =>2){
                                   imaPrintf.setBounds(1235,740,170,300);
                              }
