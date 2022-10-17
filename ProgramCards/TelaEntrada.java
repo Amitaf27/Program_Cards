@@ -1,6 +1,6 @@
 
-
 import java.awt.Color;
+
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -20,6 +20,10 @@ public class TelaEntrada extends JFrame {
         private Font font = new Font("Arial",Font.BOLD,70);
         private ImageIcon image = new ImageIcon(getClass().getResource ("Logo.png"));
         private Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
+        static Musica mu = new Musica();
+        static SomEfeito ef = new SomEfeito();
+        static String efeitoSom= "C:/Users/Keyce/git/ProgramCards/ProgramCards/Clique.wav";
+        static String musicaSom = "C:/Users/Keyce/git/ProgramCards/ProgramCards/Maid-with-the-Flaxen-Hair.wav";
         
         public TelaEntrada(){
             
@@ -68,7 +72,9 @@ public class TelaEntrada extends JFrame {
                   
                   new TelaLogin();
                  setVisible(false);
-                 Sons2.main(null);
+                 mu.setFile(musicaSom);
+                 mu.play();
+                 
     }
              }
                   public static void main(String[] args) {
@@ -76,3 +82,4 @@ public class TelaEntrada extends JFrame {
                    ex.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
      }
 }
+
