@@ -19,6 +19,8 @@ import javax.swing.border.Border;
 public class TelaCadastro extends JFrame {
 
 	private static final long serialVersionUID = 1L;
+	
+	
 	JButton botao, botao1;
 	JLabel rotulo1, rotulo2, rotulo3;
 	JTextField text1, text2, text3, text4;
@@ -27,8 +29,9 @@ public class TelaCadastro extends JFrame {
 	Border b = BorderFactory.createLineBorder(Color.black, 3);
 	JPanel painel = new JPanel();
         Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
-	Musica mu = new Musica():
+	Musica musica = new Musica():
         SomEfeito ef = new SomEfeito();
+	ef.setFile(EfeitoSom);
 
 	public TelaCadastro() {
         rotulo1 =  new JLabel("Cadastro");
@@ -77,7 +80,7 @@ public class TelaCadastro extends JFrame {
    				
    				public void actionPerformed(ActionEvent e) {
 					
-					mu.setFile([[constante]]);
+					
 					mu.play();
    				        //new Questionario();
    					dispose();
