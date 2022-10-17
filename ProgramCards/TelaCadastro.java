@@ -27,6 +27,8 @@ public class TelaCadastro extends JFrame {
 	Border b = BorderFactory.createLineBorder(Color.black, 3);
 	JPanel painel = new JPanel();
         Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
+	Musica mu = new Musica():
+        SomEfeito ef = new SomEfeito();
 
 	public TelaCadastro() {
         rotulo1 =  new JLabel("Cadastro");
@@ -74,10 +76,10 @@ public class TelaCadastro extends JFrame {
 
    				
    				public void actionPerformed(ActionEvent e) {
-   					
-                                    TelaLogin a = new TelaLogin();
-   					
-   				    //new Questionario();
+					
+					mu.setFile([[constante]]);
+					mu.play();
+   				        //new Questionario();
    					dispose();
    					
    				} 
@@ -100,6 +102,7 @@ public class TelaCadastro extends JFrame {
       				
       				public void actionPerformed(ActionEvent e) {
       					
+					mu.play();
       					TelaLogin s = new TelaLogin();
       					setVisible(false);
       				} 
