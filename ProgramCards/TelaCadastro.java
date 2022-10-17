@@ -2,7 +2,9 @@ package ProgramCards;
 
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -24,6 +26,7 @@ public class TelaCadastro extends JFrame {
 	Font fonte2 = new Font("Arial", Font.BOLD, 30);
 	Border b = BorderFactory.createLineBorder(Color.black, 3);
 	JPanel painel = new JPanel();
+        Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
 
 	public TelaCadastro() {
         rotulo1 =  new JLabel("Cadastro");
@@ -72,8 +75,9 @@ public class TelaCadastro extends JFrame {
    				
    				public void actionPerformed(ActionEvent e) {
    					
-   					Sons.main(null);
-   					new TelaLogin();
+                                    TelaLogin a = new TelaLogin();
+   					
+   				    //new Questionario();
    					dispose();
    					
    				} 
@@ -84,7 +88,7 @@ public class TelaCadastro extends JFrame {
           cont.setBackground(new Color(25, 25, 112));
          
           
-          botao1 = new JButton("Já possui cadastro? Clique aqui");
+          botao1 = new JButton("JÃ¡ possui cadastro? Clique aqui");
           botao1.setOpaque(false);
           botao1.setFocusable(false);
           botao1.setContentAreaFilled(false);
@@ -96,9 +100,8 @@ public class TelaCadastro extends JFrame {
       				
       				public void actionPerformed(ActionEvent e) {
       					
-      					Sons.main(null);
-      					new TelaLogin();
-      					dispose();
+      					TelaLogin s = new TelaLogin();
+      					setVisible(false);
       				} 
         	        });
 
@@ -133,7 +136,7 @@ public class TelaCadastro extends JFrame {
           botao1.setBounds(820, 640, 300, 30);
           
          
-          setSize(1920, 1080 );
+          setSize(dimensao);
           setVisible(true);
          
        }
