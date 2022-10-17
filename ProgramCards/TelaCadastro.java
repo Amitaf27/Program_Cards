@@ -30,7 +30,7 @@ public class TelaCadastro extends JFrame {
 	JPanel painel = new JPanel();
         Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
 	Musica musica = new Musica():
-        SomEfeito ef = new SomEfeito();
+        EfeitoSom ef = new EfeitoSom();
 	ef.setFile(EfeitoSom);
 
 	public TelaCadastro() {
