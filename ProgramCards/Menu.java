@@ -314,7 +314,8 @@
                                                   
     
               Container cont = getContentPane();  
-                     cont.add(ilha1);  
+                     cont.add(ilha1);
+                  cont.setBackground(azul);
                   cont.add(ilha2);  
                   cont.add(ilha3);  
                   cont.add(livre);  
