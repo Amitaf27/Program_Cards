@@ -127,7 +127,7 @@ public class TelaNiveis extends JFrame {
            private class AcionaBotao implements ActionListener {
 
               public void actionPerformed(ActionEvent e){
-            	//  new TelaJogo();
+            	new TelaPartida();
             	  
         }
         }
