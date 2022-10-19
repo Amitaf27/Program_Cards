@@ -39,25 +39,53 @@ public class Menu extends JFrame {
 	     private JPanel painel = new JPanel();
 	     Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();	     
 	     Color azulclaro = new Color(135,206,250);
-	     Color ouroclaro = new Color(238,201,0);
-	     Color ouro = new Color(135,206,250);
-	     Color azul = new Color(238,201,0);
-	     
+	     Color ouroclaro = new Color(238,232,1);
+	     Color ouro = new Color(238,201,0);
+	     Color azul = new Color(25,25,112);
+	     Border borda = new BordeFactory.createLineBorder(Color.BLACK,4);
+             String efeitoSom, musicaSom, musicaSomLigada;
+             EfeitoSom ef = new EfeitoSom();
+             Musica musica = new Musica();
+
 	     public Menu() {
 	    	 setTitle("ILHAS");
 	    	 
 	    	 barrinha = new JMenuBar();
-	    	 
+	    	 setJMenuBar(barrinha);
+
 	    	 opcao = new JMenu("Opção");
 	    	 
 	    	 config = new JMenuItem("Configurações");
 	    	 sair = new JMenuItem("Sair");
 	    	 
-	    	 opcao.
-	    	 
+	    	 opcao.add(config);
+                 opcao.add(sair);
+	    	 opcao.setBackground(ouro);
+
 	    	 barrinha.add(opcao);
-	    	 
-	    	 
+                 barrinha.setBackground(ouro);
+//Configurando os componentes do painel
+                 btSom = new JButton(imagem5);
+                 btSom.setBorder(borda);
+                 btSom.setOpaque(false);
+                 btSom.setFocusable(false);
+	    	 btSom.setContentAreaFilled(false);
+                 
+                 btSom2 = new JButton(imagem7);
+                 btSom2.setBorder(borda);
+                 btSom2.setOpaque(false);
+                 btSom2.setFocusable(false);
+	    	 btSom2.setContentAreaFilled(false);
+
+                 btNome = new JButton("Mudar NickName");
+                 btNome.setFont(texto);
+
+                 btConfirmar = new JButton("Confirmar");
+                 btConfirmar.setFont(texto);
+//Configurando o painel de configurações 
+                 label = new JLabel("Configurações");
+                 
+
 	    	 Container cont = getContentPane();
 	    	 
 	    	 cont.add(ilha1);
