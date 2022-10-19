@@ -139,6 +139,7 @@ import java.awt.Color;
                    if (text1.getText().equalsIgnoreCase("mestreAndre") && senha1.equalsIgnoreCase("andre123")){ 
               
                        new Menu(); 
+                      dispose(); 
                       setVisible(false); 
                     }else { 
           
