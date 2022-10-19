@@ -22,8 +22,8 @@ public class TelaEntrada extends JFrame {
         private Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
         static Musica mu = new Musica();
         static SomEfeito ef = new SomEfeito();
-        static String efeitoSom= "C:/Users/Keyce/git/ProgramCards/ProgramCards/Clique.wav";
-        static String musicaSom = "C:/Users/Keyce/git/ProgramCards/ProgramCards/Maid-with-the-Flaxen-Hair.wav";
+        static String efeitoSom= "F:/Clique.wav";
+        static String musicaSom = "F:Mario.wav";
         
         public TelaEntrada(){
             
