@@ -84,8 +84,53 @@ public class Menu extends JFrame {
                  btConfirmar.setFont(texto);
 //Configurando o painel de configurações 
                  label = new JLabel("Configurações");
+                 label.setFont(titulo);
+                 label.setForeground(Color.BLACK);
                  
+                 label2 = new JLabel("Música");
+                 label2.setFont(texto);
+                 label2.setForeground(Color.BLACK);
+  
+                 label3 = new JLabel("Efeito Sonoro");
+                 label3.setFont(texto);
+                 label3.setForeground(new Color(27,27,74));
 
+                 add(painel);
+                 label.setBounds(95,0,400,100);
+                 label2.setBounds(110,135,100,100);
+                 label3.setBounds(215,135,100,100);
+
+                 painel.setLayout(null);
+                 
+                 painel.setBounds(750,250,400,500);
+                 painel.setVisible(ativo);
+                 painel.setBackground(new Color(161,220,255));
+                 painel.setBorder(borda);
+
+                 painel.add(btSom);
+                 painel.add(label2);
+                 painel.add(btSom2);
+                 painel.add(label3);
+                 painel.add(btNome);
+                 painel.add(btConfirmar);
+
+                 btSom.setBounds(90,80,90,90);
+ //configurando botão de som 
+                 efeitoSom = "F:/Clique";
+                 musicaSom = "F:/music";
+                 ef.setFile(efeitoSom);
+                 musicaSomLigada = "on";
+
+//configurando botões 
+                 btSom.addActionListener (new ActionListener(){
+                    public void actionPerformed(ActionEvent e){
+                       ef.play();
+                     if(musicaSomLigada.equals("off")){
+                        musica.setFilel(musicaSom);
+                        musica.play();
+       }
+           }
+               });
 	    	 Container cont = getContentPane();
 	    	 
 	    	 cont.add(ilha1);
