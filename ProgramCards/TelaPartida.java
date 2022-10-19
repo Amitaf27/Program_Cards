@@ -45,7 +45,7 @@ public class TelaPartida extends JFrame {
 				cont++;
 				imaFor.setBounds(1235,740-100,170,300);
 	
-                                    if (cont =>2){
+                                    if (cont >=2){
                                   imaFor.setBounds(1235,740,170,300);
                              }
 
@@ -88,7 +88,7 @@ public class TelaPartida extends JFrame {
 				cont++;
 				imaIf.setBounds(1235,740-100,170,300);
 	
-                                    if (cont =>2){
+                                    if (cont >=2){
                                   imaIf.setBounds(1235,740,170,300);
                              }
 
@@ -131,7 +131,7 @@ public class TelaPartida extends JFrame {
 				cont++;
 				imaInclude.setBounds(1235,740-100,170,300);
 	
-                                    if (cont =>2){
+                                    if (cont >=2){
                                   imaInclude.setBounds(1235,740,170,300);
                              }
 
@@ -174,7 +174,7 @@ public class TelaPartida extends JFrame {
 				cont++;
 				imaScanf.setBounds(1235,740-100,170,300);
 	
-                                    if (cont =>2){
+                                    if (cont >=2){
                                   imaScanf.setBounds(1235,740,170,300);
                              }
 
@@ -217,7 +217,7 @@ public class TelaPartida extends JFrame {
 				cont++;
 				imaPrintf.setBounds(1235,740-100,170,300);
 	
-                                    if (cont =>2){
+                                    if (cont >=2){
                                   imaPrintf.setBounds(1235,740,170,300);
                              }
 
