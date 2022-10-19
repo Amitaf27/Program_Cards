@@ -128,6 +128,7 @@ public class TelaNiveis extends JFrame {
 
               public void actionPerformed(ActionEvent e){
             	new TelaPartida();
+            	dispose();
             	  
         }
         }
