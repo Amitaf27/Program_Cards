@@ -69,13 +69,13 @@ import javax.swing.JScrollPane;
                  titulo = new JLabel("QUESTIONARIO"); 
                  titulo.setFont(font1); 
                  titulo.setForeground(ouro); 
-//configurando a primeira questão 
-                 perg1 = new JLabel("1 - Você sabe o básico de C?:"); 
+//configurando a primeira questÃ£o 
+                 perg1 = new JLabel("1 - VocÃª sabe o bÃ¡sico de C?:"); 
                  perg1.setFont(font); 
                  perg1.setForeground(branco); 
 
                  P1op1 = new JRadioButton("Sim",false); 
-                 P1op2 = new JRadioButton("Não",false); 
+                 P1op2 = new JRadioButton("NÃ£o",false); 
 
                  quest1 = new ButtonGroup(); 
                  quest1.add(P1op1); 
@@ -89,13 +89,13 @@ import javax.swing.JScrollPane;
                  P1op2.setForeground(branco); 
                  P1op2.setFont(font2);
 
-//configurando a segunda questão 
-                 perg2 = new JLabel("2 - Você sabe o que são variáveis na linguagem C?"); 
+//configurando a segunda questÃ£o 
+                 perg2 = new JLabel("2 - VocÃª sabe o que sÃ£o variÃ¡veis na linguagem C?"); 
                  perg2.setFont(font); 
                  perg2.setForeground(branco); 
 
                  P2op1 = new JRadioButton("Sim",false); 
-                 P2op2 = new JRadioButton("Não",false); 
+                 P2op2 = new JRadioButton("NÃ£o",false); 
 
                  quest2 = new ButtonGroup(); 
                  quest2.add(P2op1); 
@@ -108,8 +108,8 @@ import javax.swing.JScrollPane;
                  P2op2.setBackground(azulc); 
                  P2op2.setForeground(branco);                 
 
-//configurando a terceira questão 
-                 perg3 = new JLabel("3 - Qual é a biblioteca padrão para funções de leitura de dados?"); 
+//configurando a terceira questÃ£o 
+                 perg3 = new JLabel("3 - Qual Ã© a biblioteca padrÃ£o para funÃ§Ãµes de leitura de dados?"); 
                  perg3.setFont(font); 
                  perg3.setForeground(branco); 
 
@@ -134,7 +134,7 @@ import javax.swing.JScrollPane;
                  P3op3.setForeground(branco); 
 
 
-//configurando a quarta questão 
+//configurando a quarta questÃ£o 
                  perg4 = new JLabel("4 - Qual comando expressa uma leitura de dados?"); 
                  perg4.setFont(font); 
                  perg4.setForeground(branco); 
@@ -160,8 +160,8 @@ import javax.swing.JScrollPane;
                  P4op3.setForeground(branco); 
 
 
-//configurando a quinta questão 
-                 perg5 = new JLabel("5 - Qual é a função da seguinte declaração? Scanf (str, “% d”, & i);"); 
+//configurando a quinta questÃ£o 
+                 perg5 = new JLabel("5 - Qual Ã© a funÃ§Ã£o da seguinte declaraÃ§Ã£o? Scanf (str, â€œ% dâ€�, & i);"); 
                  perg5.setFont(font); 
                  perg5.setForeground(branco); 
 
@@ -195,7 +195,7 @@ import javax.swing.JScrollPane;
                  P5op5.setBackground(azulc); 
                  P5op5.setForeground(branco); 
 
-//configurando a sexta questão 
+//configurando a sexta questÃ£o 
                  perg6 = new JLabel("6 - Selecione a bebida de sua preferencia:"); 
                  perg6.setFont(font); 
                  perg6.setForeground(branco); 
@@ -230,7 +230,7 @@ import javax.swing.JScrollPane;
                  P6op5.setBackground(azulc); 
                  P6op5.setForeground(branco); 
 
-//configurando a sétima questão 
+//configurando a sÃ©tima questÃ£o 
                  perg7 = new JLabel("7 - Selecione a bebida de sua preferencia:"); 
                  perg7.setFont(font); 
                  perg7.setForeground(branco); 
@@ -265,7 +265,7 @@ import javax.swing.JScrollPane;
                  P7op5.setBackground(azulc); 
                  P7op5.setForeground(branco); 
 
-//configurando a oitava questão 
+//configurando a oitava questÃ£o 
                  perg8 = new JLabel("8 - Selecione a bebida de sua preferencia:"); 
                  perg8.setFont(font); 
                  perg8.setForeground(branco); 
@@ -300,7 +300,7 @@ import javax.swing.JScrollPane;
                  P8op5.setBackground(azulc); 
                  P8op5.setForeground(branco); 
 
-//configurando a nona questão 
+//configurando a nona questÃ£o 
                  perg9 = new JLabel("9 - Selecione a bebida de sua preferencia:"); 
                  perg9.setFont(font); 
                  perg9.setForeground(branco); 
@@ -335,7 +335,7 @@ import javax.swing.JScrollPane;
                  P9op5.setBackground(azulc); 
                  P9op5.setForeground(branco); 
 
-//configurando a décima  questão 
+//configurando a dÃ©cima  questÃ£o 
                  perg10 = new JLabel("10 - Selecione a bebida de sua preferencia:"); 
                  perg10.setFont(font); 
                  perg10.setForeground(branco); 
@@ -443,7 +443,7 @@ import javax.swing.JScrollPane;
                  cont.add(finalizar); 
                  cont.add(cancelar); 
 
-//definindo a posição dos elementos no painel
+//definindo a posiÃ§Ã£o dos elementos no painel
                  titulo.setBounds(810,80,300,100); 
 //1
                  perg1.setBounds(35,5,400,100); 
@@ -508,7 +508,7 @@ import javax.swing.JScrollPane;
                  P10op4.setBounds(45,1865,300,50); 
                  P10op5.setBounds(45,1900,300,50);
 
-//definindo a posição dos elementos na tela principal 
+//definindo a posiÃ§Ã£o dos elementos na tela principal 
           //       painel.setBounds(460,200,1000,600); 
                  scroll.setBounds(460,200,1000,550);
                  finalizar.setBounds(670,800,250,50); 
@@ -526,7 +526,7 @@ import javax.swing.JScrollPane;
 
                          public void itemStateChanged(ItemEvent arg0) { 
                             if(P1op1.isSelected()) { 
-                                    JOptionPane.showMessageDialog(null, "Parabéns pelo bom gosto!"); 
+                                    JOptionPane.showMessageDialog(null, "ParabÃ©ns pelo bom gosto!"); 
                             } 
 
                          } 
