@@ -38,6 +38,7 @@ public class Menu extends JFrame {
 	     
 	     private JLabel label, label1, label2, label3;
 	     private Font titulo = new Font("Arial",Font.BOLD,30);
+	     private Font texto2 = new Font("Arial",Font.BOLD,20);
 	     private Font texto = new Font("Arial",Font.BOLD,14);
 	     private JMenuBar  barrinha;
 	     private JMenu opcao;
@@ -77,6 +78,15 @@ public class Menu extends JFrame {
                    opcao.add(config);  
                    opcao.add(sair);          
                    opcao.setBackground(ouro);  
+                   
+                   //decorando JMenuItem 
+                   barrinha.setFont(titulo);
+                   opcao.setFont(texto2);
+                   config.setFont(texto);
+                   sair.setFont(texto);
+                   
+                   
+                   
                      
                    //configurando os botÃµes do panel  
    
@@ -179,9 +189,7 @@ public class Menu extends JFrame {
                                         musicaSomLigada = "off"; 
                                         btSom.setIcon(imagem6); 
     
- }  
-                                              
-                                    //        Sons2.main(null);  
+ }                      
                                       
                                     }   
                       });  
@@ -195,20 +203,17 @@ public class Menu extends JFrame {
 
                                           ef.play();
                                                       
-                                                             if (on2) {                                                               btSom2.setIcon(imagem8);  
+                                                             if (on2) {                                                               
+                                                            	 btSom2.setIcon(imagem8);  
                                                             on2 = false;  
                                                     } else {  
                                                               
                                                             btSom2.setIcon(imagem7);  
                                                             on2 = true;  
-                                                    }                    
-              
-    
+                                                    }                                 
  }       
                                               
-                                            });  
-                             
-                     
+                                            });                                                    
                      
                    btNome.setBounds(125, 270, 150, 50);  
                    btNome.setBackground(new Color(182, 196, 250));  
@@ -275,10 +280,9 @@ public class Menu extends JFrame {
                  ilha3.setBackground(Color.WHITE);  
                  ilha3.setForeground(Color.BLACK);   
                  ilha3. setOpaque(false);  
-         ilha3.setFocusable(false);  
-         ilha3.setContentAreaFilled(false);  
-         ilha3.setBorderPainted(false);  
-        
+                 ilha3.setFocusable(false);  
+                 ilha3.setContentAreaFilled(false);  
+                 ilha3.setBorderPainted(false);  
                  livre = new JButton(imagem4);  
                  livre. setOpaque(false);  
                  livre.setFocusable(false);  
@@ -286,14 +290,14 @@ public class Menu extends JFrame {
                  livre.setBorderPainted(false);  
                       
                  AcionaBotao c = new AcionaBotao();  
-                  ilha1.addActionListener(c);  
-                  ilha2.addActionListener(c);  
-          ilha3.addActionListener(c);  
-          livre.addActionListener(c);  
+                 ilha1.addActionListener(c);  
+                 ilha2.addActionListener(c);  
+                 ilha3.addActionListener(c);  
+                 livre.addActionListener(c);  
                                             
    
-             Container cont = getContentPane();  
-                    cont.add(ilha1);
+                 Container cont = getContentPane();  
+                 cont.add(ilha1);
                  cont.setBackground(azul);
                  cont.add(ilha2);  
                  cont.add(ilha3);  
@@ -303,9 +307,9 @@ public class Menu extends JFrame {
                    
                
                   ilha1.setBounds(200,200,400,400);  
-          ilha2.setBounds(610,200,400,400);  
-          ilha3.setBounds(1020,200,400,400);  
-          livre.setBounds(1430,200,400,400);  
+                  ilha2.setBounds(610,200,400,400);  
+                  ilha3.setBounds(1020,200,400,400);  
+                  livre.setBounds(1430,200,400,400);  
    
                  setSize(dimensao);  
                  setVisible(true);  
