@@ -1,4 +1,5 @@
 
+
 import java.awt.Color;
 
 import java.awt.Container;
@@ -49,15 +50,15 @@ public class TelaEntrada extends JFrame {
          
             cont.add(barra);
 
-            nome.setBounds(710,100,800,250);
-            logo.setBounds(770,250,350,350);
-            barra.setBounds(710,670,500,50);
+            nome.setBounds(433,50,500,150);
+            logo.setBounds(508,200,350,350);
+            barra.setBounds(433,620,500,50);
 
             new Temporizador().start();
             
             setLayout(null);
             setVisible(true);
-            setSize(dimensao);
+            setSize(1366,768);
 }
              public class Temporizador extends Thread {
                   public void run(){
@@ -82,4 +83,3 @@ public class TelaEntrada extends JFrame {
                    ex.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
      }
 }
-
