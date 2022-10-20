@@ -1,4 +1,3 @@
-
 import java.awt.Color; 
  import java.awt.Container; 
  import java.awt.Dimension; 
@@ -46,6 +45,7 @@ import java.awt.Color;
              
             imagem1 = new ImageIcon(getClass().getResource("btsair.png")); 
             painel.setBackground(azulc); 
+            painel.setLayout(null);
             loginT =  new JLabel("LOGIN"); 
             loginT.setForeground(Color.WHITE);//mudar cor do texto da label 
             loginT.setFont(new Font("Arial",Font.BOLD,30));//alterar fonte do label 
@@ -53,7 +53,7 @@ import java.awt.Color;
             rotulo3 = new JLabel(); 
             cadas  = new JLabel("Novo aqui?"); 
             cadas.setForeground(Color.WHITE);//mudar cor do texto da label 
-            text1 = new JTextField("Email ou senha de Usuário"); 
+            text1 = new JTextField("Email ou senha de UsuÃ¡rio"); 
             senha = new JPasswordField(); 
          
             AcionaBotao evento = new AcionaBotao(); 
@@ -86,6 +86,12 @@ import java.awt.Color;
             
             cadastrar.setMnemonic('c'); 
             
+//adicionando elementos no painel
+            painel.add(loginT);
+            painel.add(rotulo2);
+            painel.add(rotulo3);
+            painel.add(text1);
+            painel.add(senha);
             Container cont = getContentPane(); 
             cont.setBackground(azul); 
            
@@ -93,14 +99,14 @@ import java.awt.Color;
             
             cont.add(botao2); 
             
-            cont.add(loginT); 
+         //   cont.add(loginT); 
         
   
-            cont.add(rotulo2); 
-            cont.add(rotulo3); 
+         //   cont.add(rotulo2); 
+         //   cont.add(rotulo3); 
            
-            cont.add(text1); 
-            cont.add(senha); 
+         //   cont.add(text1); 
+          //  cont.add(senha); 
     
            
             cont.add(botaoLogin); 
@@ -111,21 +117,21 @@ import java.awt.Color;
            
             botao2.setBounds(10,10, 100, 50); 
            
-            loginT.setBounds(920, 250, 300, 25 ); 
-            rotulo2.setBounds(820, 330, 280, 25); 
-            rotulo3.setBounds(820, 360, 280, 25); 
-            text1.setBounds(825, 330, 280, 25); 
-            senha.setBounds(825, 360, 280,25); 
+            loginT.setBounds(170, 50, 300, 25 ); 
+            rotulo2.setBounds(80, 150, 280, 25); 
+            rotulo3.setBounds(820, 310, 280, 25); 
+            text1.setBounds(80, 150, 280, 25); 
+            senha.setBounds(825, 310, 280,25); 
            
             botaoLogin.setBounds(825, 390, 280, 25); 
   
             cadas.setBounds(890,930,200,25); 
             cadastrar.setBounds(890,930,200,25); 
-            painel.setBounds(715, 150, 500, 500); 
+            painel.setBounds(458, 100, 450, 450); 
             painel.setBorder(b); 
   
            
-            setSize(dimensao); 
+            setSize(1366,768); 
             setVisible(true); 
            
         } 
