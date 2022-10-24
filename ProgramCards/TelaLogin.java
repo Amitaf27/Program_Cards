@@ -61,7 +61,18 @@ private static final long serialVersionUID = 1L;
            botaoLogin = new JButton("LOGIN");
            botaoLogin.addActionListener(evento);
            botaoLogin.setBackground(Color.GREEN);
-          
+
+//adicionando elementos no painel 
+           painel.add(loginT); 
+      
+           painel.add(rotulo2);
+           painel.add(text1);
+    
+           painel.add(rotulo3);
+           painel.add(senha);
+
+           painel.add(botaoLogin);
+
            botao2 = new JButton(imagem1);
            
            botao2.addActionListener(evento);
@@ -88,44 +99,32 @@ private static final long serialVersionUID = 1L;
           
            Container cont = getContentPane();
            cont.setBackground(azul);
-         
+//adicionando elementos no frame principal         
            setLayout(null);
           
            cont.add(botao2);
           
-           cont.add(loginT);
-      
-
-           cont.add(rotulo2);
-           cont.add(rotulo3);
-         
-           cont.add(text1);
-           cont.add(senha);
-  
-         
-           cont.add(botaoLogin);
-
            cont.add(cadas);
            cont.add(cadastrar);
            cont.add(painel);
          
            botao2.setBounds(10,10, 100, 50);
          
-           loginT.setBounds(920, 250, 300, 25 );
-           rotulo2.setBounds(820, 330, 280, 25);
-           rotulo3.setBounds(820, 360, 280, 25);
-           text1.setBounds(825, 330, 280, 25);
-           senha.setBounds(825, 360, 280,25);
+           loginT.setBounds(75, 50, 300, 25 );
+           rotulo2.setBounds(80, 110, 280, 25);
+           rotulo3.setBounds(80, 140, 280, 25);
+           text1.setBounds(80, 110, 280, 25);
+           senha.setBounds(80, 140, 280,25);
          
-           botaoLogin.setBounds(825, 390, 280, 25);
+           botaoLogin.setBounds(80, 170, 280, 25);
 
-           cadas.setBounds(890,930,200,25);
-           cadastrar.setBounds(890,930,200,25);
-           painel.setBounds(715, 150, 500, 500);
+           cadas.setBounds(583,580,200,25);
+           cadastrar.setBounds(583,580,200,25);
+           painel.setBounds(458,100,450,450);
            painel.setBorder(b);
 
          
-           setSize(dimensao);
+           setSize(1366,768);
            setVisible(true);
          
        }
