@@ -16,6 +16,8 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 
+
+
  public class Questionario extends JFrame { 
 
          private static final long serialVersionUID = 1L; 
@@ -64,6 +66,7 @@ import javax.swing.JScrollPane;
                  	painel.setPreferredSize(new Dimension(950,1950));
 
                         scroll = new JScrollPane(painel);
+                        scroll.setForeground(ouro);
  //aqui vc adiciona os componentes ao JPanel
 
                  titulo = new JLabel("QUESTIONARIO"); 
@@ -444,7 +447,7 @@ import javax.swing.JScrollPane;
                  cont.add(cancelar); 
 
 //definindo a posiÃ§Ã£o dos elementos no painel
-                 titulo.setBounds(810,80,300,100); 
+                 titulo.setBounds(533,40,300,100); 
 //1
                  perg1.setBounds(35,5,400,100); 
                  P1op1.setBounds(45,70,300,50); 
@@ -509,15 +512,15 @@ import javax.swing.JScrollPane;
                  P10op5.setBounds(45,1900,300,50);
 
 //definindo a posiÃ§Ã£o dos elementos na tela principal 
-          //       painel.setBounds(460,200,1000,600); 
-                 scroll.setBounds(460,200,1000,550);
-                 finalizar.setBounds(670,800,250,50); 
-                 cancelar.setBounds(960,800,250,50); 
+          //     painel.setBounds(183,160,1000,500); 
+                 scroll.setBounds(183,160,1000,450);
+                 finalizar.setBounds(413,660,250,50); 
+                 cancelar.setBounds(683,660,250,50); 
 
                  P1op1.addItemListener(handler); 
 
                  setLayout(null); 
-                 setSize(dimensao); 
+                 setSize(1366,768); 
                  setVisible(true); 
 
          } 
@@ -526,7 +529,7 @@ import javax.swing.JScrollPane;
 
                          public void itemStateChanged(ItemEvent arg0) { 
                             if(P1op1.isSelected()) { 
-                                    JOptionPane.showMessageDialog(null, "ParabÃ©ns pelo bom gosto!"); 
+                                    JOptionPane.showMessageDialog(null, "Parabens pelo bom gosto!"); 
                             } 
 
                          } 
