@@ -59,7 +59,17 @@ public class TelaCadastro extends JFrame {
         
         painel.setBackground(new Color(65, 105, 225));
         painel.setBorder(b);
-       
+        painel.setLayout(null);
+//adicionando elementos no painel
+        painel.add(rotulo1);
+        painel.add(rotulo2);
+        painel.add(rotulo3);
+        painel.add(text1);
+        painel.add(text2);
+        painel.add(text3);
+        painel.add(text4);
+
+        
           botao = new JButton("Confirmar");
           botao.setBackground(new Color(0, 187, 45));
           botao.setFont(fonte1);
@@ -87,7 +97,7 @@ public class TelaCadastro extends JFrame {
    					
    				} 
      	        });
-          
+          painel.add(botao);          
           botao.addActionListener(
         		 new ActionListener() {
 
@@ -117,7 +127,7 @@ public class TelaCadastro extends JFrame {
       				
       				public void actionPerformed(ActionEvent e) {
       					
-      					Sons.main(null);
+      				//	Sons.main(null);
       					new TelaLogin();
       					dispose();
       				} 
@@ -126,35 +136,25 @@ public class TelaCadastro extends JFrame {
          
           setLayout(null);
          
-       
-          cont.add(rotulo1);
-          cont.add(rotulo2);
-          cont.add(rotulo3);
-         
-          cont.add(text1);
-          cont.add(text2);
-          cont.add(text3);
-          cont.add(text4);
-         
-          cont.add(botao);
+      
           cont.add(botao1);
       
           cont.add(painel);
                     
-          painel.setBounds(730, 330, 400, 400);
-          rotulo1.setBounds(865, 360, 300, 30);
+          painel.setBounds(483, 80, 400, 400);
+          rotulo1.setBounds(125, 30, 200, 30);
           rotulo2.setBounds(635, 360, 300, 30);
           rotulo3.setBounds(635, 380, 300, 30);
-          text1.setBounds(780, 420, 300, 30);
-          text2.setBounds(780, 460, 300,30);
-          text3.setBounds(780, 500, 300,30);
-          text4.setBounds(780, 540, 300,30);
+          text1.setBounds(50, 80, 300, 30);
+          text2.setBounds(50, 120, 300,30);
+          text3.setBounds(50, 160, 300,30);
+          text4.setBounds(50, 200, 300,30);
          
-          botao.setBounds(780, 580, 300, 30);
-          botao1.setBounds(820, 640, 300, 30);
+          botao.setBounds(50, 240, 300, 30);
+          botao1.setBounds(543, 540, 300, 30);
           
          
-          setSize(1920, 1080);
+          setSize(1366, 768);
           setVisible(true);
          
        }

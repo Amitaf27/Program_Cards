@@ -46,6 +46,7 @@ private static final long serialVersionUID = 1L;
            
            imagem1 = new ImageIcon(getClass().getResource("btsair.png"));
            painel.setBackground(azulc);
+           painel.setLayout(null);
            loginT =  new JLabel("LOGIN");
            loginT.setForeground(Color.WHITE);//mudar cor do texto da label
            loginT.setFont(new Font("Arial",Font.BOLD,30));//alterar fonte do label
@@ -110,7 +111,7 @@ private static final long serialVersionUID = 1L;
          
            botao2.setBounds(10,10, 100, 50);
          
-           loginT.setBounds(75, 50, 300, 25 );
+           loginT.setBounds(160, 50, 200, 25 );
            rotulo2.setBounds(80, 110, 280, 25);
            rotulo3.setBounds(80, 140, 280, 25);
            text1.setBounds(80, 110, 280, 25);
@@ -118,8 +119,8 @@ private static final long serialVersionUID = 1L;
          
            botaoLogin.setBounds(80, 170, 280, 25);
 
-           cadas.setBounds(583,580,200,25);
-           cadastrar.setBounds(583,580,200,25);
+           cadas.setBounds(593,580,200,25);
+           cadastrar.setBounds(593,580,200,25);
            painel.setBounds(458,100,450,450);
            painel.setBorder(b);
 
