@@ -27,9 +27,9 @@ public class Menu extends JFrame {
 	     
 	
 	     ImageIcon imagem1 = new ImageIcon(getClass().getResource("ilhas1.png"));
-	     ImageIcon imagem2 = new ImageIcon(getClass().getResource("ilhas2.png"));
-	     ImageIcon imagem3 = new ImageIcon(getClass().getResource("ilhas3.png"));
-	     ImageIcon imagem4 = new ImageIcon(getClass().getResource("ilha livre.png"));
+	     ImageIcon imagem2 = new ImageIcon(getClass().getResource("ilhas2Bloqueada.png"));
+	     ImageIcon imagem3 = new ImageIcon(getClass().getResource("ilhas3Bloqueada.png"));
+	     ImageIcon imagem4 = new ImageIcon(getClass().getResource("ilha livreBloqueada.png"));
 	     ImageIcon imagem5 = new ImageIcon(getClass().getResource("Música_ligada.png"));
 	     ImageIcon imagem6 = new ImageIcon(getClass().getResource("Música_desligada.png"));
 	     ImageIcon imagem7 = new ImageIcon(getClass().getResource("Efeito_ligado.png"));
@@ -37,6 +37,7 @@ public class Menu extends JFrame {
 
 	     
 	     private JLabel label, label1, label2, label3;
+	     private JLabel ilha1Texto, ilha2Texto, ilha3Texto, ilha4Texto;
 	     private Font titulo = new Font("Arial",Font.BOLD,30);
 	     private Font texto2 = new Font("Arial",Font.BOLD,20);
 	     private Font texto = new Font("Arial",Font.BOLD,14);
@@ -44,7 +45,7 @@ public class Menu extends JFrame {
 	     private JMenu opcao;
 	     private JMenuItem config, sair;
 	     private JPanel painel = new JPanel();
-	     Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();	  
+	     //Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();	  
 	     
 	
 	     Color azulclaro = new Color(135,206,250);
@@ -57,6 +58,34 @@ public class Menu extends JFrame {
              Musica musica = new Musica();
 
 	     public Menu() {
+	    	 
+	    	 
+	    	 // configurando textos das ilhas 
+	    	 ilha1Texto = new JLabel("Ilha Iniciante");
+	    	 ilha2Texto = new JLabel("Ilha Intermediaria");
+	    	 ilha3Texto = new JLabel("Ilha Avançada");
+	    	 ilha4Texto = new JLabel("Ilha Livre");
+	    	 
+	    	
+	    	 
+	    	 ilha1Texto.setBounds(180, 350, 200, 200);
+	    	 ilha1Texto.setForeground(Color.WHITE);
+	    	 ilha1Texto.setFont(texto);
+	    	 
+	    	 ilha2Texto.setBounds(450, 350, 200, 200);
+	    	 ilha2Texto.setForeground(Color.WHITE);
+	    	 ilha2Texto.setFont(texto);
+	    	 ilha2Texto.setFocusable(false);
+	    	 
+	    	 ilha3Texto.setBounds(770, 350, 200, 200);
+	    	 ilha3Texto.setForeground(Color.WHITE);
+	    	 ilha3Texto.setFont(texto);
+	    	 
+	    	 ilha4Texto.setBounds(1090, 350, 200, 200);
+	    	 ilha4Texto.setForeground(Color.WHITE);
+	    	 ilha4Texto.setFont(texto);
+
+	    	 
 	    	   
                      
            
@@ -66,9 +95,9 @@ public class Menu extends JFrame {
                      
                    setJMenuBar(barrinha);  
                      
-                   opcao = new JMenu("OpÃ§Ãµes");  
+                   opcao = new JMenu("Opções");  
                    
-                   config = new JMenuItem("ConfiguraÃ§Ãµes");  
+                   config = new JMenuItem("Configurações");  
                    sair = new JMenuItem("sair");  
                      
                    barrinha.add(opcao);  
@@ -114,11 +143,11 @@ public class Menu extends JFrame {
                      
                      
                    //configurando o panel de configuracoes  
-                   label = new JLabel("ConfiguraÃ§Ãµes");  
+                   label = new JLabel("Configurações");  
                    label.setFont(titulo);  
                    label.setForeground(Color.BLACK);  
                      
-                   label2 = new JLabel("MÃºsica");  
+                   label2 = new JLabel("Música");  
                    label2.setForeground(Color.BLACK);  
                    label2.setFont(texto);  
                      
@@ -132,7 +161,7 @@ public class Menu extends JFrame {
 
 
                    painel.setLayout(null);
-                   painel.setBounds(750,250,400,500);
+                   painel.setBounds(500, 100,400,450);
 				 //  panel.add(label);  
                  //  label.setBounds(0, 0, 80, 60);  
                    painel.setVisible(ativo);  
@@ -304,16 +333,21 @@ public class Menu extends JFrame {
                  cont.add(ilha2);  
                  cont.add(ilha3);  
                  cont.add(livre);  
+                 cont.add(ilha1Texto);
+    	    	 cont.add(ilha2Texto);
+    	    	 cont.add(ilha3Texto);
+    	    	 cont.add(ilha4Texto);
+                 
                    
                  setLayout(null);  
                    
                
-                  ilha1.setBounds(200,200,400,400);  
-                  ilha2.setBounds(610,200,400,400);  
-                  ilha3.setBounds(1020,200,400,400);  
-                  livre.setBounds(1430,200,400,400);  
+                  ilha1.setBounds(100,200,250,250);  
+                  ilha2.setBounds(400,200,250,250);  
+                  ilha3.setBounds(700,200,250,250);  
+                  livre.setBounds(1000,200,250,250);  
    
-                 setSize(dimensao);  
+                 setSize(1366, 768);  
                  setVisible(true);  
                    
          }   
