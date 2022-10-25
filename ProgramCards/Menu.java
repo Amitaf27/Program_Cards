@@ -25,7 +25,7 @@ public class Menu extends JFrame {
 	     private JButton ilha1, ilha2, ilha3, livre;
 	     private JButton btSom, btSom2, btNome, btConfirmar;
 	     
-	     //isso ta mt feio
+	
 	     ImageIcon imagem1 = new ImageIcon(getClass().getResource("ilhas1.png"));
 	     ImageIcon imagem2 = new ImageIcon(getClass().getResource("ilhas2.png"));
 	     ImageIcon imagem3 = new ImageIcon(getClass().getResource("ilhas3.png"));
@@ -34,7 +34,7 @@ public class Menu extends JFrame {
 	     ImageIcon imagem6 = new ImageIcon(getClass().getResource("Música_desligada.png"));
 	     ImageIcon imagem7 = new ImageIcon(getClass().getResource("Efeito_ligado.png"));
 	     ImageIcon imagem8 = new ImageIcon(getClass().getResource("Efeito_desligado.png"));
-	     //ImageIcon fundo = new ImageIcon(getClass().getResource("FundoIlhas.png"));
+
 	     
 	     private JLabel label, label1, label2, label3;
 	     private Font titulo = new Font("Arial",Font.BOLD,30);
@@ -46,7 +46,7 @@ public class Menu extends JFrame {
 	     private JPanel painel = new JPanel();
 	     Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();	  
 	     
-	     //separa isso pfv
+	
 	     Color azulclaro = new Color(135,206,250);
 	     Color ouroclaro = new Color(238,232,1);
 	     Color ouro = new Color(238,201,0);
@@ -66,9 +66,9 @@ public class Menu extends JFrame {
                      
                    setJMenuBar(barrinha);  
                      
-                   opcao = new JMenu("Opções");  
+                   opcao = new JMenu("OpÃ§Ãµes");  
                    
-                   config = new JMenuItem("Configurações");  
+                   config = new JMenuItem("ConfiguraÃ§Ãµes");  
                    sair = new JMenuItem("sair");  
                      
                    barrinha.add(opcao);  
@@ -88,7 +88,7 @@ public class Menu extends JFrame {
                    
                    
                      
-                   //configurando os botÃµes do panel  
+                   //configurando os botÃƒÂµes do panel  
    
            
                            
@@ -114,11 +114,11 @@ public class Menu extends JFrame {
                      
                      
                    //configurando o panel de configuracoes  
-                   label = new JLabel("Configurações");  
+                   label = new JLabel("ConfiguraÃ§Ãµes");  
                    label.setFont(titulo);  
                    label.setForeground(Color.BLACK);  
                      
-                   label2 = new JLabel("Música");  
+                   label2 = new JLabel("MÃºsica");  
                    label2.setForeground(Color.BLACK);  
                    label2.setFont(texto);  
                      
@@ -158,9 +158,10 @@ public class Menu extends JFrame {
   
   
                    //configurando botao de som 
-                   // efeitoSom= "F:/Clique"; 
-                   // musicaSom = "F:/music";
+                 //   efeitoSom= "F:/Clique"; 
+                 //   musicaSom = "F:/music";
                    ef.setFile(TelaEntrada.efeitoSom);
+                   musica.setFile(TelaEntrada.musicaSom);
                     musicaSomLigada = "on"; 
                      
                      
@@ -234,9 +235,10 @@ public class Menu extends JFrame {
                                       
                                     public void actionPerformed(ActionEvent e) {  
                                               
-                                  ef.play();           
+                                    	 ef.play();  
                                         ativo = !ativo;  
                                             painel.setVisible(ativo);  
+                                            
                                               
                                       
                                     }   
