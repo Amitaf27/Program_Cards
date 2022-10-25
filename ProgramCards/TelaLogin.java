@@ -34,35 +34,43 @@ private static final long serialVersionUID = 1L;
           JTextField text1;
           JPasswordField senha;
           JButton cadastrar;          
-	      ImageIcon imagem1;
+	      ImageIcon imagem1,email;
 	      JPanel painel = new JPanel();
           Color azul = new Color(18,10,143);
           Color azulc = new Color(65,105,225);
           Color ouro = new Color(238,201,0);
+          Color verde = new Color(0, 187, 45);
           Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
           
          
           public TelaLogin() {
            
            imagem1 = new ImageIcon(getClass().getResource("btsair.png"));
+           email =  new ImageIcon(getClass().getResource("Email.png"));
            painel.setBackground(azulc);
            painel.setLayout(null);
            loginT =  new JLabel("LOGIN");
            loginT.setForeground(Color.WHITE);//mudar cor do texto da label
-           loginT.setFont(new Font("Arial",Font.BOLD,30));//alterar fonte do label
-           rotulo2 = new JLabel();
+           loginT.setFont(fonte2);//alterar fonte do label
+           rotulo2 = new JLabel(email);
+           rotulo2.setBackground(Color.WHITE);
            rotulo3 = new JLabel();
            cadas  = new JLabel("Novo aqui?");
            cadas.setForeground(Color.WHITE);//mudar cor do texto da label
-           text1 = new JTextField("Email ou senha de Usuário");
-           senha = new JPasswordField();
-       
+           text1 = new JTextField("Email ou senha de Usuario");
+           text1.setBackground(Color.WHITE);
+           text1.setBorder(null);
+           senha = new JPasswordField("senha");
+           senha.setBorder(b);
+          
            AcionaBotao evento = new AcionaBotao();
           
            botaoLogin = new JButton("LOGIN");
            botaoLogin.addActionListener(evento);
-           botaoLogin.setBackground(Color.GREEN);
-
+           botaoLogin.setBackground(verde);
+           botaoLogin.setForeground(Color.WHITE);
+           botaoLogin.setFont(fonte1);
+           botaoLogin.setBorder(b);
 //adicionando elementos no painel 
            painel.add(loginT); 
       
@@ -111,17 +119,17 @@ private static final long serialVersionUID = 1L;
          
            botao2.setBounds(10,10, 100, 50);
          
-           loginT.setBounds(160, 50, 200, 25 );
-           rotulo2.setBounds(80, 110, 280, 25);
-           rotulo3.setBounds(80, 140, 280, 25);
-           text1.setBounds(80, 110, 280, 25);
-           senha.setBounds(80, 140, 280,25);
+           loginT.setBounds(170, 80, 200, 30 );
+           rotulo2.setBounds(70, 150, 30, 30);
+           rotulo3.setBounds(70, 190, 300, 30);
+           text1.setBounds(100, 150, 270, 30);
+           senha.setBounds(70, 190, 300,30);
          
-           botaoLogin.setBounds(80, 170, 280, 25);
+           botaoLogin.setBounds(70, 230, 300, 30);
 
-           cadas.setBounds(593,580,200,25);
-           cadastrar.setBounds(593,580,200,25);
-           painel.setBounds(458,100,450,450);
+           cadas.setBounds(595,580,200,25);
+           cadastrar.setBounds(595,580,200,25);
+           painel.setBounds(460,100,450,450);
            painel.setBorder(b);
 
          
