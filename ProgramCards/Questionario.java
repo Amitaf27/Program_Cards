@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,6 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
+import javax.swing.border.Border;
 
 
 
@@ -37,22 +39,31 @@ import javax.swing.JScrollPane;
          private Color azul = new Color(18,10,143); 
          private Color azulc = new Color(65,105,225); 
          private Color ouro = new Color(238,201,0); 
+         private Color verde = new Color(0, 187, 45);
+         private Color vermelho = new Color(207, 14, 14);
          private Color branco = new Color(255,255,255); 
          private Font font = new Font("Arial",Font.BOLD,20); 
          private Font font1 = new Font("Arial",Font.BOLD,30); 
          private Font font2 = new Font("Arial",Font.BOLD,14); 
-         private Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize(); 
          private RadioButtonHandler handler; 
          private JPanel painel ; 
          private ButtonGroup quest1, quest2,quest3,quest4, quest5,quest6,quest7,quest8,quest9,quest10; 
          private JScrollPane scroll; 
-
+         private Border b = BorderFactory.createLineBorder(Color.black, 2);
+         
          public Questionario() { 
                  handler = new RadioButtonHandler(); 
                  finalizar = new JButton("Finalizar"); 
                  finalizar.setFont(font); 
+                 finalizar.setBorder(b);
+                 finalizar.setForeground(Color.WHITE);
+                 finalizar.setBackground(verde);
+                 
                  cancelar = new JButton("Cancelar"); 
+                 cancelar.setForeground(Color.WHITE);
+                 cancelar.setBackground(vermelho);
                  cancelar.setFont(font); 
+                 cancelar.setBorder(b);
                  cancelar.addActionListener((ActionEvent e) -> {
                      //                 new TelaLogin();
                      setVisible(false);
@@ -62,7 +73,7 @@ import javax.swing.JScrollPane;
                  	painel.setBackground(azulc); 
                  	painel.setSize(1000,600); 
                  	painel.setLayout(null);
-                 	painel.setPreferredSize(new Dimension(950,1950));
+                 	painel.setPreferredSize(new Dimension(950,1880));
 
                         scroll = new JScrollPane(painel);
                         scroll.setForeground(ouro);
@@ -150,7 +161,7 @@ import javax.swing.JScrollPane;
                                
 
 //configurando a terceira questÃ£o 
-                 perg3 = new JLabel("3 - Que tipo de variavel é lida com o comando %s ?"); 
+                 perg3 = new JLabel("3 - Que tipo de variavel e lida com o comando %s ?"); 
                  perg3.setFont(font); 
                  perg3.setForeground(branco); 
 
@@ -191,12 +202,12 @@ import javax.swing.JScrollPane;
 
 
 //configurando a quarta questÃ£o 
-                 perg4 = new JLabel("4 - Qual dos comandos abaixo é uma estrutura de repetição?"); 
+                 perg4 = new JLabel("4 - Qual dos comandos abaixo e uma estrutura de repeticao?"); 
                  perg4.setFont(font); 
                  perg4.setForeground(branco); 
 
 
-                 P4op1 = new JRadioButton("S",false); 
+                 P4op1 = new JRadioButton("if(x < 60){ \n printf('Pamonha');}",false); 
                  P4op2 = new JRadioButton("printf();",false); 
                  P4op3 = new JRadioButton("int a;",false); 
 
@@ -363,17 +374,17 @@ import javax.swing.JScrollPane;
                  P9op1.setForeground(branco); 
                  P9op1.setFont(font2); 
 
-                 P9op1.setBackground(azulc); 
-                 P9op1.setForeground(branco); 
-                 P9op1.setFont(font2);  
+                 P9op2.setBackground(azulc); 
+                 P9op2.setForeground(branco); 
+                 P9op2.setFont(font2);  
 
-                 P9op1.setBackground(azulc); 
-                 P9op1.setForeground(branco); 
-                 P9op1.setFont(font2);  
+                 P9op3.setBackground(azulc); 
+                 P9op3.setForeground(branco); 
+                 P9op3.setFont(font2);  
 
-                 P9op1.setBackground(azulc); 
-                 P9op1.setForeground(branco); 
-                 P9op1.setFont(font2); 
+                 P9op4.setBackground(azulc); 
+                 P9op4.setForeground(branco); 
+                 P9op4.setFont(font2); 
 
 //configurando a decima  questao 
                  perg10 = new JLabel("10 - Selecione a bebida de sua preferencia:"); 
@@ -385,8 +396,7 @@ import javax.swing.JScrollPane;
                  P10op2 = new JRadioButton("Guarana Antartica",false); 
                  P10op3 = new JRadioButton("Fanta",false); 
                  P10op4 = new JRadioButton("Regente",false); 
-                 P10op5 = new JRadioButton("Pepsi",false); 
-
+             
                  quest10 = new ButtonGroup(); 
                  quest10.add(P10op1); 
                  quest10.add(P10op2); 
@@ -486,8 +496,8 @@ import javax.swing.JScrollPane;
 //definindo a posiÃ§Ã£o dos elementos no painel
                  titulo.setBounds(533,40,300,100); 
 //1
-                 perg1.setBounds(35,5,400,100); 
-                 P1op1.setBounds(45,70,300,50); 
+                 perg1.setBounds(35,5,500,100); 
+                 P1op1.setBounds(45,70,500,50); 
                  P1op2.setBounds(45,100,300,50);
                  P1op3.setBounds(45,130,300,50);
                  P1op4.setBounds(45,160,300,50);
@@ -552,8 +562,8 @@ import javax.swing.JScrollPane;
 
 //definindo a posiÃ§Ã£o dos elementos na tela principal 
                  scroll.setBounds(183,160,1000,450);
-                 finalizar.setBounds(413,660,250,50); 
-                 cancelar.setBounds(683,660,250,50); 
+                 finalizar.setBounds(413,640,250,50); 
+                 cancelar.setBounds(683,640,250,50); 
 
                  P1op1.addItemListener(handler); 
 
