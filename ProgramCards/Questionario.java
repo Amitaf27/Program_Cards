@@ -22,16 +22,16 @@ import javax.swing.JScrollPane;
 
          private static final long serialVersionUID = 1L; 
          private JButton finalizar,cancelar; 
-         private JRadioButton P1op1, P1op2; 
-         private JRadioButton P2op1, P2op2; 
-         private JRadioButton P3op1, P3op2, P3op3; 
+         private JRadioButton P1op1, P1op2,P1op3,P1op4,P1op5; 
+         private JRadioButton P2op1, P2op2,P2op3,P2op4,P2op5; 
+         private JRadioButton P3op1, P3op2, P3op3,P3op4,P3op5; 
          private JRadioButton P4op1, P4op2, P4op3;
-         private JRadioButton P5op1, P5op2, P5op3, P5op4, P5op5; 
-         private JRadioButton P6op1, P6op2, P6op3, P6op4, P6op5; 
-         private JRadioButton P7op1, P7op2, P7op3, P7op4, P7op5; 
-         private JRadioButton P8op1, P8op2, P8op3, P8op4, P8op5; 
-         private JRadioButton P9op1, P9op2, P9op3, P9op4, P9op5; 
-         private JRadioButton P10op1, P10op2, P10op3, P10op4, P10op5; 
+         private JRadioButton P5op1, P5op2, P5op3, P5op4; 
+         private JRadioButton P6op1, P6op2, P6op3, P6op4; 
+         private JRadioButton P7op1, P7op2, P7op3, P7op4; 
+         private JRadioButton P8op1, P8op2, P8op3; 
+         private JRadioButton P9op1, P9op2, P9op3, P9op4; 
+         private JRadioButton P10op1, P10op2, P10op3, P10op4; 
          private JLabel titulo; 
          private JLabel perg1, perg2,perg3, perg4, perg5, perg6, perg7, perg8,perg9,perg10;
          private Color azul = new Color(18,10,143); 
@@ -78,11 +78,18 @@ import javax.swing.JScrollPane;
                  perg1.setForeground(branco); 
 
                  P1op1 = new JRadioButton("Sim",false); 
-                 P1op2 = new JRadioButton("NÃ£o",false); 
+                 P1op2 = new JRadioButton("NÃO",false); 
+                 P1op3 = new JRadioButton("NÃO",false); 
+                 P1op4 = new JRadioButton("NÃO",false); 
+                 P1op5 = new JRadioButton("NÃO",false); 
 
+     
                  quest1 = new ButtonGroup(); 
                  quest1.add(P1op1); 
-                 quest1.add(P1op2); 
+                 quest1.add(P1op2);
+                 quest1.add(P1op3);
+                 quest1.add(P1op4);
+                 quest1.add(P1op5);
 
                  P1op1.setBackground(azulc); 
                  P1op1.setForeground(branco); 
@@ -91,6 +98,18 @@ import javax.swing.JScrollPane;
                  P1op2.setBackground(azulc); 
                  P1op2.setForeground(branco); 
                  P1op2.setFont(font2);
+
+                 P1op3.setBackground(azulc); 
+                 P1op3.setForeground(branco); 
+                 P1op3.setFont(font2);
+
+                 P1op4.setBackground(azulc); 
+                 P1op4.setForeground(branco); 
+                 P1op4.setFont(font2);
+
+                 P1op5.setBackground(azulc); 
+                 P1op5.setForeground(branco); 
+                 P1op5.setFont(font2);
 
 //configurando a segunda questÃ£o 
                  perg2 = new JLabel("2 - VocÃª sabe o que sÃ£o variÃ¡veis na linguagem C?"); 
