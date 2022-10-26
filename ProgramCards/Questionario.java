@@ -72,15 +72,15 @@ import javax.swing.JScrollPane;
                  titulo.setFont(font1); 
                  titulo.setForeground(ouro); 
 //configurando a primeira questÃ£o 
-                 perg1 = new JLabel("1 - VocÃª sabe o bÃ¡sico de C?:"); 
+                 perg1 = new JLabel("1 - Qual o metodo para abrir um arquivo em C?"); 
                  perg1.setFont(font); 
                  perg1.setForeground(branco); 
 
-                 P1op1 = new JRadioButton("Sim",false); 
-                 P1op2 = new JRadioButton("NÃO",false); 
-                 P1op3 = new JRadioButton("NÃO",false); 
-                 P1op4 = new JRadioButton("NÃO",false); 
-                 P1op5 = new JRadioButton("NÃO",false); 
+                 P1op1 = new JRadioButton("fopen();",false); 
+                 P1op2 = new JRadioButton("getc();",false); 
+                 P1op3 = new JRadioButton("fseek();",false); 
+                 P1op4 = new JRadioButton("putw();",false); 
+                 P1op5 = new JRadioButton("rewind();",false); 
 
      
                  quest1 = new ButtonGroup(); 
@@ -111,15 +111,15 @@ import javax.swing.JScrollPane;
                  P1op5.setFont(font2);
 
 //configurando a segunda questÃ£o 
-                 perg2 = new JLabel("2 - VocÃª sabe o que sÃ£o variÃ¡veis na linguagem C?"); 
+                 perg2 = new JLabel("2 - Como se declara um Struct em C ?"); 
                  perg2.setFont(font); 
                  perg2.setForeground(branco); 
 
-                 P2op1 = new JRadioButton("Sim",false); 
-                 P2op2 = new JRadioButton("NÃ£o",false); 
-                 P2op3 = new JRadioButton("NÃ£o",false); 
-                 P2op4 = new JRadioButton("NÃ£o",false); 
-                 P2op5 = new JRadioButton("NÃ£o",false); 
+                 P2op1 = new JRadioButton("int Struct;,",false); 
+                 P2op2 = new JRadioButton("typedef struct{} nome da struct; ",false); 
+                 P2op3 = new JRadioButton("mao struct{};",false); 
+                 P2op4 = new JRadioButton("char Rio = struct(9); ",false); 
+                 P2op5 = new JRadioButton("String{} struct;",false); 
 
                  quest2 = new ButtonGroup(); 
                  quest2.add(P2op1); 
@@ -150,16 +150,16 @@ import javax.swing.JScrollPane;
                                
 
 //configurando a terceira questÃ£o 
-                 perg3 = new JLabel("3 - Qual Ã© a biblioteca padrÃ£o para funÃ§Ãµes de leitura de dados?"); 
+                 perg3 = new JLabel("3 - Que tipo de variavel é lida com o comando %s ?"); 
                  perg3.setFont(font); 
                  perg3.setForeground(branco); 
 
 
-                 P3op1 = new JRadioButton("#include <stdio.h>",false); 
-                 P3op2 = new JRadioButton("#include <math.h>",false); 
-                 P3op3 = new JRadioButton("#include <stdio.lib>",false); 
-                 P3op4 = new JRadioButton("#include <stdio.lib>",false); 
-                 P3op5 = new JRadioButton("#include <stdio.lib>",false); 
+                 P3op1 = new JRadioButton("char",false); 
+                 P3op2 = new JRadioButton("int",false); 
+                 P3op3 = new JRadioButton("float",false); 
+                 P3op4 = new JRadioButton("boolean",false); 
+                 P3op5 = new JRadioButton("String",false); 
 
 
                  quest3 = new ButtonGroup(); 
@@ -191,12 +191,12 @@ import javax.swing.JScrollPane;
 
 
 //configurando a quarta questÃ£o 
-                 perg4 = new JLabel("4 - Qual comando expressa uma leitura de dados?"); 
+                 perg4 = new JLabel("4 - Qual dos comandos abaixo é uma estrutura de repetição?"); 
                  perg4.setFont(font); 
                  perg4.setForeground(branco); 
 
 
-                 P4op1 = new JRadioButton("Scanf();",false); 
+                 P4op1 = new JRadioButton("S",false); 
                  P4op2 = new JRadioButton("printf();",false); 
                  P4op3 = new JRadioButton("int a;",false); 
 
