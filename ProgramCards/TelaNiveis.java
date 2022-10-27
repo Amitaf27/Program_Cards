@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -20,21 +21,22 @@ public class TelaNiveis extends JFrame {
 	   JMenuBar barrinha;
 	   JMenu opcao;
 	   JMenuItem ilhas, config, sair;
-	   JButton nivel[] = new JButton[20];
+	   JButton nivel[] = new JButton[11];
+	   ImageIcon imaNivel[] = new ImageIcon[11];
 	   Color azul = new Color(18,10,143);
        Color azulc = new Color(65,105,225);
        Color ouro = new Color(238,201,0);
 	   Font font = new Font("Arial",Font.BOLD,30);
 	   Border b = BorderFactory.createLineBorder(new Color(255,191,0), 2);
 	   Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
-	   int t1 = 400;
-	   int t3 = t1, t4 = 400, t5 = 400;
+	   int t1 = 0;
+	   int t3 = t1;
 	   
 	   public TelaNiveis() {
 		  super("Ilha iniciante");
 		  JMenu opcao = new JMenu("Opcoes");
 		  JMenuBar barrinha = new JMenuBar();
-		
+		   imaNivel[1] = new ImageIcon(getClass().getResource("nivel1.png"));
 		  Container cont = getContentPane();
 		  cont.setBackground(azul);
 		  
@@ -66,37 +68,26 @@ public class TelaNiveis extends JFrame {
 					} 
 	  	        });
 	
-			  for( int i = 1; i < 20; i++){
+			  for( int i = 1; i < 11; i++){
 				  
-			
-				 String pe = String.valueOf(i);
-			
-				  nivel[i] = new JButton(pe);
+				  nivel[i] = new JButton(imaNivel[i]);
 				  cont.add(nivel[i]);
 				  
-				  
-				  nivel[i].setFont(font);
-				  nivel[i].setBackground(azulc);
-				  
+				  nivel[i].setBorderPainted(false); 
+                  nivel[i].setOpaque(false);  
+                  nivel[i].setFocusable(false);  
+                  nivel[i].setContentAreaFilled(false);
 				 
 				  
 				   if(i > 0 && i <= 5){
 					  
-				       t1 += 190;
-				       nivel[i].setBounds(t1, 100, 150, 150);
+				       t1 += 200;
+				       nivel[i].setBounds(t1, 150, 160, 160);
 	
 				   }else if(i > 5 && i <= 10){
-					    t3 += 190;
-					    nivel[i].setBounds(t3, 300, 150, 150);
-				   }else if(i > 10 && i <= 15){
-					   t4 += 190;
-					    nivel[i].setBounds(t4, 500, 150, 150);
-					  
-				   }else if(i > 15 && i <=20){
-					   t5 += 190;
-					    nivel[i].setBounds(t5, 700, 150, 150);
-				   }										  
-
+					    t3 += 200;
+					    nivel[i].setBounds(t3, 360, 170, 170);
+				   }
 
 		
 			  }
@@ -119,7 +110,7 @@ public class TelaNiveis extends JFrame {
 	           
 			   setLayout(null);
 			   
-			   setSize(dimensao);
+			   setSize(1366,768);
 			   setVisible(true);
 
 
