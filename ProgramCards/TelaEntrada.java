@@ -19,8 +19,7 @@ public class TelaEntrada extends JFrame {
         private Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
         static Musica mu = new Musica();
         static SomEfeito ef = new SomEfeito();
-        static String efeitoSom= "C://Users//Suporte//git//ProgramCards//ProgramCards//Clique.wav";
-        static String musicaSom = "C://Users//Suporte//git//ProgramCards//ProgramCards//Mario.wav";
+     
         
         public TelaEntrada(){
             
@@ -69,7 +68,7 @@ public class TelaEntrada extends JFrame {
                   
                   new TelaLogin();
                  setVisible(false);
-                 mu.setFile(musicaSom);
+                 mu.setFile(mu.musicaSom);
                  mu.play();
                  
     }
