@@ -7,6 +7,8 @@ import javax.swing.JOptionPane;
 public class SomEfeito {
 	
 	 Clip clipF;
+	  static String efeitoSom= "C:/Users/Aluno/git/ProgramCardsh/ProgramCards/Clique.wav";
+	 
 	   public void setFile(String fileName){
 
 	     try{
