@@ -49,8 +49,8 @@ private static final long serialVersionUID = 1L;
          
           public TelaLogin() {
         	  
-        	  ef.setFile(TelaEntrada.efeitoSom);
-              musica.setFile(TelaEntrada.musicaSom);
+        	  ef.setFile(ef.efeitoSom);
+              musica.setFile(musica.musicaSom);
            
            imagem1 = new ImageIcon(getClass().getResource("btsair.png"));
            email =  new ImageIcon(getClass().getResource("Email.png"));
@@ -273,8 +273,6 @@ private static final long serialVersionUID = 1L;
 	    	 
 	    	
         	TelaLogin ex = new TelaLogin();
-	        ex.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	
+	        ex.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
 	}
 }
-
