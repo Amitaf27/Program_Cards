@@ -9,7 +9,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -20,7 +19,6 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
-
 import BancoDados.Usuario;
 import BancoDados.UsuarioBD;
 
@@ -44,8 +42,15 @@ private static final long serialVersionUID = 1L;
           Color verde = new Color(0, 187, 45);
           Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
           int cont = 0;
+          
+          SomEfeito ef = new SomEfeito();
+          Musica musica = new Musica();
+          
          
           public TelaLogin() {
+        	  
+        	  ef.setFile(TelaEntrada.efeitoSom);
+              musica.setFile(TelaEntrada.musicaSom);
            
            imagem1 = new ImageIcon(getClass().getResource("btsair.png"));
            email =  new ImageIcon(getClass().getResource("Email.png"));
@@ -203,8 +208,11 @@ private static final long serialVersionUID = 1L;
              private class AcionaCadastro implements ActionListener {
 
                public void actionPerformed(ActionEvent e){
+            	   
+            	  
+            	  ef.play();
              	  new TelaCadastro();
-    	          setVisible(false);
+    	          dispose();
     	  
               }
             }
@@ -213,7 +221,7 @@ private static final long serialVersionUID = 1L;
 
               public void actionPerformed(ActionEvent e){
             	  
-            	 // Sons.main(null);
+             	  ef.play();
             	  System.exit(0);
             	  
               }
@@ -269,3 +277,4 @@ private static final long serialVersionUID = 1L;
 	
 	}
 }
+
