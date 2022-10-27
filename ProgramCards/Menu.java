@@ -29,7 +29,7 @@ public class Menu extends JFrame {
 	     ImageIcon imagem1 = new ImageIcon(getClass().getResource("ilhas1.png"));
 	     ImageIcon imagem2 = new ImageIcon(getClass().getResource("ilhas2Bloqueada.png"));
 	     ImageIcon imagem3 = new ImageIcon(getClass().getResource("ilhas3Bloqueada.png"));
-	     ImageIcon imagem4 = new ImageIcon(getClass().getResource("ilha livreBloqueada.png"));
+	     ImageIcon imagem4 = new ImageIcon(getClass().getResource("ilha livreBloc.png"));
 	     ImageIcon imagem5 = new ImageIcon(getClass().getResource("Música_ligada.png"));
 	     ImageIcon imagem6 = new ImageIcon(getClass().getResource("Música_desligada.png"));
 	     ImageIcon imagem7 = new ImageIcon(getClass().getResource("Efeito_ligado.png"));
@@ -63,7 +63,7 @@ public class Menu extends JFrame {
 	    	 // configurando textos das ilhas 
 	    	 ilha1Texto = new JLabel("Ilha Iniciante");
 	    	 ilha2Texto = new JLabel("Ilha Intermediaria");
-	    	 ilha3Texto = new JLabel("Ilha Avançada");
+	    	 ilha3Texto = new JLabel("Ilha AvanÃ§ada");
 	    	 ilha4Texto = new JLabel("Ilha Livre");
 	    	 
 	    	
@@ -95,9 +95,9 @@ public class Menu extends JFrame {
                      
                    setJMenuBar(barrinha);  
                      
-                   opcao = new JMenu("Opções");  
+                   opcao = new JMenu("OpÃ§Ãµes");  
                    
-                   config = new JMenuItem("Configurações");  
+                   config = new JMenuItem("ConfiguraÃ§Ãµes");  
                    sair = new JMenuItem("sair");  
                      
                    barrinha.add(opcao);  
@@ -117,7 +117,7 @@ public class Menu extends JFrame {
                    
                    
                      
-                   //configurando os botÃƒÂµes do panel  
+                   //configurando os botÃƒÆ’Ã‚Âµes do panel  
    
            
                            
@@ -143,11 +143,11 @@ public class Menu extends JFrame {
                      
                      
                    //configurando o panel de configuracoes  
-                   label = new JLabel("Configurações");  
+                   label = new JLabel("ConfiguraÃ§Ãµes");  
                    label.setFont(titulo);  
                    label.setForeground(Color.BLACK);  
                      
-                   label2 = new JLabel("Música");  
+                   label2 = new JLabel("MÃºsica");  
                    label2.setForeground(Color.BLACK);  
                    label2.setFont(texto);  
                      
@@ -189,8 +189,8 @@ public class Menu extends JFrame {
                    //configurando botao de som 
                  //   efeitoSom= "F:/Clique"; 
                  //   musicaSom = "F:/music";
-                   ef.setFile(TelaEntrada.efeitoSom);
-                   musica.setFile(TelaEntrada.musicaSom);
+                   ef.setFile(ef.efeitoSom);
+                   musica.setFile(musica.musicaSom);
                     musicaSomLigada = "on"; 
                      
                      
@@ -206,7 +206,7 @@ public class Menu extends JFrame {
                                               
                                        if(musicaSomLigada.equals("off")){ 
     
-                                        musica.setFile(TelaEntrada.musicaSom); 
+                                        musica.setFile(musica.musicaSom); 
                                         musica.play(); 
                                         musicaSomLigada = "on"; 
                                         btSom.setIcon(imagem5); 
