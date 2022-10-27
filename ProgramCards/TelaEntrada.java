@@ -1,12 +1,8 @@
-
-
 import java.awt.Color;
-
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
-
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -23,8 +19,8 @@ public class TelaEntrada extends JFrame {
         private Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
         static Musica mu = new Musica();
         static SomEfeito ef = new SomEfeito();
-        static String efeitoSom= "F:/Clique.wav";
-        static String musicaSom = "F:Mario.wav";
+        static String efeitoSom= "C://Users//Suporte//git//ProgramCards//ProgramCards//Clique.wav";
+        static String musicaSom = "C://Users//Suporte//git//ProgramCards//ProgramCards//Mario.wav";
         
         public TelaEntrada(){
             
