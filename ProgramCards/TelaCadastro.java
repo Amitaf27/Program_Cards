@@ -3,7 +3,6 @@ import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,7 +10,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
-
 import BancoDados.Usuario;
 import BancoDados.UsuarioBD;
 
@@ -25,8 +23,15 @@ public class TelaCadastro extends JFrame {
 	Font fonte2 = new Font("Arial", Font.BOLD, 30);
 	Border b = BorderFactory.createLineBorder(Color.black, 3);
 	JPanel painel = new JPanel();
+	
+	Musica musica = new Musica();
+	SomEfeito ef = new SomEfeito();
 
 	public TelaCadastro() {
+		
+		 ef.setFile(TelaEntrada.efeitoSom);
+         musica.setFile(TelaEntrada.musicaSom);
+		
         rotulo1 =  new JLabel("Cadastro");
         rotulo1.setFont(fonte2);
         rotulo1.setForeground(Color.WHITE);
@@ -39,7 +44,7 @@ public class TelaCadastro extends JFrame {
         text1.setBackground(new Color(0, 191, 225));
         text1.setForeground(Color.white);
         
-        text2 = new JTextField("Nome de Usuário");
+        text2 = new JTextField("Nome de UsuÃ¡rio");
         text2.setFont(fonte1);
         text2.setBorder(b);
         text2.setBackground(new Color(0, 191, 225));
@@ -104,7 +109,10 @@ public class TelaCadastro extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+				
+				
 					new Questionario();
+					ef.play();
 					dispose();
 			}
         	  
@@ -115,7 +123,7 @@ public class TelaCadastro extends JFrame {
           cont.setBackground(new Color(25, 25, 112));
          
           
-          botao1 = new JButton("Já possui cadastro? Clique aqui");
+          botao1 = new JButton("JÃ¡ possui cadastro? Clique aqui");
           botao1.setOpaque(false);
           botao1.setFocusable(false);
           botao1.setContentAreaFilled(false);
@@ -127,7 +135,7 @@ public class TelaCadastro extends JFrame {
       				
       				public void actionPerformed(ActionEvent e) {
       					
-      				//	Sons.main(null);
+      				   ef.play();
       					new TelaLogin();
       					dispose();
       				} 
