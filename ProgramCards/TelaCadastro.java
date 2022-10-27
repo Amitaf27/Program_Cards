@@ -3,6 +3,9 @@ import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -26,7 +29,8 @@ public class TelaCadastro extends JFrame {
 	
 	Musica musica = new Musica();
 	SomEfeito ef = new SomEfeito();
-
+    int cont = 0;
+    
 	public TelaCadastro() {
 		
 		 ef.setFile(ef.efeitoSom);
@@ -37,6 +41,9 @@ public class TelaCadastro extends JFrame {
         rotulo1.setForeground(Color.WHITE);
         rotulo2 = new JLabel();
         rotulo3 = new JLabel();
+        
+        Limpar a = new Limpar();
+        
         
         text1 = new JTextField("Nome");
         text1.setFont(fonte1);
@@ -61,6 +68,11 @@ public class TelaCadastro extends JFrame {
         text4.setBorder(b);
         text4.setBackground(new Color(0, 191, 225));
         text4.setForeground(Color.WHITE);
+        
+        text1.addMouseListener(a);
+        text2.addMouseListener(a);
+        text3.addMouseListener(a);
+        text4.addMouseListener(a);
         
         painel.setBackground(new Color(65, 105, 225));
         painel.setBorder(b);
@@ -166,6 +178,62 @@ public class TelaCadastro extends JFrame {
           setVisible(true);
          
        }
+	
+	private class Limpar implements MouseListener{
+
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			cont++;
+		if(e.getSource() == text1){
+			if(cont == 1){
+				 text1.setText(" ");
+			} 
+		}
+			if(e.getSource() == text2){
+				if(cont == 2){
+					 text2.setText("");
+			}
+			}
+			
+			if(e.getSource() == text3){
+				if(cont == 3){
+					 text3.setText("");
+			}
+			}
+			
+			if(e.getSource() == text4){
+				if(cont == 4){
+					 text4.setText("");
+			}
+			}
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseExited(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mousePressed(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+    	 
+     }
+
 	
 	public static void main(String[] args) {
 		
