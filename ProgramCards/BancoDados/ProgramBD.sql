@@ -11,3 +11,9 @@ create table Usuario (
 );
 
 select * from Usuario;
+
+alter table usuario 
+ drop PRIMARY KEY,
+ add PRIMARY KEY (nomeUsuario),
+ add UNIQUE INDEX senha_UNIQUE (senha ASC) VISIBLE;
+ ;
