@@ -33,8 +33,8 @@ public class TelaCadastro extends JFrame {
     
 	public TelaCadastro() {
 		
-		 ef.setFile(ef.efeitoSom);
-         musica.setFile(musica.musicaSom);
+		
+         
 		
         rotulo1 =  new JLabel("Cadastro");
         rotulo1.setFont(fonte2);
@@ -51,7 +51,7 @@ public class TelaCadastro extends JFrame {
         text1.setBackground(new Color(0, 191, 225));
         text1.setForeground(Color.white);
         
-        text2 = new JTextField("Nome de UsuÃƒÂ¡rio");
+        text2 = new JTextField("Nome de UsuÃƒÆ’Ã‚Â¡rio");
         text2.setFont(fonte1);
         text2.setBorder(b);
         text2.setBackground(new Color(0, 191, 225));
@@ -135,7 +135,7 @@ public class TelaCadastro extends JFrame {
           cont.setBackground(new Color(25, 25, 112));
          
           
-          botao1 = new JButton("JÃƒÂ¡ possui cadastro? Clique aqui");
+          botao1 = new JButton("JÃƒÆ’Ã‚Â¡ possui cadastro? Clique aqui");
           botao1.setOpaque(false);
           botao1.setFocusable(false);
           botao1.setContentAreaFilled(false);
