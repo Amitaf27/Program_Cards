@@ -51,7 +51,6 @@ public class Menu extends JFrame {
 	     Color ouro = new Color(238,201,0);
 	     Color azul = new Color(25,25,112);
 	     Border borda = BorderFactory.createLineBorder(Color.BLACK);
-         String musicaSomLigada;
          SomEfeito ef = new SomEfeito();
          Musica musica = new Musica();
 
@@ -101,7 +100,10 @@ public class Menu extends JFrame {
          sair.setFont(texto);
                 
         //configurando os botÃµes do panel  
-         btSom = new JButton(imagem5);  
+
+        	 btSom = new JButton(imagem5); 
+       
+         
           btSom.setBorder(borda);  
           btSom.setOpaque(false);  
           btSom.setFocusable(false);  
@@ -155,8 +157,6 @@ public class Menu extends JFrame {
           btSom.setBounds(90, 80, 90, 90);  
         //configurando botao de som
 
-        
-          musicaSomLigada = "on"; 
                      
         //configurando botoes 
                     
@@ -165,16 +165,16 @@ public class Menu extends JFrame {
         			 public void actionPerformed(ActionEvent e) {  
         				 ef.play();            
                      
-        				if(musicaSomLigada.equals("off")){ 
+        				if(Musica.ligado){ 
         				
-                            musica.play(); 
-                            musicaSomLigada = "on"; 
-                            btSom.setIcon(imagem5); 
+                            musica.play();  
+                            btSom.setIcon(imagem5);
+                            musica.muda();
                     
-        			  } else if (musicaSomLigada.equals("on")){ 
+        			  } else if (Musica.ligado == false){ 
         				  musica.stop(); 
-                          musicaSomLigada = "off"; 
-                          btSom.setIcon(imagem6);  
+                          btSom.setIcon(imagem6);
+                          musica.muda();
         			  }                      
                                       
         			 }   
@@ -184,12 +184,16 @@ public class Menu extends JFrame {
          btSom2.addActionListener(  
         		 new ActionListener(){  
         			 public void actionPerformed(ActionEvent e) { 
-        				 ef.play();
+        			
                         
-        				if (on2) {                                                               
+        				if (on2) {   
+        					 SomEfeito.muda();
         					btSom2.setIcon(imagem8);  
                             on2 = false;  
+                           
                       } else {  
+                    	     SomEfeito.muda();
+                    		 ef.play();
                     	  btSom2.setIcon(imagem7);  
                           on2 = true;  
                       }
