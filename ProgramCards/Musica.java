@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 public class Musica {
 
    static Clip clipM;
+   static boolean ligado = true;
    
      public void play(){
     	 
@@ -18,13 +19,28 @@ public class Musica {
 
     	    	   JOptionPane.showMessageDialog(null, "Arquivo da mÃƒÂºsica nÃƒÂ£o encontrado.");
     	       }
+    	   
+    	      if(ligado){
+    	   
+    	   
     	   	   clipM.setFramePosition(0);
-    	   	   clipM.start();      
+    	   	   clipM.start();
+    	      } else{
+    	    	  
+    	    	  
+    	    	  
+    	      }
      }
 
      public void stop(){
 
        clipM.stop();
        clipM.close();
+     }
+     
+     public void muda(){
+    	 
+    	 ligado = !ligado;
+    	 
      }
    }
