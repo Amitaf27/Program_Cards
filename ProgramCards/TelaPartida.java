@@ -12,7 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-//falta os imports e está incompleto por enquanto
+//falta os imports e estÃ¡ incompleto por enquanto
 
 public class TelaPartida extends JFrame { 
   
@@ -26,6 +26,7 @@ public class TelaPartida extends JFrame {
      Color ouro = new Color(238,201,0); 
      Font fonte1 = new Font("Arial", Font.BOLD, 24); 
      int cont=0; 
+     
      boolean mouseP = false; 
   
       public TelaPartida(){ 
@@ -38,10 +39,13 @@ public class TelaPartida extends JFrame {
               perg.setFont(fonte1); 
               perg.setForeground(Color.WHITE); 
               painel.add(perg); 
-  
+              int x = 0, y = 0;
               imFor = new ImageIcon(getClass().getResource("for.png")); 
               imaFor = new JLabel(imFor); 
           imaFor.addMouseListener(new MouseListener(){ 
+        	  
+              int x  = 875;
+              int y = 740;
   
                          public void mouseClicked(MouseEvent arg0) { 
                                  cont++; 
@@ -50,7 +54,6 @@ public class TelaPartida extends JFrame {
                                      if (cont >=2){ 
                                    imaFor.setBounds(1235,740,170,300); 
                               } 
-  
                          } 
   
                          @Override 
@@ -123,6 +126,11 @@ public class TelaPartida extends JFrame {
               imif = new ImageIcon(getClass().getResource("if.png")); 
               imaIf = new JLabel(imif); 
           imaIf.addMouseListener(new MouseListener(){ 
+        	  
+        	  
+        	  
+              int x  = 695;
+              int y = 740;
   
                          public void mouseClicked(MouseEvent arg0) { 
                                  cont++; 
@@ -166,6 +174,9 @@ public class TelaPartida extends JFrame {
               include = new ImageIcon(getClass().getResource("include.png")); 
               imaInclude = new JLabel(include); 
           imaInclude.addMouseListener(new MouseListener(){ 
+        	  
+              int x  = 515;
+              int y = 740;
   
                          public void mouseClicked(MouseEvent arg0) { 
                                  cont++; 
@@ -208,8 +219,11 @@ public class TelaPartida extends JFrame {
   
               scanf = new ImageIcon(getClass().getResource("scanf.png")); 
               imaScanf = new JLabel(scanf); 
-          imaScanf.addMouseListener(new MouseListener(){ 
-  
+          imaScanf.addMouseListener(new MouseListener(){
+        	  
+                         int x  = 1055;
+                         int y = 740;
+                         
                          public void mouseClicked(MouseEvent arg0) { 
                                  cont++; 
                                  imaScanf.setBounds(1235,740-100,170,300); 
@@ -259,6 +273,9 @@ public class TelaPartida extends JFrame {
               imPrintf = new ImageIcon(getClass().getResource("printf.png")); 
               imaPrintf = new JLabel(imPrintf); 
               imaPrintf.addMouseListener(new MouseListener(){ 
+            	  
+            	  int x = 1235; 
+                  int  y = 740; 
   
                          public void mouseClicked(MouseEvent arg0) { 
                                  cont++; 
@@ -293,7 +310,9 @@ public class TelaPartida extends JFrame {
                                  imaPrintf.setBounds(875,540,170,300); 
   
   
-                         } 
+                         }
+                         
+                         
   
   
               }); 
@@ -334,9 +353,14 @@ public class TelaPartida extends JFrame {
                               if(mouseP){ 
                                       Point ponto = getMousePosition(); 
                                              if(cont >= 2){ 
-                                                     int x = 1235; 
-                                                     int y = 740; 
+                                            	 
+                                            	                                         	 
+                                            	 
+                                                   imaFor.setBounds(ponto.x-85,ponto.y-150,170,300); 
+                                                    imaIf.setBounds(ponto.x-85,ponto.y-150,170,300); 
+                                                    imaScanf.setBounds(ponto.x-85,ponto.y-150,170,300); 
                                                      imaPrintf.setBounds(ponto.x-85,ponto.y-150,170,300); 
+                                                    imaInclude.setBounds(ponto.x-85,ponto.y-150,170,300); 
                                              } 
   
                               } 
