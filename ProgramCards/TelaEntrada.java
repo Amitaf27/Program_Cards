@@ -68,7 +68,7 @@ public class TelaEntrada extends JFrame {
                   
                   new TelaLogin();
                  setVisible(false);
-                 mu.setFile(mu.musicaSom);
+           
                  mu.play();
                  
     }
