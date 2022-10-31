@@ -30,8 +30,8 @@ public class Menu extends JFrame {
 	     ImageIcon imagem2 = new ImageIcon(getClass().getResource("ilhas2Bloqueada.png"));
 	     ImageIcon imagem3 = new ImageIcon(getClass().getResource("ilhas3Bloqueada.png"));
 	     ImageIcon imagem4 = new ImageIcon(getClass().getResource("ilha livreBloqueada.png"));
-	     ImageIcon imagem5 = new ImageIcon(getClass().getResource("Música_ligada.png"));
-	     ImageIcon imagem6 = new ImageIcon(getClass().getResource("Música_desligada.png"));
+	     ImageIcon imagem5 = new ImageIcon(getClass().getResource("Musica_ligada.png"));
+	     ImageIcon imagem6 = new ImageIcon(getClass().getResource("Musica_desligada.png"));
 	     ImageIcon imagem7 = new ImageIcon(getClass().getResource("Efeito_ligado.png"));
 	     ImageIcon imagem8 = new ImageIcon(getClass().getResource("Efeito_desligado.png"));
 	     
@@ -59,8 +59,8 @@ public class Menu extends JFrame {
 	    	 
 	  //configurando textos das ilhas 
 	     ilha1Texto = new JLabel("Ilha Iniciante");
-	     ilha2Texto = new JLabel("Ilha Intermediária");
-	     ilha3Texto = new JLabel("Ilha Avançada");
+	     ilha2Texto = new JLabel("Ilha IntermediÃ¡ria");
+	     ilha3Texto = new JLabel("Ilha AvanÃ§ada");
 	     ilha4Texto = new JLabel("Ilha Livre");
 	    	 
 	     ilha1Texto.setBounds(180, 350, 200, 200);
@@ -83,9 +83,9 @@ public class Menu extends JFrame {
 	      setTitle("ILHAS");  
          barrinha = new JMenuBar();  
          setJMenuBar(barrinha);  
-         opcao = new JMenu("Opções");  
+         opcao = new JMenu("OpÃ§Ãµes");  
                    
-         config = new JMenuItem("Configurações");  
+         config = new JMenuItem("ConfiguraÃ§Ãµes");  
          sair = new JMenuItem("Sair");  
                      
          barrinha.add(opcao);  
@@ -100,7 +100,7 @@ public class Menu extends JFrame {
          config.setFont(texto);
          sair.setFont(texto);
                 
-        //configurando os botões do panel  
+        //configurando os botÃµes do panel  
          btSom = new JButton(imagem5);  
           btSom.setBorder(borda);  
           btSom.setOpaque(false);  
@@ -120,11 +120,11 @@ public class Menu extends JFrame {
           btConfirmar.setFont(new Font("Arial", Font.BOLD, 14));  
                      
          //configurando o panel de configuracoes  
-          label = new JLabel("Configurações");  
+          label = new JLabel("ConfiguraÃ§Ãµes");  
            label.setFont(titulo);  
            label.setForeground(Color.BLACK);  
                      
-          label2 = new JLabel("Música");  
+          label2 = new JLabel("MÃºsica");  
            label2.setForeground(Color.BLACK);  
            label2.setFont(texto);  
                      
