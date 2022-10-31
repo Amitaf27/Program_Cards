@@ -5,9 +5,13 @@ import javax.swing.JOptionPane;
 
 public class SomEfeito {
 	
-	 Clip clipF;
+	 static Clip clipF;
+	 static boolean ligado = true;
+	 
+	 
+	 
 	
-	     public void play(){
+	      public void play(){
 
 		   try{
 		  
@@ -18,14 +22,26 @@ public class SomEfeito {
 
 		    	   JOptionPane.showMessageDialog(null, "Arquivo da mÃºsica nÃ£o encontrado.");
 		   }
+		   
+		   if(ligado){
 
 	       clipF.setFramePosition(0);
-	       clipF.start();      
+	       clipF.start();
+	       
+		   } else{
+			   
+			
+		   }
 	     }
 
-	     public void stop(){
+	      public void stop(){
 
 	       clipF.stop();
 	       clipF.close();
-	     }	
+	     }
+	     
+	     public static void muda(){
+	    	 
+	    	 ligado = !ligado;
+	     }
 }
