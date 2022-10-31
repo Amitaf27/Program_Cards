@@ -154,8 +154,8 @@ public class Menu extends JFrame {
                      
           btSom.setBounds(90, 80, 90, 90);  
         //configurando botao de som
-          ef.setFile(ef.efeitoSom);
-          musica.setFile(musica.musicaSom);
+
+        
           musicaSomLigada = "on"; 
                      
         //configurando botoes 
@@ -166,7 +166,7 @@ public class Menu extends JFrame {
         				 ef.play();            
                      
         				if(musicaSomLigada.equals("off")){ 
-        					musica.setFile(musica.musicaSom); 
+        				
                             musica.play(); 
                             musicaSomLigada = "on"; 
                             btSom.setIcon(imagem5); 
