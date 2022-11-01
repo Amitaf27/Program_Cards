@@ -107,10 +107,7 @@ public class TelaNiveis extends JFrame {
 			   barrinha.add(opcao);
 			   setJMenuBar(barrinha);
 
-	        
-			   
-	           AcionaBotao evento2 = new AcionaBotao();
-	  
+	      
 
 	          
 			   barrinha.setBackground(ouro);
@@ -123,18 +120,94 @@ public class TelaNiveis extends JFrame {
 			   
 			   setSize(1366,768);
 			   setVisible(true);
+			   
+			   nivel[0].addActionListener(  
+		        		 new ActionListener(){  
+		        			 public void actionPerformed(ActionEvent e) { 
+		        			
+		                        new TelaPartida();
+		                        dispose();
+		        				
+		        			 }       
+		        		 }); 
+			   
+			   
+			   nivel[0].addActionListener(  
+		        		 new ActionListener(){  
+		        			 public void actionPerformed(ActionEvent e) { 
+		        			
+		                        new TelaPartida();
+		                        dispose();
+		        				
+		        			 }       
+		        		 });                
+			   
+			   nivel[1].addActionListener(  
+		        		 new ActionListener(){  
+		        			 public void actionPerformed(ActionEvent e) { 
+		        			
+		                        new TelaPartida();
+		                        dispose();
+		        				
+		        			 }       
+		        		 });                
+			   
+			   
+			   
+			   nivel[2].addActionListener(  
+		        		 new ActionListener(){  
+		        			 public void actionPerformed(ActionEvent e) { 
+		        			
+		                        new TelaPartida();
+		                        dispose();
+		        				
+		        			 }       
+		        		 }); 
+			   
+			   nivel[3].addActionListener(  
+		        		 new ActionListener(){  
+		        			 public void actionPerformed(ActionEvent e) { 
+		        			
+		                        new TelaPartida();
+		                        dispose();
+		        				
+		        			 }       
+		        		 });
+			   
+			   nivel[4].addActionListener(  
+		        		 new ActionListener(){  
+		        			 public void actionPerformed(ActionEvent e) { 
+		        			
+		                        new TelaPartida();
+		                        dispose();
+		        				
+		        			 }       
+		        		 }); 
+			   nivel[5].addActionListener(  
+		        		 new ActionListener(){  
+		        			 public void actionPerformed(ActionEvent e) { 
+		        			
+		                        new TelaPartida();
+		                        dispose();
+		        				
+		        			 }       
+		        		 });
+			   
+			   nivel[6].addActionListener(  
+		        		 new ActionListener(){  
+		        			 public void actionPerformed(ActionEvent e) { 
+		        			
+		                        new TelaPartida();
+		                        dispose();
+		        				
+		        			 }       
+		        		 });
+			   
+			   
 
 
 	   }
-           private class AcionaBotao implements ActionListener {
-
-              public void actionPerformed(ActionEvent e){
-            	new TelaPartida();
-            	dispose();
-            	  
-        }
-        }
-	   
+        
 	   public static void main(String[] args) {
 		   TelaNiveis teste = new TelaNiveis();
 		   teste.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
