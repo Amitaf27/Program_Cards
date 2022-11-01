@@ -21,8 +21,8 @@ public class TelaNiveis extends JFrame {
 	   JMenuBar barrinha;
 	   JMenu opcao;
 	   JMenuItem ilhas, config, sair;
-	   JButton nivel[] = new JButton[11];
-	   ImageIcon imaNivel[] = new ImageIcon[11];
+	   JButton nivel[] = new JButton[10];
+	   ImageIcon imaNivel[] = new ImageIcon[10];
 	   Color azul = new Color(18,10,143);
        Color azulc = new Color(65,105,225);
        Color ouro = new Color(238,201,0);
@@ -36,7 +36,17 @@ public class TelaNiveis extends JFrame {
 		  super("Ilha iniciante");
 		  JMenu opcao = new JMenu("Opcoes");
 		  JMenuBar barrinha = new JMenuBar();
-		   imaNivel[1] = new ImageIcon(getClass().getResource("nivel1.png"));
+		   imaNivel[0] = new ImageIcon(getClass().getResource("nivel1.png"));
+		   imaNivel[1] = new ImageIcon(getClass().getResource("nivel2.png"));
+		   imaNivel[2] = new ImageIcon(getClass().getResource("nivel3.png"));
+		   imaNivel[3] = new ImageIcon(getClass().getResource("nivel4.png"));
+		   imaNivel[4] = new ImageIcon(getClass().getResource("nivel5.png"));
+		   imaNivel[5] = new ImageIcon(getClass().getResource("nivel6.png"));
+		   imaNivel[6] = new ImageIcon(getClass().getResource("nivel7.png"));
+		   imaNivel[7] = new ImageIcon(getClass().getResource("nivel8trac.png"));
+		   imaNivel[8] = new ImageIcon(getClass().getResource("nivel9trac.png"));
+		   imaNivel[9] = new ImageIcon(getClass().getResource("nivel10trac.png"));
+		   
 		  Container cont = getContentPane();
 		  cont.setBackground(azul);
 		  
@@ -47,6 +57,7 @@ public class TelaNiveis extends JFrame {
 
 				
 						public void actionPerformed(ActionEvent arg0) {
+							
 							new Menu();
 							setVisible(false);
 							
@@ -68,7 +79,7 @@ public class TelaNiveis extends JFrame {
 					} 
 	  	        });
 	
-			  for( int i = 1; i < 11; i++){
+			  for( int i = 0; i <= 9; i++){
 				  
 				  nivel[i] = new JButton(imaNivel[i]);
 				  cont.add(nivel[i]);
@@ -79,12 +90,12 @@ public class TelaNiveis extends JFrame {
                   nivel[i].setContentAreaFilled(false);
 				 
 				  
-				   if(i > 0 && i <= 5){
+				   if(i >= 0 && i <= 4){
 					  
 				       t1 += 200;
 				       nivel[i].setBounds(t1, 150, 160, 160);
 	
-				   }else if(i > 5 && i <= 10){
+				   }else if(i >= 5 && i <= 9){
 					    t3 += 200;
 					    nivel[i].setBounds(t3, 360, 170, 170);
 				   }
