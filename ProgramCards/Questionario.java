@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
@@ -46,11 +47,16 @@ import javax.swing.border.Border;
          private Font font1 = new Font("Arial",Font.BOLD,30); 
          private Font font2 = new Font("Arial",Font.BOLD,14); 
          private RadioButtonHandler handler; 
+         
          private JPanel painel ; 
+         private JPanel painel1 = new JPanel();
+         private JLabel resul;
+         
+         private JButton btOk;
          private ButtonGroup quest1, quest2,quest3,quest4, quest5,quest6,quest7,quest8,quest9,quest10; 
          private JScrollPane scroll; 
          private Border b = BorderFactory.createLineBorder(Color.black, 2);
-         
+         int cont = 0;
          public Questionario() { 
                  handler = new RadioButtonHandler(); 
                  finalizar = new JButton("Finalizar"); 
@@ -58,6 +64,8 @@ import javax.swing.border.Border;
                  finalizar.setBorder(b);
                  finalizar.setForeground(Color.WHITE);
                  finalizar.setBackground(verde);
+                 AcionaFinal ex = new AcionaFinal();
+                 finalizar.addActionListener(ex);
                  
                  cancelar = new JButton("Cancelar"); 
                  cancelar.setForeground(Color.WHITE);
@@ -82,7 +90,7 @@ import javax.swing.border.Border;
                  titulo = new JLabel("QUESTIONARIO"); 
                  titulo.setFont(font1); 
                  titulo.setForeground(ouro); 
-//configurando a primeira questÃ£o 
+//configurando a primeira questÃƒÆ’Ã‚Â£o 
                  perg1 = new JLabel("1 - Qual o metodo para abrir um arquivo em C?"); 
                  perg1.setFont(font); 
                  perg1.setForeground(branco); 
@@ -121,7 +129,7 @@ import javax.swing.border.Border;
                  P1op5.setForeground(branco); 
                  P1op5.setFont(font2);
 
-//configurando a segunda questÃ£o 
+//configurando a segunda questÃƒÆ’Ã‚Â£o 
                  perg2 = new JLabel("2 - Como se declara um Struct em C ?"); 
                  perg2.setFont(font); 
                  perg2.setForeground(branco); 
@@ -160,7 +168,7 @@ import javax.swing.border.Border;
                  P2op5.setFont(font2);
                                
 
-//configurando a terceira questÃ£o 
+//configurando a terceira questÃƒÆ’Ã‚Â£o 
                  perg3 = new JLabel("3 - Que tipo de variavel e lida com o comando %s ?"); 
                  perg3.setFont(font); 
                  perg3.setForeground(branco); 
@@ -201,15 +209,19 @@ import javax.swing.border.Border;
                  P3op5.setFont(font2);
 
 
-//configurando a quarta questÃ£o 
+//configurando a quarta questÃƒÆ’Ã‚Â£o 
                  perg4 = new JLabel("4 - Qual dos comandos abaixo e uma estrutura de repeticao?"); 
                  perg4.setFont(font); 
                  perg4.setForeground(branco); 
 
 
                  P4op1 = new JRadioButton("if(x < 60){ \n printf('Pamonha');}",false); 
-                 P4op2 = new JRadioButton("printf();",false); 
-                 P4op3 = new JRadioButton("int a;",false); 
+                 P4op2 = new JRadioButton("b.for(int i = 10; i >= 1; i--){"
+                 		+ "printf('AAAA');"
+                 		+ "}",false); 
+                 P4op3 = new JRadioButton("c.void repetir(){"
+                 		+ "printf('k');"
+                 		+ "}",false); 
 
                  quest4 = new ButtonGroup(); 
                  quest4.add(P4op1); 
@@ -228,16 +240,16 @@ import javax.swing.border.Border;
                  P4op3.setForeground(branco); 
                  P4op3.setFont(font2); 
 
-//configurando a quinta questÃ£o 
-                 perg5 = new JLabel("5 - Qual Ã© a funÃ§Ã£o da seguinte declaraÃ§Ã£o? Scanf (str, â€œ% dâ€�, & i);"); 
+//configurando a quinta questÃƒÆ’Ã‚Â£o 
+                 perg5 = new JLabel("5.Qual a forma correta de declarar um vetor?"); 
                  perg5.setFont(font); 
                  perg5.setForeground(branco); 
 
 
-                 P5op1 = new JRadioButton("Coca-Cola",false); 
-                 P5op2 = new JRadioButton("Guarana Antartica",false); 
-                 P5op3 = new JRadioButton("Fanta",false); 
-                 P5op4 = new JRadioButton("Regente",false); 
+                 P5op1 = new JRadioButton("a. int funcao;",false); 
+                 P5op2 = new JRadioButton("b. main();",false); 
+                 P5op3 = new JRadioButton("c. struct funcao;",false); 
+                 P5op4 = new JRadioButton("d. #define f;",false); 
 
                  quest5 = new ButtonGroup(); 
                  quest5.add(P5op1); 
@@ -261,16 +273,16 @@ import javax.swing.border.Border;
                  P5op4.setForeground(branco); 
                  P5op4.setFont(font2); 
 
-//configurando a sexta questÃ£o 
-                 perg6 = new JLabel("6 - Selecione a bebida de sua preferencia:"); 
+//configurando a sexta questÃƒÆ’Ã‚Â£o 
+                 perg6 = new JLabel("6.Qual a forma correta de declarar um vetor?"); 
                  perg6.setFont(font); 
                  perg6.setForeground(branco); 
 
 
-                 P6op1 = new JRadioButton("Coca-Cola",false); 
-                 P6op2 = new JRadioButton("Guarana Antartica",false); 
-                 P6op3 = new JRadioButton("Fanta",false); 
-                 P6op4 = new JRadioButton("Regente",false); 
+                 P6op1 = new JRadioButton("vetor i;",false); 
+                 P6op2 = new JRadioButton("int(8) b;",false); 
+                 P6op3 = new JRadioButton("float t[7];",false); 
+                 P6op4 = new JRadioButton("char v(8);",false); 
 
                  quest6 = new ButtonGroup(); 
                  quest6.add(P6op1); 
@@ -295,15 +307,15 @@ import javax.swing.border.Border;
                  P6op4.setFont(font2); 
 
 //configurando a setima questao 
-                 perg7 = new JLabel("7 - Selecione a bebida de sua preferencia:"); 
+                 perg7 = new JLabel("7.Como declaramos String em C?"); 
                  perg7.setFont(font); 
                  perg7.setForeground(branco); 
 
 
-                 P7op1 = new JRadioButton("Coca-Cola",false); 
-                 P7op2 = new JRadioButton("Guarana Antartica",false); 
-                 P7op3 = new JRadioButton("Fanta",false); 
-                 P7op4 = new JRadioButton("Regente",false); 
+                 P7op1 = new JRadioButton("String a;",false); 
+                 P7op2 = new JRadioButton("char c = String;",false); 
+                 P7op3 = new JRadioButton("char a[100];",false); 
+                 P7op4 = new JRadioButton("getString(ba);",false); 
             
                  quest7 = new ButtonGroup(); 
                  quest7.add(P7op1); 
@@ -327,14 +339,15 @@ import javax.swing.border.Border;
                  P7op4.setForeground(branco); 
                  P7op4.setFont(font2);
 
-//configurando a oitava questÃ£o 
-                 perg8 = new JLabel("8 - Selecione a bebida de sua preferencia:"); 
+//configurando a oitava questÃƒÆ’Ã‚Â£o 
+                 perg8 = new JLabel("8.Qual e a funcao da seguinte declaracao?"
+                 		+ "Scanf (str, '% d', & i);"); 
                  perg8.setFont(font); 
                  perg8.setForeground(branco); 
 
-                 P8op1 = new JRadioButton("Coca-Cola",false); 
-                 P8op2 = new JRadioButton("Guarana Antartica",false); 
-                 P8op3 = new JRadioButton("Fanta",false);  
+                 P8op1 = new JRadioButton("Converte um valor de string para inteiro",false); 
+                 P8op2 = new JRadioButton("Imprime um valor inteiro",false); 
+                 P8op3 = new JRadioButton("Converte um valor double para inteiro",false);  
 
                  quest8 = new ButtonGroup(); 
                  quest8.add(P8op1); 
@@ -353,16 +366,16 @@ import javax.swing.border.Border;
                  P8op3.setForeground(branco); 
                  P8op3.setFont(font2);  
 
-//configurando a nona questÃ£o 
-                 perg9 = new JLabel("9 - Selecione a bebida de sua preferencia:"); 
+//configurando a nona questÃƒÆ’Ã‚Â£o 
+                 perg9 = new JLabel("9.Para que serve o \"\t \"?"); 
                  perg9.setFont(font); 
                  perg9.setForeground(branco); 
 
 
-                 P9op1 = new JRadioButton("Coca-Cola",false); 
-                 P9op2 = new JRadioButton("Guarana Antartica",false); 
-                 P9op3 = new JRadioButton("Fanta",false); 
-                 P9op4 = new JRadioButton("Fanta",false); 
+                 P9op1 = new JRadioButton("Para quebrar uma linha",false); 
+                 P9op2 = new JRadioButton("Para finalizar um texto",false); 
+                 P9op3 = new JRadioButton("Para dar tab no momento da impressao",false); 
+                 P9op4 = new JRadioButton("Para comentar em uma linha",false); 
 
                  quest9 = new ButtonGroup(); 
                  quest9.add(P9op1); 
@@ -387,15 +400,15 @@ import javax.swing.border.Border;
                  P9op4.setFont(font2); 
 
 //configurando a decima  questao 
-                 perg10 = new JLabel("10 - Selecione a bebida de sua preferencia:"); 
+                 perg10 = new JLabel("10.Qual o significado desse operador lógico '&&'?"); 
                  perg10.setFont(font); 
                  perg10.setForeground(branco); 
 
 
-                 P10op1 = new JRadioButton("Coca-Cola",false); 
-                 P10op2 = new JRadioButton("Guarana Antartica",false); 
-                 P10op3 = new JRadioButton("Fanta",false); 
-                 P10op4 = new JRadioButton("Regente",false); 
+                 P10op1 = new JRadioButton("não",false); 
+                 P10op2 = new JRadioButton("ou",false); 
+                 P10op3 = new JRadioButton("diferente",false); 
+                 P10op4 = new JRadioButton("e",false); 
              
                  quest10 = new ButtonGroup(); 
                  quest10.add(P10op1); 
@@ -492,12 +505,13 @@ import javax.swing.border.Border;
                  cont.add(titulo); 
                  cont.add(finalizar); 
                  cont.add(cancelar); 
+                // cont.add(painel1);
 
-//definindo a posiÃ§Ã£o dos elementos no painel
+//definindo a posiÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â£o dos elementos no painel
                  titulo.setBounds(533,40,300,100); 
 //1
                  perg1.setBounds(35,5,500,100); 
-                 P1op1.setBounds(45,70,500,50); 
+                 P1op1.setBounds(45,70,200,50); 
                  P1op2.setBounds(45,100,300,50);
                  P1op3.setBounds(45,130,300,50);
                  P1op4.setBounds(45,160,300,50);
@@ -531,7 +545,7 @@ import javax.swing.border.Border;
                  P5op3.setBounds(45,910,300,50); 
                  P5op4.setBounds(45,940,300,50); 
 //6
-                perg6.setBounds(35,965,400,100); 
+                perg6.setBounds(35,965,500,100); 
                  P6op1.setBounds(45,1030,300,50); 
                  P6op2.setBounds(45,1060,300,50); 
                  P6op3.setBounds(45,1090,300,50); 
@@ -543,8 +557,8 @@ import javax.swing.border.Border;
                  P7op3.setBounds(45,1270,300,50); 
                  P7op4.setBounds(45,1300,300,50); 
 //8
-                perg8.setBounds(35,1325,400,100); 
-                 P8op1.setBounds(45,1390,300,50); 
+                perg8.setBounds(35,1325,700,100); 
+                 P8op1.setBounds(45,1390,400,50); 
                  P8op2.setBounds(45,1420,300,50); 
                  P8op3.setBounds(45,1450,300,50); 
 //9
@@ -554,18 +568,28 @@ import javax.swing.border.Border;
                  P9op3.setBounds(45,1600,300,50); 
                  P9op4.setBounds(45,1630,300,50); 
 //10
-                 perg10.setBounds(35,1660,400,100); 
+                 perg10.setBounds(35,1660,600,100); 
                  P10op1.setBounds(45,1725,300,50); 
                  P10op2.setBounds(45,1755,300,50); 
                  P10op3.setBounds(45,1785,300,50); 
                  P10op4.setBounds(45,1815,300,50); 
 
-//definindo a posiÃ§Ã£o dos elementos na tela principal 
+//definindo a posiÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â£o dos elementos na tela principal 
                  scroll.setBounds(183,160,1000,450);
                  finalizar.setBounds(413,640,250,50); 
                  cancelar.setBounds(683,640,250,50); 
 
                  P1op1.addItemListener(handler); 
+                 P2op2.addItemListener(handler);
+                 P3op5.addItemListener(handler);
+                 P4op2.addItemListener(handler);
+                 P5op2.addItemListener(handler);
+                 P6op3.addItemListener(handler);
+                 P7op3.addItemListener(handler);
+                 P8op1.addItemListener(handler);
+                 P9op3.addItemListener(handler);
+                 P10op4.addItemListener(handler);
+                 
 
                  setLayout(null); 
                  setSize(1366,768); 
@@ -576,16 +600,139 @@ import javax.swing.border.Border;
                private class RadioButtonHandler implements ItemListener{ 
 
                          public void itemStateChanged(ItemEvent arg0) { 
-                            if(P1op1.isSelected()) { 
-                                    JOptionPane.showMessageDialog(null, "Parabens pelo bom gosto!"); 
-                            } 
+                            if(P1op1.isSelected()) {
+                            	  cont++;
+                            	
+                              }
+                            if(P2op2.isSelected()) {
+                          	  cont++;
+                          	
+                            }
+                            if(P3op5.isSelected()) {
+                            	  cont++;
+                            	
+                              }
+                            if(P4op2.isSelected()) {
+                            	  cont++;
+                            	
+                              }
+                            if(P5op2.isSelected()) {
+                            	  cont++;
+                            	
+                              }
+                            if(P6op3.isSelected()) {
+                            	  cont++;
+                            	
+                              }
+                            if(P7op3.isSelected()) {
+                            	  cont++;
+                            	
+                              }
+                            if(P8op1.isSelected()) {
+                            	  cont++;
+                            	
+                              }
+                            if(P9op3.isSelected()) {
+                          	  cont++;
+                          	
+                            }
+                            if(P10op4.isSelected()) {
+                          	  cont++;
+                          	
+                            }
 
                          } 
 
                } 
+  
+                       private class AcionaFinal implements ActionListener{
 
+						@Override
+						public void actionPerformed(ActionEvent arg0) {
+							
+							if(cont>=0 && cont <=5){
+								resul = new JLabel("Seu nivel e iniciante");
+								btOk = new JButton("ok");
+								btOk.addActionListener(new ActionListener(){
+
+									@Override
+									public void actionPerformed(ActionEvent e) {
+										//new Menu();
+										setVisible(false);
+									}
+									
+								});
+								add(painel1);
+								painel1.setBackground(azul);
+								painel1.setLayout(null);
+								painel1.setVisible(true);
+								painel1.add(resul);
+								painel1.add(btOk);
+								
+								painel1.setBounds(488,184,400,400);
+								resul.setBounds(50,100,200,50);
+								btOk.setBounds(100,200,100,50);
+
+								
+							}else if(cont>=6 && cont <=8){
+								resul = new JLabel("Seu nivel e intermediario");
+								btOk = new JButton("ok");
+								btOk.addActionListener(new ActionListener(){
+
+									@Override
+									public void actionPerformed(ActionEvent e) {
+										//new Menu();
+										setVisible(false);
+									}
+									
+								});
+								add(painel1);
+								painel1.setBackground(azul);
+								painel1.setLayout(null);
+								painel1.setVisible(true);
+								painel1.add(resul);
+								painel1.add(btOk);
+								painel.setFocusable(true);
+								
+								painel1.setBounds(600,200,400,400);
+								resul.setBounds(50,100,200,50);
+								btOk.setBounds(100,200,100,50);
+
+								
+							} else if(cont>=9){
+								resul = new JLabel("Seu nivel e Avancado");
+								btOk = new JButton("ok");
+								btOk.addActionListener(new ActionListener(){
+
+									@Override
+									public void actionPerformed(ActionEvent e) {
+										//new Menu();
+										setVisible(false);
+									}
+									
+								});
+								add(painel1);
+								painel1.setBackground(azul);
+								painel1.setLayout(null);
+								painel1.setVisible(true);
+								painel1.add(resul);
+								painel1.add(btOk);
+								painel.setFocusable(true);
+								
+								painel1.setBounds(600,200,400,400);
+								resul.setBounds(50,100,200,50);
+								btOk.setBounds(100,200,100,50);
+
+								
+							}
+							
+						}
+
+                    	   
+                       }
               public static void main(String[]args) { 
                       Questionario ex = new Questionario(); 
                       ex.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
               } 
  }
+
