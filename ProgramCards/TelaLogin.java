@@ -189,6 +189,7 @@ private static final long serialVersionUID = 1L;
               	
               	if (rsusuBD.next()) {
               		Menu menu = new Menu();
+              		musica.play();
               		menu.setVisible(true);
               		dispose();
               	} else {
