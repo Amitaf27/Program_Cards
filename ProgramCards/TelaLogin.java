@@ -64,15 +64,13 @@ private static final long serialVersionUID = 1L;
            btEsq.setBorderPainted(false);
            btEsq.setForeground(new Color(50,205,50));
            btEsq.addActionListener( new ActionListener(){
-
-			
-			public void actionPerformed(ActionEvent arg0) {
-				//new RecuperaSenha();
-				setVisible(false);
-			}
-        	   
-        	   
-           });
+        	   public void actionPerformed(ActionEvent arg0) {
+        		   new RecuperaSenha1();
+        		   setVisible(true);
+        		   
+        		   //dispose();
+        	  }
+         });
            
            Limpar a = new Limpar();
            Limpar c = new Limpar();
@@ -85,7 +83,7 @@ private static final long serialVersionUID = 1L;
            cadas  = new JLabel("Novo aqui?");
            cadas.setForeground(Color.WHITE);//mudar cor do texto da label
            
-           text1 = new JTextField("Email ou senha de Usuario");
+           text1 = new JTextField("Email ou nome de Usuario");
            text1.setBackground(Color.WHITE);
            text1.setBorder(null);
            text1.addMouseListener(a);
@@ -125,8 +123,6 @@ private static final long serialVersionUID = 1L;
            botao2.setContentAreaFilled(false);
            botao2.setBorderPainted(false);
          
-           
-           
            AcionaCadastro cad = new AcionaCadastro();
            cadastrar = new JButton("Cadastre-se");
            cadastrar.setForeground(Color.GREEN);//MUDA A COR DO TEXT DO BOTAO
@@ -175,33 +171,34 @@ private static final long serialVersionUID = 1L;
           private class AcionaBotao implements ActionListener {
     
              public void actionPerformed(ActionEvent e) {
-            	
-              try {
-            	String nomeUsuario = text1.getText();
-              	String senha1 = new String(senha.getPassword()).trim();
-              	
-              	Usuario usu = new Usuario();
-              	usu.setNomeUsuario(nomeUsuario);
-              	usu.setSenha(senha1);
-              	
-              	UsuarioBD usuBD = new UsuarioBD();
-              	ResultSet rsusuBD = usuBD.autenticUsu(usu);
-              	
-              	if (rsusuBD.next()) {
-              		Menu menu = new Menu();
-              		musica.play();
-              		menu.setVisible(true);
-              		dispose();
-              	} else {
-              		JOptionPane.showMessageDialog(null, "Usuario ou senha invalidos" + e);
-              	}
-              	
-              } catch(SQLException err) {
-            	  JOptionPane.showMessageDialog(null, "TelaLogin" + e);
-              }
-            	
-                 //setVisible(false);
-             }
+            	 try {
+            		 String nome_usuario, senha_usuario;
+                	 
+                	 nome_usuario = text1.getText();
+                	 senha_usuario = new String(senha.getPassword());
+                	 
+                	 Usuario usu = new Usuario();
+                	  usu.setNomeUsuario(nome_usuario);
+                	  usu.setSenha(senha_usuario);
+                	 
+                	 UsuarioBD usuBD = new UsuarioBD();
+                	 ResultSet rsusuariobd = usuBD.autenticUsu(usu);
+                	 
+                	 if(rsusuariobd.next()) {
+                  		//chamar tela
+                  		Menu objmenu = new Menu();
+                  		objmenu.setVisible(true);
+                  		
+                  		dispose();
+                    } else {
+                  	  //enivar mensagem de erro
+                  	  JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos");
+                    }
+                	  
+               } catch (SQLException erro) {
+            	   JOptionPane.showMessageDialog(null, "TelaLogin" + erro);
+			   }	
+            }
 
 
            }
@@ -276,4 +273,3 @@ private static final long serialVersionUID = 1L;
 	        ex.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
 	}
 }
-
