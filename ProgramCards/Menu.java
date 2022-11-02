@@ -17,7 +17,6 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
-
 public class Menu extends JFrame {
 
 		private static final long serialVersionUID = 1L;
@@ -58,8 +57,8 @@ public class Menu extends JFrame {
 	    	 
 	  //configurando textos das ilhas 
 	     ilha1Texto = new JLabel("Ilha Iniciante");
-	     ilha2Texto = new JLabel("Ilha IntermediÃ¡ria");
-	     ilha3Texto = new JLabel("Ilha AvanÃ§ada");
+	     ilha2Texto = new JLabel("Ilha Intermediária");
+	     ilha3Texto = new JLabel("Ilha Avançada");
 	     ilha4Texto = new JLabel("Ilha Livre");
 	    	 
 	     ilha1Texto.setBounds(180, 350, 200, 200);
@@ -82,9 +81,9 @@ public class Menu extends JFrame {
 	      setTitle("ILHAS");  
          barrinha = new JMenuBar();  
          setJMenuBar(barrinha);  
-         opcao = new JMenu("OpÃ§Ãµes");  
+         opcao = new JMenu("Opções");  
                    
-         config = new JMenuItem("ConfiguraÃ§Ãµes");  
+         config = new JMenuItem("Configurações");  
          sair = new JMenuItem("Sair");  
                      
          barrinha.add(opcao);  
@@ -101,9 +100,8 @@ public class Menu extends JFrame {
                 
         //configurando os botÃµes do panel  
 
-        	 btSom = new JButton(imagem5); 
-       
-         
+          btSom = new JButton(imagem5); 
+      
           btSom.setBorder(borda);  
           btSom.setOpaque(false);  
           btSom.setFocusable(false);  
@@ -122,11 +120,11 @@ public class Menu extends JFrame {
           btConfirmar.setFont(new Font("Arial", Font.BOLD, 14));  
                      
          //configurando o panel de configuracoes  
-          label = new JLabel("ConfiguraÃ§Ãµes");  
+          label = new JLabel("Configurações");  
            label.setFont(titulo);  
            label.setForeground(Color.BLACK);  
                      
-          label2 = new JLabel("MÃºsica");  
+          label2 = new JLabel("Música");  
            label2.setForeground(Color.BLACK);  
            label2.setFont(texto);  
                      
@@ -236,8 +234,7 @@ public class Menu extends JFrame {
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						// TODO Auto-generated method stub
-						
+						new MudarNick();
 				   }
         		});
    
