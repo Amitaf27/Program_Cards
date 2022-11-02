@@ -1,0 +1,12 @@
+import javax.swing.JFrame;
+
+public class RecuperaSenha1 extends JFrame {
+	
+	public RecuperaSenha1() {
+		super("Recuperar Senha");
+		setLayout(null);
+		setSize(400, 400);
+		
+		setVisible(true);
+	}
+}
