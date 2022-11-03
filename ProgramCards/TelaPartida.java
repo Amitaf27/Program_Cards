@@ -2,7 +2,6 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,6 +9,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -17,9 +17,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 
-//falta os imports e estÃƒÂ¡ incompleto por enquanto
+//falta os imports e estÃƒÆ’Ã‚Â¡ incompleto por enquanto
 
 public class TelaPartida extends JFrame { 
   
@@ -35,20 +34,21 @@ public class TelaPartida extends JFrame {
      private JMenuBar  barra;
      private JMenu opcao;
      private JMenuItem config, voltar;
-     JLabel option = new JLabel();
+
 
      
      boolean mouseP = false; 
   
       public TelaPartida(){ 
-    	  option.setHorizontalAlignment(SwingConstants.CENTER);
+    	 
+    	
     	  
-    	  option.settex
+    	 
     	  barra = new JMenuBar();  
           setJMenuBar(barra);  
-          opcao = new JMenu("Opções");  
+          opcao = new JMenu("OpÃ§Ãµes");  
                     
-          config = new JMenuItem("Configurações");  
+          config = new JMenuItem("ConfiguraÃ§Ãµes");  
           voltar = new JMenuItem("Voltar");  
           
           voltar.addActionListener(  
@@ -102,7 +102,7 @@ public class TelaPartida extends JFrame {
   
                                      if (cont >=2){ 
                                    imaFor.setBounds(590,400,170,300);
-                                   JOptionPane.showMessageDialog(null, "Errou babaca");
+                                   JOptionPane.showMessageDialog(null, "Errou");
                                    cont = 0;
                               } 
                          } 
@@ -151,7 +151,7 @@ public class TelaPartida extends JFrame {
   
                                      if (cont >=2){ 
                                    imaIf.setBounds(240,400,170,300);
-                                   JOptionPane.showMessageDialog(null, "Errou babaca");
+                                   JOptionPane.showMessageDialog(null, "Errou");
                                    cont = 0;
                               } 
   
@@ -200,7 +200,7 @@ public class TelaPartida extends JFrame {
   
                                      if (cont >=2){ 
                                    imaInclude.setBounds(410,400,170,300); 
-                                   JOptionPane.showMessageDialog(null, "Errou babaca");
+                                   JOptionPane.showMessageDialog(null, "Errou");
                                    cont = 0;
                               } 
   
@@ -254,7 +254,7 @@ public class TelaPartida extends JFrame {
   
                                      if (cont >=2){ 
                                    imaScanf.setBounds(760,400,170,300); 
-                                   JOptionPane.showMessageDialog(null, "Errou otario");
+                                   JOptionPane.showMessageDialog(null, "Errou");
                                    cont = 0;
                               } 
   
@@ -388,3 +388,4 @@ public class TelaPartida extends JFrame {
         } 
          
  }
+
