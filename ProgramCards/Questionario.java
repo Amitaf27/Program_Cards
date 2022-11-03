@@ -725,7 +725,8 @@ import javax.swing.border.Border;
 
 								
 							}
-							
+							new Menu();
+                                                         setVisible(false);
 						}
 
                     	   
