@@ -1,7 +1,7 @@
 package BancoDados;
 
 public class Usuario {
-	private String nomeUsuario, nome;
+	private String nomeUsuario, nome, nomeNovo;
 	private String senha, idade;
 	
 	public String getNomeUsuario() {
@@ -35,4 +35,13 @@ public class Usuario {
 	public void setIdade(String idade) {
 		this.idade = idade;
 	}
+
+	public String getNomeNovo() {
+		return nomeNovo;
+	}
+
+	public void setNomeNovo(String nomeNovo) {
+		this.nomeNovo = nomeNovo;
+	}
+
 }
