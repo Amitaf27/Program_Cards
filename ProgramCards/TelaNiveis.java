@@ -1,21 +1,3 @@
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.border.Border;
-
 public class TelaNiveis extends JFrame {
 	   JLabel rotulo1;
 	   JMenuBar barrinha;
@@ -44,8 +26,10 @@ public class TelaNiveis extends JFrame {
 		   imaNivel[5] = new ImageIcon(getClass().getResource("nivel6.png"));
 		   imaNivel[6] = new ImageIcon(getClass().getResource("nivel7.png"));
 		   imaNivel[7] = new ImageIcon(getClass().getResource("nivel8trac.png"));
-		   imaNivel[8] = new ImageIcon(getClass().getResource("nivel9trac.png"));
-		   imaNivel[9] = new ImageIcon(getClass().getResource("nivel10trac.png"));
+		   imaNivel[8] = new ImageIcon(getClass().getResource("Group 12.png"));
+		   imaNivel[9] = new ImageIcon(getClass().getResource("Group 12.png"));
+		   
+		
 		   
 		  Container cont = getContentPane();
 		  cont.setBackground(azul);
