@@ -4,10 +4,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -40,20 +43,46 @@ public class MudarNick extends JFrame {
 		txtNomeNovo = new JTextField();
 		btSalvar = new JButton("Salvar");
 		btSalvar.addActionListener(
-				new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent evt) {
+			new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent evt) {
+					try {
 						String nome_novo, nomeUsuario;
-						
+							
 						nomeUsuario = txtNomeAnt.getText();
-						nome_novo = txtNomeNovo.getText();
-						
+							
 						Usuario objusu = new Usuario();
 						objusu.setNomeUsuario(nomeUsuario);
-						objusu.setNomeNovo(nome_novo);
-						
+							
 						UsuarioBD objusubd = new UsuarioBD();
-						objusubd.AlterarNome(objusu);
+						objusubd.verificar(objusu);
+						ResultSet rsusubd = objusubd.verificar(objusu);
+							
+					if (rsusubd.next()) {
+						JOptionPane.showMessageDialog(null, "Usuário encontrado! Insira seu novo nome de Usuário");
+						
+					 try {
+						 nome_novo = txtNomeNovo.getText();
+						    
+						 Usuario objusu2 = new Usuario();
+						  objusu2.setNomeNovo(nome_novo);
+						    
+						 UsuarioBD objusubd2 = new UsuarioBD();
+						  objusubd2.alterarNome(objusu2);
+						
+						//JOptionPane.showMessageDialog(null, "Nome de Usuário alterado com sucesso!");
+
+				   } catch (Exception err2) {
+						JOptionPane.showMessageDialog(null, "Novo Nick" + err2);
+				   }
+   
+				  } else {
+					  JOptionPane.showMessageDialog(null, "Usuário não encontrado!");
+				  }
+						   
+				} catch (SQLException err) {
+					JOptionPane.showMessageDialog(null, "Verificar Nick" + err);
+				}
 				  }
 			  });
 
