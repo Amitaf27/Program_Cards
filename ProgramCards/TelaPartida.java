@@ -4,15 +4,20 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Point;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
-//falta os imports e estÃ¡ incompleto por enquanto
+//falta os imports e estÃƒÂ¡ incompleto por enquanto
 
 public class TelaPartida extends JFrame { 
   
@@ -25,11 +30,39 @@ public class TelaPartida extends JFrame {
      Color azulc = new Color(65,105,225); 
      Color ouro = new Color(238,201,0); 
      Font fonte1 = new Font("Arial", Font.BOLD, 24); 
+     private JMenuBar  barra;
+     private JMenu opcao;
+     private JMenuItem config, voltar;
      int cont=0; 
      
      boolean mouseP = false; 
   
       public TelaPartida(){ 
+    	  
+    	  
+    	  
+    	  barra = new JMenuBar();  
+          setJMenuBar(barra);  
+          opcao = new JMenu("Opções");  
+                    
+          config = new JMenuItem("Configurações");  
+          voltar = new JMenuItem("Voltar");  
+          
+          voltar.addActionListener(  
+         		 new ActionListener(){  
+         			 public void actionPerformed(ActionEvent e) { 
+         			
+                         new Menu();
+                         dispose();
+        
+         				
+         			 }       
+         		 });                 
+          
+          barra.add(opcao);  
+          barra.setBackground(ouro);  
+          opcao.add(config);  
+          opcao.add(voltar);          
   
               painel = new JPanel(); 
               painel.setLayout(null); 
@@ -236,8 +269,9 @@ public class TelaPartida extends JFrame {
   
                          @Override 
                          public void mouseEntered(MouseEvent arg0) { 
-                                 // TODO Auto-generated method stub 
-  
+                                 
+
+                        	 
                          } 
                           
                          public void mouseExit(MouseEvent args0){ 
@@ -328,45 +362,86 @@ public class TelaPartida extends JFrame {
               cont.add(imaScanf); 
               cont.add(imaPrintf); 
   
-              painel.setBounds(450,50,1000,200); 
+              painel.setBounds(200,50,1000,150); 
               perg.setBounds(20,50,900,100); 
-              imaIf.setBounds(695,740,170,300); 
-              imaInclude.setBounds(515,740,170,300); 
-              imaFor.setBounds(875,740,170,300); 
-              imaScanf.setBounds(1055,740,170,300); 
-              imaPrintf.setBounds(1235,740,170,300); 
+              imaIf.setBounds(240,400,170,300); 
+              imaInclude.setBounds(410,400,170,300); 
+              imaFor.setBounds(590,400,170,300); 
+              imaScanf.setBounds(760,400,170,300); 
+              imaPrintf.setBounds(930,400,170,300); 
   
- new Mover().start(); 
-       setSize(dimensao); 
-       setLayout(null); 
-       setVisible(true); 
+      new Mover().start(); 
+      setSize(1366, 768);
+      setLayout(null); 
+      setVisible(true); 
   
   
  } 
   
-      public class Mover extends Thread{ 
+      public class Mover extends Thread implements MouseListener { 
               public void run(){ 
                       while(true){ 
                               try{ 
                                       sleep(10); 
                               }catch(Exception erro){} 
-                              if(mouseP){ 
-                                      Point ponto = getMousePosition(); 
-                                             if(cont >= 2){ 
-                                            	 
-                                            	                                         	 
-                                            	 
-                                                   imaFor.setBounds(ponto.x-85,ponto.y-150,170,300); 
-                                                    imaIf.setBounds(ponto.x-85,ponto.y-150,170,300); 
-                                                    imaScanf.setBounds(ponto.x-85,ponto.y-150,170,300); 
-                                                     imaPrintf.setBounds(ponto.x-85,ponto.y-150,170,300); 
-                                                    imaInclude.setBounds(ponto.x-85,ponto.y-150,170,300); 
-                                             } 
-  
-                              } 
+                
                       } 
-              } 
-      } 
+      	
+				
+			}
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+				  if(mouseP){ 
+                      Point ponto = getMousePosition(); 
+                             if(cont >= 2){ 
+                            	 
+                            	
+                                     int x = 1235; 
+                                     int y = 740; 
+                                     
+                                     imaPrintf.setBounds(ponto.x-85,ponto.y-150,170,300); 
+                             } 
+                             
+				  }             
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+				
+					  
+				
+			}
+
+		
+     
+      
+      
+      
      public static void main (String[]args){ 
         TelaPartida ex = new TelaPartida(); 
         ex.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
