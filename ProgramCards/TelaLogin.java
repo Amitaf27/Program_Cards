@@ -65,7 +65,7 @@ private static final long serialVersionUID = 1L;
            btEsq.setForeground(new Color(50,205,50));
            btEsq.addActionListener( new ActionListener(){
         	   public void actionPerformed(ActionEvent arg0) {
-        		   new RecuperaSenha1();
+        		   //new RecuperaSenha1();
         		   setVisible(true);
         		   
         		   //dispose();
