@@ -1,19 +1,13 @@
-create  database ProgramBD;
-use ProgramBD;
+create schema programbd;
+use programbd;
 
-drop table Usuario;
+drop table if exists usuario;
 
-create table Usuario (
-    nomeUsuario VARCHAR (50) not null unique,
-    senha CHAR (6) primary key not null,
-    nome VARCHAR (50) not null,
-    idade int not null
+create table usuario (
+	nomeUsuario varchar(50) primary key unique,
+    senha char(10) unique not null,
+    nome varchar(50),
+    email varchar(100)
 );
 
-select * from Usuario;
-
-alter table usuario 
- drop PRIMARY KEY,
- add PRIMARY KEY (nomeUsuario),
- add UNIQUE INDEX senha_UNIQUE (senha ASC) VISIBLE;
- ;
+select * from usuario;
