@@ -14,7 +14,7 @@ public class UsuarioBD {
 	
 	//Cadastro de Usuário
 		public void cadastrar(Usuario usu) {
-			String sqlCads = "insert into Usuario (nome, nomeUsuario, idade, senha) values (?, ?, ?, ?)";
+			String sqlCads = "insert into Usuario (nome, nomeUsuario, email, senha) values (?, ?, ?, ?)";
 		
 			connCads = new ConexaoBD().conectaBD();
 		
@@ -22,7 +22,7 @@ public class UsuarioBD {
 			  pstm = connCads.prepareStatement(sqlCads);
 			  pstm.setString(1, usu.getNome());
 			  pstm.setString(2, usu.getNomeUsuario());
-			  pstm.setString(3, usu.getIdade());
+			  pstm.setString(3, usu.getEmail());
 			  pstm.setString(4, usu.getSenha());
 			 
 			  pstm.execute();
