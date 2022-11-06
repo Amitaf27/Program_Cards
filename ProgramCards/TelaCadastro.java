@@ -33,10 +33,7 @@ public class TelaCadastro extends JFrame {
     
 	public TelaCadastro() {
 		
-		
-         
-		
-        rotulo1 =  new JLabel("Cadastro");
+		rotulo1 =  new JLabel("Cadastro");
         rotulo1.setFont(fonte2);
         rotulo1.setForeground(Color.WHITE);
         rotulo2 = new JLabel();
@@ -51,13 +48,13 @@ public class TelaCadastro extends JFrame {
         text1.setBackground(new Color(0, 191, 225));
         text1.setForeground(Color.white);
         
-        text2 = new JTextField("Nome de UsuÃƒÆ’Ã‚Â¡rio");
+        text2 = new JTextField("Nome de Usuário");
         text2.setFont(fonte1);
         text2.setBorder(b);
         text2.setBackground(new Color(0, 191, 225));
         text2.setForeground(Color.WHITE);
         
-        text3 = new JTextField("Idade");
+        text3 = new JTextField("E-mail");
         text3.setFont(fonte1);
         text3.setBorder(b);
         text3.setBackground(new Color(0, 191, 225));
@@ -97,16 +94,16 @@ public class TelaCadastro extends JFrame {
 
    				public void actionPerformed(ActionEvent evt) {
    					
-   					String nickName, nome, senha, idade;
+   					String nickName, nome, senha, email;
    					 nome = text1.getText();
    					 nickName = text2.getText();
-   					 idade = text3.getText();
+   					 email = text3.getText();
    					 senha = text4.getText();
    					 
    					Usuario usuario = new Usuario();
    					 usuario.setNome(nome);
    					 usuario.setNomeUsuario(nickName);
-   					 usuario.setIdade(idade);
+   					 usuario.setEmail(email)
    					 usuario.setSenha(senha);
    					 
    					UsuarioBD usuario1 = new UsuarioBD();
@@ -114,6 +111,7 @@ public class TelaCadastro extends JFrame {
    					
    				} 
      	        });
+          
           painel.add(botao);          
           botao.addActionListener(
         		 new ActionListener() {
@@ -135,7 +133,7 @@ public class TelaCadastro extends JFrame {
           cont.setBackground(new Color(25, 25, 112));
          
           
-          botao1 = new JButton("JÃƒÆ’Ã‚Â¡ possui cadastro? Clique aqui");
+          botao1 = new JButton("Já possui cadastro? Clique aqui");
           botao1.setOpaque(false);
           botao1.setFocusable(false);
           botao1.setContentAreaFilled(false);
