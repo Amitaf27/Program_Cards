@@ -2,7 +2,7 @@ package BancoDados;
 
 public class Usuario {
 	private String nomeUsuario, nome, nomeNovo;
-	private String senha, idade;
+	private String senha, email;
 	
 	public String getNomeUsuario() {
 		return nomeUsuario;
@@ -28,20 +28,20 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public String getIdade() {
-		return idade;
-	}
-
-	public void setIdade(String idade) {
-		this.idade = idade;
-	}
-
 	public String getNomeNovo() {
 		return nomeNovo;
 	}
 
 	public void setNomeNovo(String nomeNovo) {
 		this.nomeNovo = nomeNovo;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }
