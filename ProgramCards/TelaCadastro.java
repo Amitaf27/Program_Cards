@@ -48,7 +48,7 @@ public class TelaCadastro extends JFrame {
         text1.setBackground(new Color(0, 191, 225));
         text1.setForeground(Color.white);
         
-        text2 = new JTextField("Nome de Usuário");
+        text2 = new JTextField("Nome de UsuÃ¡rio");
         text2.setFont(fonte1);
         text2.setBorder(b);
         text2.setBackground(new Color(0, 191, 225));
@@ -103,7 +103,7 @@ public class TelaCadastro extends JFrame {
    					Usuario usuario = new Usuario();
    					 usuario.setNome(nome);
    					 usuario.setNomeUsuario(nickName);
-   					 usuario.setEmail(email)
+   					 usuario.setEmail(email);
    					 usuario.setSenha(senha);
    					 
    					UsuarioBD usuario1 = new UsuarioBD();
@@ -133,7 +133,7 @@ public class TelaCadastro extends JFrame {
           cont.setBackground(new Color(25, 25, 112));
          
           
-          botao1 = new JButton("Já possui cadastro? Clique aqui");
+          botao1 = new JButton("JÃ¡ possui cadastro? Clique aqui");
           botao1.setOpaque(false);
           botao1.setFocusable(false);
           botao1.setContentAreaFilled(false);
