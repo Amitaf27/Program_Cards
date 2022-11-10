@@ -24,21 +24,20 @@ public class RecuperaSenha extends JFrame{
         Color verde = new Color(0,187,45);
         Color azulClaro = new Color(65,105,225);
     	Font fonte1 = new Font("Arial", Font.BOLD, 30);
-    	Font fonte2 = new Font("Arial", Font.BOLD, 20);
+    	Font fonte2 = new Font("Arial", 0 , 20);
     	Font fonte3 = new Font("Arial", Font.BOLD, 14);
     	Border b = BorderFactory.createLineBorder(Color.black, 3);
 
         private JPanel painel = new JPanel();
-     public RecuperaSenha(){
+        public RecuperaSenha(){
     	 
  //configurando o painel
 	      ImCade = new JLabel(cadeado);
     	  painel.setBorder(b);
-    	  painel.setSize(500,500);
     	  painel.setLayout(null);
     	  painel.setBackground(azulClaro);
     	  
-          recupera = new JLabel("RECUPERACAO DE SENHA");
+          recupera = new JLabel("Confirmar Email");
           recupera.setForeground(Color.WHITE);
           recupera.setFont(fonte1);
           txtIn = new JLabel("Insira o email que foi informado no cadastro.");
@@ -73,7 +72,7 @@ public class RecuperaSenha extends JFrame{
 
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
-	//					new TelaLogin();
+						new TelaLogin();
      					setVisible(false);
 					}
                  	  
@@ -94,13 +93,12 @@ public class RecuperaSenha extends JFrame{
         cont.add(painel);
         cont.add(btSair);
         
-        recupera.setBounds(50,50,400,50);
-        ImCade.setBounds(160,100,100,100);
-        txtIn.setBounds(70,200,350,50);
-        email.setBounds(70,250,350,50);
-        btConfirma.setBounds(70,310,350,50);
-        painel.setBounds(430,100,500,500);
-        btSair.setBounds(580,600,200,50);
+        recupera.setBounds(110,60,400,50);
+        txtIn.setBounds(60,140,350,50);
+        email.setBounds(60,200,350,50);
+        btConfirma.setBounds(60,260,350,50);
+        painel.setBounds(430,100,450,450);
+        btSair.setBounds(550,560,200,50);
 
         setLayout(null);
         setVisible(true);
@@ -116,18 +114,23 @@ public class RecuperaSenha extends JFrame{
              public VerificarEmail(){
 //configurando painel
             	 painel1.setLayout(null);
-            	 painel1.setSize(450,450);
+           // 	 painel1.setSize(450,450);
             	 painel1.setBackground(azulClaro);
             	 painel1.setBorder(b);
             	 
                 verificar = new JLabel("Verificar Email");
                 verificar.setFont(fonte1);
+                verificar.setForeground(Color.WHITE);
+
                 infV = new JLabel("Insira o codigo que foi enviado para o seu email");
+                infV.setForeground(Color.WHITE);
                 infV.setFont(fonte3);
                 cod = new JTextField("Codigo de confirmacao");
                 btVerificar = new JButton("Verificar");
                 btVerificar.setBackground(verde);
                 btVerificar.setBorder(b);
+                btVerificar.setForeground(Color.WHITE);
+                btVerificar.setFont(fonte2);
                 btVerificar.addActionListener(
                		 new ActionListener() {
 
@@ -148,11 +151,11 @@ public class RecuperaSenha extends JFrame{
               cont.setBackground(azul);
      
               cont.add(painel1);
-             painel1.setBounds(438,100,500,500);
-             verificar.setBounds(140,20,350,100);
-             infV.setBounds(70,180,350,50);
-             cod.setBounds(70,230,350,50);
-             btVerificar.setBounds(70,280,350,50);
+             painel1.setBounds(450,100,450,450);
+             verificar.setBounds(120,30,350,100);
+             infV.setBounds(50,150,350,50);
+             cod.setBounds(50,205,360,50);
+             btVerificar.setBounds(50,270,360,50);
 
              setLayout(null);
              setVisible(true);
@@ -173,7 +176,6 @@ public class RecuperaSenha extends JFrame{
 //configurando painel 
             painel2.setBackground(azulClaro);
             painel2.setLayout(null);
-            painel2.setSize(500,500);
             painel2.setBorder(b);
 
 
@@ -182,16 +184,17 @@ public class RecuperaSenha extends JFrame{
             alterS.setForeground(Color.WHITE);
 
             nvS = new JLabel("Nova senha");
+            nvS.setForeground(Color.WHITE);
+
             nvS.setFont(fonte2);
 
             nvSenha = new JTextField("Nova senha");
-            nvSenha.setFont(fonte3);
 
             confirS = new JLabel("Confirmar nova senha");
+            confirS.setForeground(Color.WHITE);
             confirS.setFont(fonte2);
 
             repS = new JTextField("Repetir senha");
-            repS.setFont(fonte3);
      
             btFinalizar = new JButton("Finalizar");
             btFinalizar.setBackground(verde);
@@ -203,7 +206,7 @@ public class RecuperaSenha extends JFrame{
 
   					@Override
   					public void actionPerformed(ActionEvent arg0) {
-  						//new TelaLogin();
+  						new TelaLogin();
        					setVisible(false);
   					}
                    	  
@@ -223,13 +226,13 @@ public class RecuperaSenha extends JFrame{
           
 //configurando a posicao dos elementos no painel
 
-          	painel2.setBounds(438,100,500,500);
-          	alterS.setBounds(150,30,300,100);
-          	nvS.setBounds(70,120,200,50);
-          	nvSenha.setBounds(70,170,350,50);
-          	confirS.setBounds(70,220,250,50);
-        	repS.setBounds(70,270,350,50);
-        	btFinalizar.setBounds(70,330,350,50);
+          	painel2.setBounds(438,100,450,450);
+          	alterS.setBounds(130,30,300,100);
+          	nvS.setBounds(50,120,200,50);
+          	nvSenha.setBounds(50,170,350,50);
+          	confirS.setBounds(50,220,250,50);
+        	repS.setBounds(50,270,350,50);
+        	btFinalizar.setBounds(50,330,350,50);
 
          
          setLayout(null);
