@@ -133,72 +133,101 @@ public class TelaNiveis extends JFrame {
 		        		 }); 
 			   
 			   
-			   nivel[0].addActionListener(  
-		        		 new ActionListener(){  
-		        			 public void actionPerformed(ActionEvent e) { 
-		        			
-		                        new TelaPartida();
-		                        dispose();
-		        				
-		        			 }       
-		        		 });                
-			   
 			   nivel[1].addActionListener(  
 		        		 new ActionListener(){  
 		        			 public void actionPerformed(ActionEvent e) { 
 		        			
-		                        new TelaPartida();
+		                        new TelaPartida2();
 		                        dispose();
 		        				
 		        			 }       
 		        		 });                
-			   
-			   
 			   
 			   nivel[2].addActionListener(  
 		        		 new ActionListener(){  
 		        			 public void actionPerformed(ActionEvent e) { 
 		        			
-		                        new TelaPartida();
+		                        new TelaPartida3();
 		                        dispose();
 		        				
 		        			 }       
-		        		 }); 
+		        		 });                
+			   
+			   
 			   
 			   nivel[3].addActionListener(  
 		        		 new ActionListener(){  
 		        			 public void actionPerformed(ActionEvent e) { 
 		        			
-		                        new TelaPartida();
+		                        new TelaPartida4();
 		                        dispose();
 		        				
 		        			 }       
-		        		 });
+		        		 }); 
 			   
 			   nivel[4].addActionListener(  
 		        		 new ActionListener(){  
 		        			 public void actionPerformed(ActionEvent e) { 
 		        			
-		                        new TelaPartida();
-		                        dispose();
-		        				
-		        			 }       
-		        		 }); 
-			   nivel[5].addActionListener(  
-		        		 new ActionListener(){  
-		        			 public void actionPerformed(ActionEvent e) { 
-		        			
-		                        new TelaPartida();
+		                        new TelaPartida5();
 		                        dispose();
 		        				
 		        			 }       
 		        		 });
 			   
+			   nivel[5].addActionListener(  
+		        		 new ActionListener(){  
+		        			 public void actionPerformed(ActionEvent e) { 
+		        			
+		                        new TelaPartida6();
+		                        dispose();
+		        				
+		        			 }       
+		        		 }); 
 			   nivel[6].addActionListener(  
 		        		 new ActionListener(){  
 		        			 public void actionPerformed(ActionEvent e) { 
 		        			
-		                        new TelaPartida();
+		                        new TelaPartida7();
+		                        dispose();
+		        				
+		        			 }       
+		        		 });
+			   
+			   nivel[7].addActionListener(  
+		        		 new ActionListener(){  
+		        			 public void actionPerformed(ActionEvent e) { 
+		        			
+		                        new TelaPartida8();
+		                        dispose();
+		        				
+		        			 }       
+		        		 });
+			   nivel[7].addActionListener(  
+		        		 new ActionListener(){  
+		        			 public void actionPerformed(ActionEvent e) { 
+		        			
+		                        new TelaPartida8();
+		                        dispose();
+		        				
+		        			 }       
+		        		 });
+			   
+			   nivel[8].addActionListener(  
+		        		 new ActionListener(){  
+		        			 public void actionPerformed(ActionEvent e) { 
+		        			
+		                        new TelaPartida9();
+		                        dispose();
+		        				
+		        			 }       
+		        		 });
+			   
+			   nivel[9].addActionListener(  
+		        		 new ActionListener(){  
+		        			 public void actionPerformed(ActionEvent e) { 
+		        			
+		                        new TelaPartida10();
 		                        dispose();
 		        				
 		        			 }       
