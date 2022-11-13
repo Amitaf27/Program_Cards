@@ -4,15 +4,21 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
+
+import BancoDados.Usuario;
+import BancoDados.UsuarioBD;
 
 
 public class RecuperaSenha extends JFrame{
@@ -43,7 +49,7 @@ public class RecuperaSenha extends JFrame{
           txtIn = new JLabel("Insira o email que foi informado no cadastro.");
           txtIn.setFont(fonte3);
           txtIn.setForeground(Color.WHITE);
-          email = new JTextField(" Email");
+          email = new JTextField("Email");
 
           btConfirma = new JButton("Confirmar");
           btConfirma.addActionListener(
@@ -51,11 +57,34 @@ public class RecuperaSenha extends JFrame{
 
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
-						new VerificarEmail();
-     					setVisible(false);
-					}
-                 	  
-                  });
+						
+						try {
+							String emailinser;
+							
+							emailinser = email.getText();
+							
+							Usuario objusuemail = new Usuario();
+							objusuemail.setEmail(emailinser);
+								
+							UsuarioBD objusubd = new UsuarioBD();
+							objusubd.verificarEmail(objusuemail);
+							ResultSet rsusubdemail = objusubd.verificarEmail(objusuemail);
+							
+						    if(rsusubdemail.next()) {
+						    	JOptionPane.showMessageDialog(null, "E-mail encontrado!");
+						    	new VerificarEmail();
+		     					setVisible(false);
+						   } else {
+							   JOptionPane.showMessageDialog(null, "E-mail não encontrado!");
+						   }
+						    
+					 } catch (SQLException erro) {
+						 JOptionPane.showMessageDialog(null, "Verificar Nick" + erro);
+				     }
+						
+					}  
+				});
+          
           btConfirma.setBackground(verde);
           btConfirma.setForeground(Color.WHITE);
           btConfirma.setFont(fonte2);
@@ -74,6 +103,8 @@ public class RecuperaSenha extends JFrame{
 					public void actionPerformed(ActionEvent arg0) {
 						new TelaLogin();
      					setVisible(false);
+     					
+     					dispose();
 					}
                  	  
                   });
@@ -162,9 +193,10 @@ public class RecuperaSenha extends JFrame{
              setSize(1366,768);
 
 
-}
+         }
 
-}
+  }
+       
 //terceira classe : a de redefinir senha
        private class NovaSenha extends JFrame{
            JLabel alterS,nvS,confirS;
@@ -206,8 +238,30 @@ public class RecuperaSenha extends JFrame{
 
   					@Override
   					public void actionPerformed(ActionEvent arg0) {
-  						new TelaLogin();
-       					setVisible(false);
+  						try {
+  							String novaSenha;
+  							novaSenha = nvSenha.getText();
+  							
+  							Usuario objusuarions = new Usuario();
+  							objusuarions.setSenha(novaSenha);
+  							
+  							UsuarioBD objusuariobdns = new UsuarioBD();
+  							objusuariobdns.alterarSenha(objusuarions);
+  							
+  							if (objusuarions.getSenha().equals(novaSenha)) {
+  								JOptionPane.showMessageDialog(null, "Senha alterada com sucesso!");
+  								
+  								new TelaLogin();
+  	  	       					setVisible(false);
+  	  	       					
+  	  	       					dispose();
+							} else {
+								JOptionPane.showMessageDialog(null, "Não foi possível alterar a senha :(");
+							}
+  					
+						} catch (Exception erronew) {
+							JOptionPane.showMessageDialog(null, "RecuperaSenha NovaSenha" + erronew);
+						}
   					}
                    	  
                     });
