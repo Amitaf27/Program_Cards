@@ -53,6 +53,7 @@ public class UsuarioBD {
 	      }
 	   }
 		
+		//Verificar nome - MudarNick
 		public ResultSet verificar(Usuario objusuario) {
 			Connection connVerif = new ConexaoBD().conectaBD();
 			
@@ -65,11 +66,12 @@ public class UsuarioBD {
 				return rs;
 				
 			} catch (SQLException erroVerif) {
-				JOptionPane.showMessageDialog(null, "UsuarioBD Verificar" + erroVerif);
+				JOptionPane.showMessageDialog(null, "UsuarioBD Verificar usuario" + erroVerif);
 				return null;
 			}
 		}
 		
+		//Alterar nome - MudarNick
         public void alterarNome(Usuario objusu) {
         	String sqlAlter = "update usuario set nomeUsuario = ? where nomeUsuario = ?";
         	
@@ -84,4 +86,41 @@ public class UsuarioBD {
   			  JOptionPane.showMessageDialog(null, "UsuarioBD - AlterarNome" + e);
   		  }
        }
+        
+        //Verificar E-mail - RecuperarSenha
+        public ResultSet verificarEmail(Usuario usuemail) {
+			Connection connVerifEmail = new ConexaoBD().conectaBD();
+			
+			try {
+				String sqlVerifEmail = "select * from usuario where email = ?";
+				PreparedStatement pstmVerifEmail = connVerifEmail.prepareStatement(sqlVerifEmail);
+				pstmVerifEmail.setString(1, usuemail.getEmail());
+				
+				ResultSet rs = pstmVerifEmail.executeQuery();
+				return rs;
+				
+			} catch (SQLException erroVerifEmail) {
+				JOptionPane.showMessageDialog(null, "UsuarioBD Verificar email" + erroVerifEmail);
+				return null;
+			}
+		}
+        
+        //AlterarSenha - RecuperarSenha
+        public void alterarSenha(Usuario objususenha) {
+        	String sqlAlterSenha = "update usuario set senha = ? where email = ?";
+        	
+        	connAlter = new ConexaoBD().conectaBD();
+    		
+  		  try {
+  			  pstm = connAlter.prepareStatement(sqlAlterSenha);
+  			  pstm.setString(1, objususenha.getSenha());
+  			  pstm.setString(2, objususenha.getEmail());
+  			  
+  			  pstm.execute();
+  			  pstm.close();
+  			  
+  		 } catch (SQLException erro) {
+  			JOptionPane.showMessageDialog(null, "UsuarioBD AlterarSenha" + erro);
+		 }
+      }
 }
