@@ -2,7 +2,6 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -13,13 +12,12 @@ import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.border.Border;
 
-
+import BancoDados.Usuario;
 
  public class Questionario extends JFrame { 
 
@@ -645,95 +643,102 @@ import javax.swing.border.Border;
 
                } 
   
-                       private class AcionaFinal implements ActionListener{
+            private class AcionaFinal implements ActionListener{
+            	//Usuario objusuario = new Usuario();
+            	
+            	@Override
+				public void actionPerformed(ActionEvent arg0) {
+							
+            		if(cont>=0 && cont <=5){
+            			resul = new JLabel("Seu nivel é iniciante");
+						btOk = new JButton("OK");
+						///objusuario.setResultadoQuest(resul.getText());
+						
+						btOk.addActionListener(new ActionListener(){
+
+					  @Override
+					  public void actionPerformed(ActionEvent e) {
+						  new Menu();
+						  setVisible(false);
+					}					
+				});
+								
+					  add(painel1);
+					  painel1.setBackground(azul);
+					  painel1.setLayout(null);
+					  painel1.setVisible(true);
+					  painel1.add(resul);
+					  painel1.add(btOk);
+								
+					  painel1.setBounds(488,184,400,400);
+					  resul.setBounds(50,100,200,50);
+					  btOk.setBounds(100,200,100,50);
+
+								
+            	} else if(cont>=6 && cont <=8){
+            		resul = new JLabel("Seu nivel é intermediário");
+					btOk = new JButton("OK");
+					//objusuario.setResultadoQuest(resul.getText());
+					
+					btOk.addActionListener(new ActionListener(){
 
 						@Override
-						public void actionPerformed(ActionEvent arg0) {
-							
-							if(cont>=0 && cont <=5){
-								resul = new JLabel("Seu nivel e iniciante");
-								btOk = new JButton("ok");
-								btOk.addActionListener(new ActionListener(){
-
-									@Override
-									public void actionPerformed(ActionEvent e) {
-										//new Menu();
-										setVisible(false);
-									}
-									
-								});
-								add(painel1);
-								painel1.setBackground(azul);
-								painel1.setLayout(null);
-								painel1.setVisible(true);
-								painel1.add(resul);
-								painel1.add(btOk);
-								
-								painel1.setBounds(488,184,400,400);
-								resul.setBounds(50,100,200,50);
-								btOk.setBounds(100,200,100,50);
-
-								
-							}else if(cont>=6 && cont <=8){
-								resul = new JLabel("Seu nivel e intermediario");
-								btOk = new JButton("ok");
-								btOk.addActionListener(new ActionListener(){
-
-									@Override
-									public void actionPerformed(ActionEvent e) {
-										//new Menu();
-										setVisible(false);
-									}
-									
-								});
-								add(painel1);
-								painel1.setBackground(azul);
-								painel1.setLayout(null);
-								painel1.setVisible(true);
-								painel1.add(resul);
-								painel1.add(btOk);
-								painel.setFocusable(true);
-								
-								painel1.setBounds(600,200,400,400);
-								resul.setBounds(50,100,200,50);
-								btOk.setBounds(100,200,100,50);
-
-								
-							} else if(cont>=9){
-								resul = new JLabel("Seu nivel e Avancado");
-								btOk = new JButton("ok");
-								btOk.addActionListener(new ActionListener(){
-
-									@Override
-									public void actionPerformed(ActionEvent e) {
-										//new Menu();
-										setVisible(false);
-									}
-									
-								});
-								add(painel1);
-								painel1.setBackground(azul);
-								painel1.setLayout(null);
-								painel1.setVisible(true);
-								painel1.add(resul);
-								painel1.add(btOk);
-								painel.setFocusable(true);
-								
-								painel1.setBounds(600,200,400,400);
-								resul.setBounds(50,100,200,50);
-								btOk.setBounds(100,200,100,50);
-
-								
-							}
+						public void actionPerformed(ActionEvent e) {
 							new Menu();
-                                                         setVisible(false);
-						}
+							setVisible(false);
+					}		
+				});
+						
+					 add(painel1);
+					 painel1.setBackground(azul);
+					 painel1.setLayout(null);
+					 painel1.setVisible(true);
+					 painel1.add(resul);
+					 painel1.add(btOk);
+					 painel.setFocusable(true);
+								
+					 painel1.setBounds(600,200,400,400);
+					 resul.setBounds(50,100,200,50);
+					 btOk.setBounds(100,200,100,50);
+
+								
+            	} else if(cont>=9){
+            		resul = new JLabel("Seu nivel é Avançado");
+					btOk = new JButton("OK");
+					//objusuario.setResultadoQuest(resul.getText());
+					
+					btOk.addActionListener(new ActionListener(){
+
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							new Menu();
+							setVisible(false);
+					}
+									
+				});
+						
+					  add(painel1);
+					  painel1.setBackground(azul);
+					  painel1.setLayout(null);
+					  painel1.setVisible(true);
+					  painel1.add(resul);
+					  painel1.add(btOk);
+				      painel.setFocusable(true);
+								
+					  painel1.setBounds(600,200,400,400);
+					  resul.setBounds(50,100,200,50);
+					  btOk.setBounds(100,200,100,50);
+
+								
+				}
+							
+			}
 
                     	   
-                       }
-              public static void main(String[]args) { 
+        }
+                       
+         public static void main(String[]args) { 
                       Questionario ex = new Questionario(); 
                       ex.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-              } 
+        } 
  }
-
