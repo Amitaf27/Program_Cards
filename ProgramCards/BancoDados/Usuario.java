@@ -2,7 +2,7 @@ package BancoDados;
 
 public class Usuario {
 	private String nomeUsuario, nome, nomeNovo;
-	private String senha, email;
+	private String senha, email, resultadoQuest;
 	
 	public String getNomeUsuario() {
 		return nomeUsuario;
@@ -42,6 +42,14 @@ public class Usuario {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getResultadoQuest() {
+		return resultadoQuest;
+	}
+
+	public void setResultadoQuest(String resultadoQuest) {
+		this.resultadoQuest = resultadoQuest;
 	}
 
 }
