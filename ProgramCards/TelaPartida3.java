@@ -75,13 +75,7 @@ public class TelaPartida3 extends JFrame {
 
 int a;
 
-Scanf("%__", &a);
-
-Carta 1 - b
-Carta 2 - c
-Carta 3 - f
-Carta 4 - d
-Carta 5 - a"); 
+Scanf("%__", &a)"); 
               perg.setFont(fonte1); 
               perg.setForeground(Color.WHITE); 
               painel.add(perg); 
