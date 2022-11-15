@@ -71,7 +71,13 @@ public class TelaPartida4 extends JFrame {
               painel.setLayout(null); 
               painel.setBackground(azulc); 
   
-              perg = new JLabel("falta4"); 
+              perg = new JLabel("Qual valor será retornado deste trecho de código? 
+
+int a = 1;
+int b = 5;
+int c = 10;
+
+printf(c/b+a)"); 
               perg.setFont(fonte1); 
               perg.setForeground(Color.WHITE); 
               painel.add(perg); 
