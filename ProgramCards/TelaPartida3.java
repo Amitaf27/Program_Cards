@@ -71,7 +71,17 @@ public class TelaPartida3 extends JFrame {
               painel.setLayout(null); 
               painel.setBackground(azulc); 
   
-              perg = new JLabel("falta3"); 
+              perg = new JLabel("Qual é o tipo de dado correspondente à área incompleta na sentença abaixo? 
+
+int a;
+
+Scanf("%__", &a);
+
+Carta 1 - b
+Carta 2 - c
+Carta 3 - f
+Carta 4 - d
+Carta 5 - a"); 
               perg.setFont(fonte1); 
               perg.setForeground(Color.WHITE); 
               painel.add(perg); 
