@@ -1,3 +1,13 @@
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -6,14 +16,8 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 import javax.swing.border.Border;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.Container;
 
 public class TelaNiveis extends JFrame {
 	   JLabel rotulo1;
@@ -30,6 +34,7 @@ public class TelaNiveis extends JFrame {
 	   Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
 	   int t1 = 0;
 	   int t3 = t1;
+	   Image backgroundImage;
 	   
 	   public TelaNiveis() {
 		  super("Ilha iniciante");
@@ -45,6 +50,19 @@ public class TelaNiveis extends JFrame {
 		   imaNivel[7] = new ImageIcon(getClass().getResource("nivel8trac.png"));
 		   imaNivel[8] = new ImageIcon(getClass().getResource("Group 12.png"));
 		   imaNivel[9] = new ImageIcon(getClass().getResource("Group 12.png"));
+		   
+	    	 
+		    backgroundImage = Toolkit.getDefaultToolkit().getImage(getClass().getResource("FundoIniciante.png"));
+			       
+		    
+		       this.setContentPane(new JPanel() {
+		   	         @Override
+		   	         public void paintComponent(Graphics g) {
+		   	            super.paintComponent(g);
+		   	            g.drawImage(backgroundImage, 0, 0, null);
+		   	         }
+		   	      });
+		    
 		   
 		
 		   
@@ -243,3 +261,4 @@ public class TelaNiveis extends JFrame {
 		   teste.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	   }
 }
+
