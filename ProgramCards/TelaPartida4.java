@@ -18,12 +18,12 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-//falta os imports e estÃƒÆ’Ã‚Â¡ incompleto por enquanto
+//falta os imports e estÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡ incompleto por enquanto
 
 public class TelaPartida4 extends JFrame { 
   
          private static final long serialVersionUID = 1L; 
-         private JLabel imaIf, imaFor,imaInclude, imaScanf, imaPrintf,perg; 
+         private JLabel imaIf, imaFor,imaInclude, imaScanf, imaPrintf,perg, perg2, perg3, perg4, perg5; 
      private JPanel painel; 
      private ImageIcon imFor,imif,include, scanf, imPrintf ; 
      Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize(); 
@@ -46,9 +46,9 @@ public class TelaPartida4 extends JFrame {
     	 
     	  barra = new JMenuBar();  
           setJMenuBar(barra);  
-          opcao = new JMenu("OpÃ§Ãµes");  
+          opcao = new JMenu("OpÃƒÂ§ÃƒÂµes");  
                     
-          config = new JMenuItem("ConfiguraÃ§Ãµes");  
+          config = new JMenuItem("ConfiguraÃƒÂ§ÃƒÂµes");  
           voltar = new JMenuItem("Voltar");  
           
           voltar.addActionListener(  
@@ -71,13 +71,34 @@ public class TelaPartida4 extends JFrame {
               painel.setLayout(null); 
               painel.setBackground(azulc); 
   
-              perg = new JLabel("Qual valor será retornado deste trecho de código? 
+              perg = new JLabel("Qual valor serÃ¡ retornado deste trecho de código? ");
+              perg2 = new JLabel("int a = 1;");
+            		  perg3 = new JLabel("int b = 5;");
+            				  perg4 = new JLabel("int c = 10;");
+            				  perg5 = new JLabel("printf(c/b+a));");
+            				  
+            				  
+            				  
 
-int a = 1;
-int b = 5;
-int c = 10;
+            	              perg2.setFont(fonte1); 
+            	              perg2.setForeground(Color.WHITE); 
+            	              painel.add(perg2); 
+            	              
 
-printf(c/b+a)"); 
+            	              perg3.setFont(fonte1); 
+            	              perg3.setForeground(Color.WHITE); 
+            	              painel.add(perg3); 
+
+            	              perg4.setFont(fonte1); 
+            	              perg4.setForeground(Color.WHITE); 
+            	              painel.add(perg4); 
+
+            	              perg5.setFont(fonte1); 
+            	              perg5.setForeground(Color.WHITE); 
+            	              painel.add(perg5); 
+ 
+    
+
               perg.setFont(fonte1); 
               perg.setForeground(Color.WHITE); 
               painel.add(perg); 
@@ -363,9 +384,13 @@ printf(c/b+a)");
               cont.add(imaScanf); 
               cont.add(imaPrintf); 
   
-              painel.setBounds(200,50,1000,150); 
-              perg.setBounds(20,50,900,100); 
-              imaIf.setBounds(240,400,170,300); 
+              painel.setBounds(200,50,1000,200); 
+              perg.setBounds(20,0,1000,100); 
+              perg2.setBounds(20,30,1000,100); 
+              perg3.setBounds(20,60,1000,100); 
+              perg4.setBounds(20,90,1000,100); 
+              perg5.setBounds(20,120,1000,100); 
+              imaIf.setBounds(240,150,170,300); 
               imaInclude.setBounds(410,400,170,300); 
               imaFor.setBounds(590,400,170,300); 
               imaScanf.setBounds(760,400,170,300); 
