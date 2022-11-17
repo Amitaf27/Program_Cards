@@ -40,16 +40,16 @@ public class TelaNiveis extends JFrame {
 		  super("Ilha iniciante");
 		  JMenu opcao = new JMenu("Opcoes");
 		  JMenuBar barrinha = new JMenuBar();
-		   imaNivel[0] = new ImageIcon(getClass().getResource("nivel1.png"));
-		   imaNivel[1] = new ImageIcon(getClass().getResource("nivel2.png"));
-		   imaNivel[2] = new ImageIcon(getClass().getResource("nivel3.png"));
-		   imaNivel[3] = new ImageIcon(getClass().getResource("nivel4.png"));
-		   imaNivel[4] = new ImageIcon(getClass().getResource("nivel5.png"));
-		   imaNivel[5] = new ImageIcon(getClass().getResource("nivel6.png"));
-		   imaNivel[6] = new ImageIcon(getClass().getResource("nivel7.png"));
-		   imaNivel[7] = new ImageIcon(getClass().getResource("nivel8trac.png"));
-		   imaNivel[8] = new ImageIcon(getClass().getResource("Group 12.png"));
-		   imaNivel[9] = new ImageIcon(getClass().getResource("Group 12.png"));
+		   imaNivel[0] = new ImageIcon(getClass().getResource("fot1.png"));
+		   imaNivel[1] = new ImageIcon(getClass().getResource("fot2.png"));
+		   imaNivel[2] = new ImageIcon(getClass().getResource("fot3.png"));
+		   imaNivel[3] = new ImageIcon(getClass().getResource("fot4.png"));
+		   imaNivel[4] = new ImageIcon(getClass().getResource("fot5.png"));
+		   imaNivel[5] = new ImageIcon(getClass().getResource("fot6.png"));
+		   imaNivel[6] = new ImageIcon(getClass().getResource("fot7.png"));
+		   imaNivel[7] = new ImageIcon(getClass().getResource("fot8.png"));
+		   imaNivel[8] = new ImageIcon(getClass().getResource("fot9.png"));
+		   imaNivel[9] = new ImageIcon(getClass().getResource("fot10.png"));
 		   
 	    	 
 		    backgroundImage = Toolkit.getDefaultToolkit().getImage(getClass().getResource("FundoIniciante.png"));
@@ -261,4 +261,6 @@ public class TelaNiveis extends JFrame {
 		   teste.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	   }
 }
+
+
 
