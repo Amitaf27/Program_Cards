@@ -27,10 +27,10 @@ public class Menu extends JFrame {
 		private JButton ilha1, ilha2, ilha3, livre;
 		private JButton btSom, btSom2, btNome, btConfirmar;
 	     
-		 ImageIcon band1 = new ImageIcon (getClass().getResource("bandIni.png"));	
-		 ImageIcon band2 = new ImageIcon (getClass().getResource("bandInt.png"));	
-		 ImageIcon band3 = new ImageIcon (getClass().getResource("bandAvan.png"));	
-		 ImageIcon band4 = new ImageIcon (getClass().getResource("bandLivre.png"));	
+		 ImageIcon band1 = new ImageIcon (getClass().getResource("ilhaINICIAN (2).png"));	
+		 ImageIcon band2 = new ImageIcon (getClass().getResource("ilhaINTER (2).png"));	
+		 ImageIcon band3 = new ImageIcon (getClass().getResource("ilhaAVANÇ.png"));	
+		 ImageIcon band4 = new ImageIcon (getClass().getResource("ilhaLIVRE.png"));	
 	     ImageIcon imagem1 = new ImageIcon(getClass().getResource("ilhas1.png"));
 	     ImageIcon imagem2 = new ImageIcon(getClass().getResource("ilhas2Bloqueada.png"));
 	     ImageIcon imagem3 = new ImageIcon(getClass().getResource("ilhas3Bloqueada.png"));
@@ -103,9 +103,9 @@ public class Menu extends JFrame {
 	      setTitle("ILHAS");  
          barrinha = new JMenuBar();  
          setJMenuBar(barrinha);  
-         opcao = new JMenu("OpÃƒÂ§ÃƒÂµes");  
+         opcao = new JMenu("OpÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Âµes");  
                    
-         config = new JMenuItem("ConfiguraÃƒÂ§ÃƒÂµes");  
+         config = new JMenuItem("ConfiguraÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Âµes");  
          sair = new JMenuItem("Sair");  
                      
          barrinha.add(opcao);  
@@ -120,7 +120,7 @@ public class Menu extends JFrame {
          config.setFont(texto);
          sair.setFont(texto);
                 
-        //configurando os botÃƒÆ’Ã‚Âµes do panel  
+        //configurando os botÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âµes do panel  
 
           btSom = new JButton(imagem5); 
       
@@ -142,11 +142,11 @@ public class Menu extends JFrame {
           btConfirmar.setFont(new Font("Arial", Font.BOLD, 14));  
                      
          //configurando o panel de configuracoes  
-          label = new JLabel("ConfiguraÃƒÂ§ÃƒÂµes");  
+          label = new JLabel("ConfiguraÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Âµes");  
            label.setFont(titulo);  
            label.setForeground(Color.BLACK);  
                      
-          label2 = new JLabel("MÃƒÂºsica");  
+          label2 = new JLabel("MÃƒÆ’Ã‚Âºsica");  
            label2.setForeground(Color.BLACK);  
            label2.setFont(texto);  
                      
@@ -348,5 +348,7 @@ public class Menu extends JFrame {
  
          
 }
+
+
 
 
