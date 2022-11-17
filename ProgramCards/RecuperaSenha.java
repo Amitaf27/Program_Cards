@@ -6,7 +6,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.NoSuchProviderException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -21,6 +32,7 @@ import BancoDados.Usuario;
 import BancoDados.UsuarioBD;
 
 
+
 public class RecuperaSenha extends JFrame{
         private JLabel recupera, txtIn,ImCade;
         private ImageIcon cadeado;
@@ -33,7 +45,67 @@ public class RecuperaSenha extends JFrame{
     	Font fonte2 = new Font("Arial", 0 , 20);
     	Font fonte3 = new Font("Arial", Font.BOLD, 14);
     	Border b = BorderFactory.createLineBorder(Color.black, 3);
+    	String emailFrom = "programcardsgame@gmail.com";
+        String passwordFrom = "xgealvpiivsumeoa";
+        String emailTo;
+        String subject;
+        String content;
 
+        Properties mPrope;
+        Session mSession;
+        MimeMessage Correo;
+               	 
+       	 
+       	 
+       private void createEmail(){
+       	 emailTo = email.getText();
+       	 subject = "Codigo de Confirmacao";
+       	 content = "12 feijao com arroz";
+       	 
+       	 mPrope.put("mail.smtp.host","smtp.gmail.com");
+       	 mPrope.put("mail.ssl.trust","smtp.gmail.com");
+       	 mPrope.setProperty("mail.smtp.starttls.enable","true");
+       	 mPrope.setProperty("mail.smtp.port","587");
+       	 mPrope.setProperty("mail.smtp.user",emailFrom);
+       	 mPrope.setProperty("mail.smtp.ssl.protocols","TLSv1.2");
+       	 mPrope.setProperty("mail.smtp.auth","true");
+       	 
+       	 mSession = Session.getDefaultInstance(mPrope);
+       	 
+       	 try {
+           	 Correo = new MimeMessage(mSession);
+   			Correo.setFrom(new InternetAddress(emailFrom));
+   			Correo.setRecipient(Message.RecipientType.TO, new InternetAddress(emailTo));
+   			Correo.setSubject(subject);
+   			Correo.setText(content,"ISO-8859-1","html");
+   			//System.out.println("boi");
+
+       	 }catch(AddressException e){
+       		 Logger.getLogger(RecuperaSenha.class.getName()).log(Level.SEVERE,null,e);
+   		} catch (MessagingException e) {
+   			// TODO Auto-generated catch block
+      		 Logger.getLogger(RecuperaSenha.class.getName()).log(Level.SEVERE,null,e);
+   		}
+        }
+       
+       private void sendEmail(){
+       	try {
+   			Transport mTransport = mSession.getTransport("smtp");
+   			mTransport.connect(emailFrom, passwordFrom);
+   			
+   			mTransport.sendMessage(Correo,Correo.getRecipients(Message.RecipientType.TO));
+   			mTransport.close();
+   			
+   		//	System.out.println("boi");
+   		} catch (NoSuchProviderException e) {
+   			// TODO Auto-generated catch block
+      		 Logger.getLogger(RecuperaSenha.class.getName()).log(Level.SEVERE,null,e);
+   		} catch (MessagingException e) {
+   			// TODO Auto-generated catch block
+      		 Logger.getLogger(RecuperaSenha.class.getName()).log(Level.SEVERE,null,e);
+   		}
+       }
+       
         private JPanel painel = new JPanel();
         public RecuperaSenha(){
     	 
@@ -61,6 +133,9 @@ public class RecuperaSenha extends JFrame{
 						try {
 							String emailinser;
 							
+							createEmail();
+				            sendEmail();
+				            
 							emailinser = email.getText();
 							
 							Usuario objusuemail = new Usuario();
@@ -134,6 +209,7 @@ public class RecuperaSenha extends JFrame{
         setLayout(null);
         setVisible(true);
         setSize(1366,768);
+        mPrope = new Properties();
 
  } 
  //segunda tela: a de confirmar email
@@ -167,8 +243,10 @@ public class RecuperaSenha extends JFrame{
 
       					@Override
       					public void actionPerformed(ActionEvent arg0) {
+      						if(cod.getText().equals(content)){
       						new NovaSenha();
            					setVisible(false);
+      						}
       					}
                        	  
                         });
