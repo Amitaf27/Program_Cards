@@ -25,3 +25,6 @@ update usuario set nomeUsuario = ? where nomeUsuario = ?;
 #mudar senha
 select * from usuario where email = ?;
 update usuario set senha = ? where email = ?;
+
+#resultado do questionario
+update usuario set resultado_quest = ? where id = (select max(id) from usuario);
