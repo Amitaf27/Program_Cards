@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -50,62 +51,15 @@ public class RecuperaSenha extends JFrame{
         String emailTo;
         String subject;
         String content;
+        String codigo;
+        String ln = "\n";
 
         Properties mPrope;
         Session mSession;
         MimeMessage Correo;
                	 
        	 
-       	 
-       private void createEmail(){
-       	 emailTo = email.getText();
-       	 subject = "Codigo de Confirmacao";
-       	 content = "12 feijao com arroz";
-       	 
-       	 mPrope.put("mail.smtp.host","smtp.gmail.com");
-       	 mPrope.put("mail.ssl.trust","smtp.gmail.com");
-       	 mPrope.setProperty("mail.smtp.starttls.enable","true");
-       	 mPrope.setProperty("mail.smtp.port","587");
-       	 mPrope.setProperty("mail.smtp.user",emailFrom);
-       	 mPrope.setProperty("mail.smtp.ssl.protocols","TLSv1.2");
-       	 mPrope.setProperty("mail.smtp.auth","true");
-       	 
-       	 mSession = Session.getDefaultInstance(mPrope);
-       	 
-       	 try {
-           	 Correo = new MimeMessage(mSession);
-   			Correo.setFrom(new InternetAddress(emailFrom));
-   			Correo.setRecipient(Message.RecipientType.TO, new InternetAddress(emailTo));
-   			Correo.setSubject(subject);
-   			Correo.setText(content,"ISO-8859-1","html");
-   			//System.out.println("boi");
-
-       	 }catch(AddressException e){
-       		 Logger.getLogger(RecuperaSenha.class.getName()).log(Level.SEVERE,null,e);
-   		} catch (MessagingException e) {
-   			// TODO Auto-generated catch block
-      		 Logger.getLogger(RecuperaSenha.class.getName()).log(Level.SEVERE,null,e);
-   		}
-        }
-       
-       private void sendEmail(){
-       	try {
-   			Transport mTransport = mSession.getTransport("smtp");
-   			mTransport.connect(emailFrom, passwordFrom);
-   			
-   			mTransport.sendMessage(Correo,Correo.getRecipients(Message.RecipientType.TO));
-   			mTransport.close();
-   			
-   		//	System.out.println("boi");
-   		} catch (NoSuchProviderException e) {
-   			// TODO Auto-generated catch block
-      		 Logger.getLogger(RecuperaSenha.class.getName()).log(Level.SEVERE,null,e);
-   		} catch (MessagingException e) {
-   			// TODO Auto-generated catch block
-      		 Logger.getLogger(RecuperaSenha.class.getName()).log(Level.SEVERE,null,e);
-   		}
-       }
-       
+ 
         private JPanel painel = new JPanel();
         public RecuperaSenha(){
     	 
@@ -130,32 +84,34 @@ public class RecuperaSenha extends JFrame{
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
 						
-						try {
-							String emailinser;
+					//	try {
+						//	String emailinser;
 							
 							createEmail();
 				            sendEmail();
 				            
-							emailinser = email.getText();
+							//emailinser = email.getText();
 							
-							Usuario objusuemail = new Usuario();
-							objusuemail.setEmail(emailinser);
+						//	Usuario objusuemail = new Usuario();
+						//	objusuemail.setEmail(emailinser);
 								
 							UsuarioBD objusubd = new UsuarioBD();
-							objusubd.verificarEmail(objusuemail);
-							ResultSet rsusubdemail = objusubd.verificarEmail(objusuemail);
+						//	objusubd.verificarEmail(objusuemail);
+							//ResultSet rsusubdemail = objusubd.verificarEmail(objusuemail);
 							
-						    if(rsusubdemail.next()) {
-						    	JOptionPane.showMessageDialog(null, "E-mail encontrado!");
+						  //  if(rsusubdemail.next()) {
+						  ////  	JOptionPane.showMessageDialog(null, "E-mail encontrado!");
+						    	//createEmail();
+					            //sendEmail();
 						    	new VerificarEmail();
 		     					setVisible(false);
-						   } else {
-							   JOptionPane.showMessageDialog(null, "E-mail não encontrado!");
-						   }
+						//   } else {
+							///   JOptionPane.showMessageDialog(null, "E-mail nao encontrado!");
+						   //}
 						    
-					 } catch (SQLException erro) {
-						 JOptionPane.showMessageDialog(null, "Verificar Nick" + erro);
-				     }
+				///	 } catch (SQLException erro) {
+					///	 JOptionPane.showMessageDialog(null, "Verificar Nick" + erro);
+				     //}
 						
 					}  
 				});
@@ -243,9 +199,13 @@ public class RecuperaSenha extends JFrame{
 
       					@Override
       					public void actionPerformed(ActionEvent arg0) {
-      						if(cod.getText().equals(content)){
-      						new NovaSenha();
+      						if(!cod.getText().equals(codigo)){
+      						   new NovaSenha();
+     							JOptionPane.showMessageDialog(null, "ERRO!!!!!! Este nao e o codigo que lhe enviamos, seu pamonha!");
+
            					setVisible(false);
+      						} else{
+       						   new NovaSenha();
       						}
       					}
                        	  
@@ -316,7 +276,7 @@ public class RecuperaSenha extends JFrame{
 
   					@Override
   					public void actionPerformed(ActionEvent arg0) {
-  						try {
+  						//try {
   							String novaSenha;
   							novaSenha = nvSenha.getText();
   							
@@ -326,23 +286,24 @@ public class RecuperaSenha extends JFrame{
   							UsuarioBD objusuariobdns = new UsuarioBD();
   							objusuariobdns.alterarSenha(objusuarions);
   							
-  							if (objusuarions.getSenha().equals(novaSenha)) {
-  								JOptionPane.showMessageDialog(null, "Senha alterada com sucesso!");
+  							//if (objusuarions.getSenha().equals(novaSenha)) {
+  								//JOptionPane.showMessageDialog(null, "Senha alterada com sucesso!");
   								
-  								new TelaLogin();
-  	  	       					setVisible(false);
+  								//new TelaLogin();
+  	  	       					//setVisible(false);
   	  	       					
-  	  	       					dispose();
-							} else {
-								JOptionPane.showMessageDialog(null, "Não foi possível alterar a senha :(");
-							}
+  	  	       					//dispose();
+							//} else {
+								//JOptionPane.showMessageDialog(null, "Não foi possível alterar a senha :(");
+							//}
   					
-						} catch (Exception erronew) {
-							JOptionPane.showMessageDialog(null, "RecuperaSenha NovaSenha" + erronew);
-						}
+						//} catch (Exception erronew) {
+							//JOptionPane.showMessageDialog(null, "RecuperaSenha NovaSenha" + erronew);
+						//}
   					}
                    	  
                     });
+                    
 //adicionando elementos ao painel
               painel2.add(alterS);
               painel2.add(nvS);
@@ -375,6 +336,62 @@ public class RecuperaSenha extends JFrame{
 }
 
 }
+     //metodos de email 	 
+       private void createEmail(){
+       	 emailTo = email.getText();
+       	 subject = "Codigo de Confirmacao";
+       	 
+       	 Random numA = new Random();
+       	 int a = numA.nextInt(999);
+         String codigo = String.valueOf(a);
+       	 content ="Ola! Voce esta recebendo este email, pois esta tentando recuperar a sua senha conosco."+"<br><html>Codigo de Confirmacao:<b> </br>" + codigo ;
+       	 
+       	 
+       	 mPrope.put("mail.smtp.host","smtp.gmail.com");
+       	 mPrope.put("mail.ssl.trust","smtp.gmail.com");
+       	 mPrope.setProperty("mail.smtp.starttls.enable","true");
+       	 mPrope.setProperty("mail.smtp.port","587");
+       	 mPrope.setProperty("mail.smtp.user",emailFrom);
+       	 mPrope.setProperty("mail.smtp.ssl.protocols","TLSv1.2");
+       	 mPrope.setProperty("mail.smtp.auth","true");
+       	 
+       	 mSession = Session.getDefaultInstance(mPrope);
+       	 
+       	 try {
+           	 Correo = new MimeMessage(mSession);
+   			Correo.setFrom(new InternetAddress(emailFrom));
+   			Correo.setRecipient(Message.RecipientType.TO, new InternetAddress(emailTo));
+   			Correo.setSubject(subject);
+   			Correo.setText(content,"ISO-8859-1","html");
+   			//System.out.println("boi");
+
+       	 }catch(AddressException e){
+       		 Logger.getLogger(RecuperaSenha.class.getName()).log(Level.SEVERE,null,e);
+   		} catch (MessagingException e) {
+   			// TODO Auto-generated catch block
+      		 Logger.getLogger(RecuperaSenha.class.getName()).log(Level.SEVERE,null,e);
+   		}
+        }
+       
+       private void sendEmail(){
+       	try {
+   			Transport mTransport = mSession.getTransport("smtp");
+   			mTransport.connect(emailFrom, passwordFrom);
+   			
+   			mTransport.sendMessage(Correo,Correo.getRecipients(Message.RecipientType.TO));
+   			mTransport.close();
+   			
+   		//	System.out.println("boi");
+   		} catch (NoSuchProviderException e) {
+   			// TODO Auto-generated catch block
+      		 Logger.getLogger(RecuperaSenha.class.getName()).log(Level.SEVERE,null,e);
+   		} catch (MessagingException e) {
+   			// TODO Auto-generated catch block
+      		 Logger.getLogger(RecuperaSenha.class.getName()).log(Level.SEVERE,null,e);
+   		}
+       }
+       
+       
         public static void main(String[]args){
              RecuperaSenha ex = new RecuperaSenha();
 }
