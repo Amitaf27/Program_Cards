@@ -4,7 +4,7 @@ use programbd;
 drop table if exists usuario;
 
 create table usuario (
-    id int primary key,
+    id int primary key auto_increment,
     nomeUsuario varchar(50) unique,
     senha char(10) unique not null,
     nome varchar(50),
