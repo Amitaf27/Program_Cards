@@ -45,7 +45,8 @@ import BancoDados.Usuario;
          private Font font1 = new Font("Arial",Font.BOLD,30); 
          private Font font2 = new Font("Arial",Font.BOLD,14); 
          private RadioButtonHandler handler; 
-         
+         String nivel;
+
          private JPanel painel ; 
          private JPanel painel1 = new JPanel();
          private JLabel resul;
@@ -651,6 +652,7 @@ import BancoDados.Usuario;
 							
             		if(cont>=0 && cont <=5){
             			resul = new JLabel("Seu nivel é iniciante");
+				nivel = "iniciante";
 						btOk = new JButton("OK");
 						///objusuario.setResultadoQuest(resul.getText());
 						
@@ -677,6 +679,7 @@ import BancoDados.Usuario;
 								
             	} else if(cont>=6 && cont <=8){
             		resul = new JLabel("Seu nivel é intermediário");
+				nivel = "intermerdiario";
 					btOk = new JButton("OK");
 					//objusuario.setResultadoQuest(resul.getText());
 					
@@ -704,6 +707,7 @@ import BancoDados.Usuario;
 								
             	} else if(cont>=9){
             		resul = new JLabel("Seu nivel é Avançado");
+				nivel = "avançado";
 					btOk = new JButton("OK");
 					//objusuario.setResultadoQuest(resul.getText());
 					
