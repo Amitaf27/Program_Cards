@@ -8,7 +8,7 @@ create table usuario (
     senha char(10) unique not null,
     nome varchar(50),
     email varchar(100),
-    resultado_quest char(20) check(resultado_quest = "Iniciante" or resultado_quest = "Intermediário" or resultado_quest = "Avançado")
+    resultado_quest char(20) check(resultado_quest = "iniciante" or resultado_quest = "intermediario" or resultado_quest = "avançado")
 );
 
 select * from usuario;
