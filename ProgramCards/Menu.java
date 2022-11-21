@@ -27,10 +27,10 @@ public class Menu extends JFrame {
 		private JButton ilha1, ilha2, ilha3, livre;
 		private JButton btSom, btSom2, btNome, btConfirmar;
 	     
-		 ImageIcon band1 = new ImageIcon (getClass().getResource("ilhaINICIAN (2).png"));	
-		 ImageIcon band2 = new ImageIcon (getClass().getResource("ilhaINTER (2).png"));	
-		 ImageIcon band3 = new ImageIcon (getClass().getResource("ilhaAVANÇ.png"));	
-		 ImageIcon band4 = new ImageIcon (getClass().getResource("ilhaLIVRE.png"));	
+		 ImageIcon band1 = new ImageIcon (getClass().getResource("bandIni.png"));	
+		 ImageIcon band2 = new ImageIcon (getClass().getResource("bandInt.png"));	
+		 ImageIcon band3 = new ImageIcon (getClass().getResource("bandAvan.png"));	
+		 ImageIcon band4 = new ImageIcon (getClass().getResource("bandLivre.png"));	
 	     ImageIcon imagem1 = new ImageIcon(getClass().getResource("ilhas1.png"));
 	     ImageIcon imagem2 = new ImageIcon(getClass().getResource("ilhas2Bloqueada.png"));
 	     ImageIcon imagem3 = new ImageIcon(getClass().getResource("ilhas3Bloqueada.png"));
@@ -39,7 +39,7 @@ public class Menu extends JFrame {
 	     ImageIcon imagem6 = new ImageIcon(getClass().getResource("Musica_desligada.png"));
 	     ImageIcon imagem7 = new ImageIcon(getClass().getResource("Efeito_ligado.png"));
 	     ImageIcon imagem8 = new ImageIcon(getClass().getResource("Efeito_desligado.png"));
-	     Image backgroundImage;
+	     ImageIcon fundo = new ImageIcon (getClass().getResource("funda de abertura.png"));
 	     
 	     private JLabel label, label1, label2, label3, label5,label6, label7, label8;
 
@@ -68,18 +68,11 @@ public class Menu extends JFrame {
 
 	     public Menu() {
 	    	 
-	    	 
-		    	 
-	    backgroundImage = Toolkit.getDefaultToolkit().getImage(getClass().getResource("funda de abertura.png"));
+	    Panel p = new Panel();	 
+	
+	 
 		       
 	    
-	       this.setContentPane(new JPanel() {
-	   	         @Override
-	   	         public void paintComponent(Graphics g) {
-	   	            super.paintComponent(g);
-	   	            g.drawImage(backgroundImage, 0, 0, null);
-	   	         }
-	   	      });
 	    
 	    
 	    
@@ -103,9 +96,9 @@ public class Menu extends JFrame {
 	      setTitle("ILHAS");  
          barrinha = new JMenuBar();  
          setJMenuBar(barrinha);  
-         opcao = new JMenu("OpÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Âµes");  
+         opcao = new JMenu("Opções");  
                    
-         config = new JMenuItem("ConfiguraÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Âµes");  
+         config = new JMenuItem("Configurações");  
          sair = new JMenuItem("Sair");  
                      
          barrinha.add(opcao);  
@@ -120,7 +113,7 @@ public class Menu extends JFrame {
          config.setFont(texto);
          sair.setFont(texto);
                 
-        //configurando os botÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âµes do panel  
+        //configurando os botÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âµes do panel  
 
           btSom = new JButton(imagem5); 
       
@@ -142,11 +135,11 @@ public class Menu extends JFrame {
           btConfirmar.setFont(new Font("Arial", Font.BOLD, 14));  
                      
          //configurando o panel de configuracoes  
-          label = new JLabel("ConfiguraÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Âµes");  
+          label = new JLabel("Configurações");  
            label.setFont(titulo);  
            label.setForeground(Color.BLACK);  
                      
-          label2 = new JLabel("MÃƒÆ’Ã‚Âºsica");  
+          label2 = new JLabel("Música");  
            label2.setForeground(Color.BLACK);  
            label2.setFont(texto);  
                      
@@ -299,8 +292,10 @@ public class Menu extends JFrame {
            ilha2.addActionListener(c);  
            ilha3.addActionListener(c);  
            livre.addActionListener(c);  
-                                            
+           add(p);                                
           Container cont = getContentPane();  
+
+          
            cont.add(ilha1);
            cont.setBackground(azul);
            cont.add(ilha2);  
@@ -310,7 +305,8 @@ public class Menu extends JFrame {
            cont.add(label6);
            cont.add(label7);
            cont.add(label8);
-           
+           cont.add(p);
+           p.setBounds(0, 0, 1366, 768);
    
           setLayout(null);  
                    
@@ -337,6 +333,22 @@ public class Menu extends JFrame {
         		System.exit(0);        
            }  
       }  
+        
+        
+      //fundo é um imageIcon
+      //faz na msm classe, mais fácil
+      // no construtor da classe principal, instancia Panel e add ele (na ordem)
+
+      public class Panel extends JPanel{
+
+          public void paintComponent(Graphics g){
+          
+          super.paintComponent(g);
+          Image img = fundo.getImage();
+          g.drawImage(img, 0,0, this);   
+
+          }
+      }
          
         public static void main(String[]args) {
         	Menu menu = new Menu();  
@@ -348,6 +360,12 @@ public class Menu extends JFrame {
  
          
 }
+
+
+
+
+
+
 
 
 
