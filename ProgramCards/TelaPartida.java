@@ -2,6 +2,8 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,7 +20,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-//falta os imports e estÃƒÆ’Ã‚Â¡ incompleto por enquanto
+//falta os imports e estÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡ incompleto por enquanto
 
 public class TelaPartida extends JFrame { 
   
@@ -34,6 +36,7 @@ public class TelaPartida extends JFrame {
      private JMenuBar  barra;
      private JMenu opcao;
      private JMenuItem config, voltar;
+     ImageIcon fundo = new ImageIcon(getClass().getResource("fundoo.png"));
 
 
      
@@ -42,13 +45,13 @@ public class TelaPartida extends JFrame {
       public TelaPartida(){ 
     	 
     	
-    	  
+    	  Panel p = new Panel();
     	 
     	  barra = new JMenuBar();  
           setJMenuBar(barra);  
-          opcao = new JMenu("OpÃ§Ãµes");  
+          opcao = new JMenu("OpÃƒÂ§ÃƒÂµes");  
                     
-          config = new JMenuItem("ConfiguraÃ§Ãµes");  
+          config = new JMenuItem("ConfiguraÃƒÂ§ÃƒÂµes");  
           voltar = new JMenuItem("Voltar");  
           
           voltar.addActionListener(  
@@ -356,6 +359,8 @@ public class TelaPartida extends JFrame {
               cont.add(imaInclude); 
               cont.add(imaScanf); 
               cont.add(imaPrintf); 
+              cont.add(p);
+              p.setBounds(0, 0, 1366, 768);
   
               painel.setBounds(200,50,1000,150); 
               perg.setBounds(20,50,900,100); 
@@ -375,7 +380,17 @@ public class TelaPartida extends JFrame {
 				
 					  
 				
-			
+
+      public class Panel extends JPanel{
+
+          public void paintComponent(Graphics g){
+          
+          super.paintComponent(g);
+          Image img = fundo.getImage();
+          g.drawImage(img, 0,0, this);   
+
+          }
+      }
 
 		
      
