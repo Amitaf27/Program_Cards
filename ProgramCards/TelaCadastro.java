@@ -1,12 +1,15 @@
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -26,7 +29,8 @@ public class TelaCadastro extends JFrame {
 	Font fonte2 = new Font("Arial", Font.BOLD, 30);
 	Border b = BorderFactory.createLineBorder(Color.black, 3);
 	JPanel painel = new JPanel();
-	
+	  ImageIcon fundo = new ImageIcon (getClass().getResource("funda de abertura.png"));
+	    
 	Musica musica = new Musica();
 	SomEfeito ef = new SomEfeito();
     int cont = 0;
@@ -41,14 +45,14 @@ public class TelaCadastro extends JFrame {
         
         Limpar a = new Limpar();
         
-        
+        Panel fundo = new Panel();
         text1 = new JTextField("Nome");
         text1.setFont(fonte1);
         text1.setBorder(b);
         text1.setBackground(new Color(0, 191, 225));
         text1.setForeground(Color.white);
         
-        text2 = new JTextField("Nome de UsuÃ¡rio");
+        text2 = new JTextField("Nome de UsuÃƒÂ¡rio");
         text2.setFont(fonte1);
         text2.setBorder(b);
         text2.setBackground(new Color(0, 191, 225));
@@ -128,12 +132,7 @@ public class TelaCadastro extends JFrame {
         	  
          });
 
-          
-          Container cont = getContentPane();
-          cont.setBackground(new Color(25, 25, 112));
-         
-          
-          botao1 = new JButton("JÃ¡ possui cadastro? Clique aqui");
+          botao1 = new JButton("JÃƒÂ¡ possui cadastro? Clique aqui");
           botao1.setOpaque(false);
           botao1.setFocusable(false);
           botao1.setContentAreaFilled(false);
@@ -151,14 +150,19 @@ public class TelaCadastro extends JFrame {
       				} 
         	        });
 
+          
+          Container cont = getContentPane();
+          cont.setBackground(new Color(25, 25, 112));
+          
+          cont.add(botao1);    
+          cont.add(painel);
+          cont.add(fundo);
+          fundo.setBounds(0, 0,1366,768);
+          
+     
          
           setLayout(null);
-         
-      
-          cont.add(botao1);
-      
-          cont.add(painel);
-                    
+    
           painel.setBounds(483, 80, 400, 400);
           rotulo1.setBounds(125, 30, 200, 30);
           rotulo2.setBounds(635, 360, 300, 30);
@@ -231,12 +235,20 @@ public class TelaCadastro extends JFrame {
 		}
     	 
      }
+	  public class Panel extends JPanel{
 
-	
+          public void paintComponent(Graphics g){
+          
+          super.paintComponent(g);
+          Image img = fundo.getImage();
+          g.drawImage(img, 0,0, this);   
+
+          }
+	  }
 	public static void main(String[] args) {
 		
 		TelaCadastro cad = new TelaCadastro();
 		
 	}
-
+	  
 }
