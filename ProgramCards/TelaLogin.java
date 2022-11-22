@@ -2,6 +2,8 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -45,13 +47,14 @@ private static final long serialVersionUID = 1L;
           
           SomEfeito ef = new SomEfeito();
           Musica musica = new Musica();
-          
+          ImageIcon fundo = new ImageIcon (getClass().getResource("funda de abertura.png"));
+ 	     
          
           public TelaLogin() {
 
         
-           
-           imagem1 = new ImageIcon(getClass().getResource("btsair.png"));
+           Panel fundo = new Panel ();
+           imagem1 = new ImageIcon(getClass().getResource("botaodesairamarelo (5).png"));
            email =  new ImageIcon(getClass().getResource("Email.png"));
            cadeado =  new ImageIcon(getClass().getResource("cadeado.png"));
            painel.setBackground(azulc);
@@ -146,7 +149,9 @@ private static final long serialVersionUID = 1L;
            cont.add(cadas);
            cont.add(cadastrar);
            cont.add(painel);
-         
+           cont.add(fundo);
+           
+           fundo.setBounds(0,0,1366,768 );     
            botao2.setBounds(10,10, 100, 50);
          
            loginT.setBounds(170, 80, 200, 30 );
@@ -157,15 +162,16 @@ private static final long serialVersionUID = 1L;
             
            btEsq.setBounds(200,260,200,30);
            botaoLogin.setBounds(70, 230, 300, 30);
-
+    
            cadas.setBounds(595,580,200,25);
            cadastrar.setBounds(595,580,200,25);
            painel.setBounds(460,100,450,450);
            painel.setBorder(b);
-
+           
          
            setSize(1366,768);
            setVisible(true);
+       
          
        }
           private class AcionaBotao implements ActionListener {
@@ -192,7 +198,7 @@ private static final long serialVersionUID = 1L;
                   		dispose();
                     } else {
                   	  //enivar mensagem de erro
-                  	  JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos");
+                  	  JOptionPane.showMessageDialog(null, "UsuÃ¡rio ou senha invÃ¡lidos");
                     }
                 	  
                } catch (SQLException erro) {
@@ -266,6 +272,17 @@ private static final long serialVersionUID = 1L;
 				}
             	 
              }
+             public class Panel extends JPanel{
+
+                 public void paintComponent(Graphics g){
+                 
+                 super.paintComponent(g);
+                 Image img = fundo.getImage();
+                 g.drawImage(img, 0,0, this);   
+
+                 }
+             }
+                
 	     public static void main (String[]args){
 	    	 
 	    	
