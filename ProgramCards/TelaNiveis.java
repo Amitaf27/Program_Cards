@@ -30,7 +30,7 @@ public class TelaNiveis extends JFrame {
        Color azulc = new Color(65,105,225);
        Color ouro = new Color(238,201,0);
 	   Font font = new Font("Arial",Font.BOLD,30);
-	   Border b = BorderFactory.createLineBorder(new Color(255,191,0), 2);
+	   Border b = BorderFactory.createLineBorder(new Color(100, 149, 237), 2);
 	   int t1 = 0;
 	   int t3 = t1;
 	   ImageIcon aa = new ImageIcon(getClass().getResource("FundoIniciante.png"));
@@ -111,7 +111,7 @@ public class TelaNiveis extends JFrame {
 			  }
 			   barrinha.add(opcao);
 			   setJMenuBar(barrinha);
-			   barrinha.setBackground(ouro);
+			   barrinha.setBackground(new Color(100, 149, 237));
 			   barrinha.setBorder(b);
 			   
 			   opcao.setForeground(Color.BLACK);
