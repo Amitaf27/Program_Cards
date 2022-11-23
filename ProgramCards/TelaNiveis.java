@@ -31,10 +31,9 @@ public class TelaNiveis extends JFrame {
        Color ouro = new Color(238,201,0);
 	   Font font = new Font("Arial",Font.BOLD,30);
 	   Border b = BorderFactory.createLineBorder(new Color(255,191,0), 2);
-	   Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
 	   int t1 = 0;
 	   int t3 = t1;
-	   Image backgroundImage;
+	   ImageIcon aa = new ImageIcon(getClass().getResource("FundoIniciante.png"));
 	   
 	   public TelaNiveis() {
 		  super("Ilha iniciante");
@@ -50,21 +49,6 @@ public class TelaNiveis extends JFrame {
 		   imaNivel[7] = new ImageIcon(getClass().getResource("fot8.png"));
 		   imaNivel[8] = new ImageIcon(getClass().getResource("fot9.png"));
 		   imaNivel[9] = new ImageIcon(getClass().getResource("fot10.png"));
-		   
-	    	 
-		    backgroundImage = Toolkit.getDefaultToolkit().getImage(getClass().getResource("FundoIniciante.png"));
-			       
-		    
-		       this.setContentPane(new JPanel() {
-		   	         @Override
-		   	         public void paintComponent(Graphics g) {
-		   	            super.paintComponent(g);
-		   	            g.drawImage(backgroundImage, 0, 0, null);
-		   	         }
-		   	      });
-		    
-		   
-		
 		   
 		  Container cont = getContentPane();
 		  cont.setBackground(azul);
@@ -83,6 +67,10 @@ public class TelaNiveis extends JFrame {
 							
 						} 
 		  	        });
+		   
+		   
+		   
+		   Panel painel = new Panel();
 		   JMenuItem config = new JMenuItem("Configuracoes");
 		   opcao.add(config); 
 		   
@@ -121,14 +109,8 @@ public class TelaNiveis extends JFrame {
 
 		
 			  }
-			  
-	
 			   barrinha.add(opcao);
 			   setJMenuBar(barrinha);
-
-	      
-
-	          
 			   barrinha.setBackground(ouro);
 			   barrinha.setBorder(b);
 			   
@@ -137,6 +119,10 @@ public class TelaNiveis extends JFrame {
 	           
 			   setLayout(null);
 			   
+			   
+			   
+			   cont.add(painel);
+		       painel.setBounds(0, 0, 1366, 768);
 			   setSize(1366,768);
 			   setVisible(true);
 			   
@@ -250,17 +236,22 @@ public class TelaNiveis extends JFrame {
 		        				
 		        			 }       
 		        		 });
-			   
-			   
-
 
 	   }
-        
+	   
+	      public class Panel extends JPanel{
+
+	          public void paintComponent(Graphics g){
+	          
+	          super.paintComponent(g);
+	          Image img = aa.getImage();
+	          g.drawImage(img, 0,0, this);   
+
+	          }
+	      } 
+
 	   public static void main(String[] args) {
 		   TelaNiveis teste = new TelaNiveis();
 		   teste.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	   }
 }
-
-
-
