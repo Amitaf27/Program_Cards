@@ -51,15 +51,19 @@ public class RecuperaSenha extends JFrame{
         String emailTo;
         String subject;
         String content;
-        String codigo;
+        
+        Random numA = new Random();
+      	int a = numA.nextInt(999);
+        String codigo = String.valueOf(a);
+      	
         String ln = "\n";
 
         Properties mPrope;
         Session mSession;
         MimeMessage Correo;
                	 
-       	 
- 
+        
+       
         private JPanel painel = new JPanel();
         public RecuperaSenha(){
     	 
@@ -188,7 +192,7 @@ public class RecuperaSenha extends JFrame{
                 infV = new JLabel("Insira o codigo que foi enviado para o seu email");
                 infV.setForeground(Color.WHITE);
                 infV.setFont(fonte3);
-                cod = new JTextField("Codigo de confirmacao");
+                cod = new JTextField("Insira o cod de confirmação");
                 btVerificar = new JButton("Verificar");
                 btVerificar.setBackground(verde);
                 btVerificar.setBorder(b);
@@ -196,16 +200,21 @@ public class RecuperaSenha extends JFrame{
                 btVerificar.setFont(fonte2);
                 btVerificar.addActionListener(
                		 new ActionListener() {
-
+                             
       					@Override
       					public void actionPerformed(ActionEvent arg0) {
-      						if(!cod.getText().equals(codigo)){
-      						   new NovaSenha();
+      						 String cd = cod.getText();
+      						 
+      						if(cd.equals(codigo)){
+      						
+      						
+      							new NovaSenha();
+           						setVisible(false);
+      						} else{
+      							
      							JOptionPane.showMessageDialog(null, "ERRO!!!!!! Este nao e o codigo que lhe enviamos, seu pamonha!");
 
-           					setVisible(false);
-      						} else{
-       						   new NovaSenha();
+       						   
       						}
       					}
                        	  
@@ -294,7 +303,7 @@ public class RecuperaSenha extends JFrame{
   	  	       					
   	  	       					//dispose();
 							//} else {
-								//JOptionPane.showMessageDialog(null, "Não foi possível alterar a senha :(");
+								//JOptionPane.showMessageDialog(null, "NÃ£o foi possÃ­vel alterar a senha :(");
 							//}
   					
 						//} catch (Exception erronew) {
@@ -341,9 +350,7 @@ public class RecuperaSenha extends JFrame{
        	 emailTo = email.getText();
        	 subject = "Codigo de Confirmacao";
        	 
-       	 Random numA = new Random();
-       	 int a = numA.nextInt(999);
-         String codigo = String.valueOf(a);
+       	 
        	 content ="Ola! Voce esta recebendo este email, pois esta tentando recuperar a sua senha conosco."+"<br><html>Codigo de Confirmacao:<b> </br>" + codigo ;
        	 
        	 
