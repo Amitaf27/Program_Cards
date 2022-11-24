@@ -90,10 +90,12 @@ public class RecuperaSenha extends JFrame{
 						
 					//	try {
 						//	String emailinser;
-							
+							new Thread(){
+								public void run(){
 							createEmail();
 				            sendEmail();
-				            
+								}
+							}.start();
 							//emailinser = email.getText();
 							
 						//	Usuario objusuemail = new Usuario();
