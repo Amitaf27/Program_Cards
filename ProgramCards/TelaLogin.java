@@ -54,7 +54,7 @@ private static final long serialVersionUID = 1L;
 
         
            Panel fundo = new Panel ();
-           imagem1 = new ImageIcon(getClass().getResource("botaodesairamarelo (5).png"));
+           imagem1 = new ImageIcon(getClass().getResource("botaodesairamarelo.png"));
            email =  new ImageIcon(getClass().getResource("Email.png"));
            cadeado =  new ImageIcon(getClass().getResource("cadeado.png"));
            painel.setBackground(azulc);
@@ -182,7 +182,8 @@ private static final long serialVersionUID = 1L;
                 	 
                 	 nome_usuario = text1.getText();
                 	 senha_usuario = new String(senha.getPassword());
-                	 
+                	 System.out.println(nome_usuario);
+                	 System.out.println(senha_usuario);
                 	 Usuario usu = new Usuario();
                 	  usu.setNomeUsuario(nome_usuario);
                 	  usu.setSenha(senha_usuario);
@@ -192,8 +193,8 @@ private static final long serialVersionUID = 1L;
                 	 
                 	 if(rsusuariobd.next()) {
                   		//chamar tela
-                  		Menu objmenu = new Menu();
-                  		objmenu.setVisible(true);
+                  		 new Menu();
+                  		setVisible(false);
                   		
                   		dispose();
                     } else {
