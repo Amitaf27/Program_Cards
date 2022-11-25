@@ -38,12 +38,11 @@ public class UsuarioBD {
 			Connection connLogin = new ConexaoBD().conectaBD();
 			
 			try {
-			   String sqlLogin = "select * from usuario where nomeUsuario = ? and senha = ?";
+			   String sqlLogin = "select * from Usuario where nomeUsuario = ? and senha = ?";
 			   
 			   PreparedStatement pstm2 = connLogin.prepareStatement(sqlLogin);
 			   pstm2.setString(1, obj.getNomeUsuario());
 			   pstm2.setString(2, obj.getSenha());
-			   
 			   ResultSet rs = pstm2.executeQuery();
 			   return rs;
 				
@@ -73,7 +72,7 @@ public class UsuarioBD {
 		
 		//Alterar nome - MudarNick
         public void alterarNome(Usuario objusu) {
-        	String sqlAlter = "update usuario set nomeUsuario = ? where nomeUsuario = ?";
+        	String sqlAlter = "update Usuario set nomeUsuario = ? where nomeUsuario = ?";
         	
         	connAlter = new ConexaoBD().conectaBD();
     		
@@ -107,7 +106,7 @@ public class UsuarioBD {
         
         //AlterarSenha - RecuperarSenha
         public void alterarSenha(Usuario objususenha) {
-        	String sqlAlterSenha = "update usuario set senha = ? where email = ?";
+        	String sqlAlterSenha = "update Usuario set senha = ? where email = ?";
         	
         	connAlter = new ConexaoBD().conectaBD();
     		
@@ -116,8 +115,7 @@ public class UsuarioBD {
   			  pstm.setString(1, objususenha.getSenha());
   			  pstm.setString(2, objususenha.getEmail());
   			  
-  			  pstm.execute();
-  			  pstm.close();
+  			  pstm.executeUpdate();
   			  
   		 } catch (SQLException erro) {
   			JOptionPane.showMessageDialog(null, "UsuarioBD AlterarSenha" + erro);
