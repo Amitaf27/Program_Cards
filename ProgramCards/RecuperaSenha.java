@@ -32,8 +32,6 @@ import javax.swing.border.Border;
 import BancoDados.Usuario;
 import BancoDados.UsuarioBD;
 
-
-
 public class RecuperaSenha extends JFrame{
         private JLabel recupera, txtIn,ImCade;
         private ImageIcon cadeado;
@@ -88,37 +86,41 @@ public class RecuperaSenha extends JFrame{
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
 						
-					//	try {
-						//	String emailinser;
-							new Thread(){
-								public void run(){
-							createEmail();
-				            sendEmail();
-								}
-							}.start();
-							//emailinser = email.getText();
+						try {
 							
-						//	Usuario objusuemail = new Usuario();
-						//	objusuemail.setEmail(emailinser);
+							String emailinser;
+						
+							emailinser = email.getText();
+							
+							Usuario objusuemail = new Usuario();
+							objusuemail.setEmail(emailinser);
 								
 							UsuarioBD objusubd = new UsuarioBD();
-						//	objusubd.verificarEmail(objusuemail);
-							//ResultSet rsusubdemail = objusubd.verificarEmail(objusuemail);
+							objusubd.verificarEmail(objusuemail);
+							ResultSet rsusubdemail = objusubd.verificarEmail(objusuemail);
+							   
+						    if(rsusubdemail.next()) {
+						    	JOptionPane.showMessageDialog(null, "E-mail encontrado!");
+						    	
+						    	new Thread() {
+									public void run(){
+								
+										createEmail();
+										sendEmail();
+									 }
+								}.start();
 							
-						  //  if(rsusubdemail.next()) {
-						  ////  	JOptionPane.showMessageDialog(null, "E-mail encontrado!");
-						    	//createEmail();
-					            //sendEmail();
+							
 						    	new VerificarEmail();
 		     					setVisible(false);
-						//   } else {
-							///   JOptionPane.showMessageDialog(null, "E-mail nao encontrado!");
-						   //}
+						   } else {
+							   JOptionPane.showMessageDialog(null, "E-mail nao encontrado!");
+						   }
 						    
-				///	 } catch (SQLException erro) {
-					///	 JOptionPane.showMessageDialog(null, "Verificar Nick" + erro);
-				     //}
-						
+					 } catch (SQLException erro) {
+						 JOptionPane.showMessageDialog(null, "Verificar Nick" + erro);
+				     }
+					
 					}  
 				});
           
@@ -287,7 +289,7 @@ public class RecuperaSenha extends JFrame{
 
   					@Override
   					public void actionPerformed(ActionEvent arg0) {
-  						//try {
+  						try {
   							String novaSenha;
   							novaSenha = nvSenha.getText();
   							
@@ -297,20 +299,22 @@ public class RecuperaSenha extends JFrame{
   							UsuarioBD objusuariobdns = new UsuarioBD();
   							objusuariobdns.alterarSenha(objusuarions);
   							
-  							//if (objusuarions.getSenha().equals(novaSenha)) {
-  								//JOptionPane.showMessageDialog(null, "Senha alterada com sucesso!");
+  							if (objusuarions.getSenha().equals(novaSenha)) {
+  								JOptionPane.showMessageDialog(null, "Senha alterada com sucesso!");
   								
-  								//new TelaLogin();
-  	  	       					//setVisible(false);
+  								new TelaLogin();
+  	  	       					setVisible(false);
   	  	       					
-  	  	       					//dispose();
-							//} else {
-								//JOptionPane.showMessageDialog(null, "NÃ£o foi possÃ­vel alterar a senha :(");
-							//}
+  	  	       					dispose();
+							} else {
+								JOptionPane.showMessageDialog(null, "NÃ£o foi possÃ­vel alterar a senha :(");
+							}
   					
-						//} catch (Exception erronew) {
-							//JOptionPane.showMessageDialog(null, "RecuperaSenha NovaSenha" + erronew);
-						//}
+						} catch (Exception erronew) {
+							JOptionPane.showMessageDialog(null, "RecuperaSenha NovaSenha" + erronew);
+						}
+           		 
+         
   					}
                    	  
                     });
