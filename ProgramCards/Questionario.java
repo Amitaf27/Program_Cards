@@ -1,7 +1,10 @@
+
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -9,6 +12,7 @@ import java.awt.event.ItemListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,8 +20,6 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.border.Border;
-
-import BancoDados.Usuario;
 
  public class Questionario extends JFrame { 
 
@@ -36,7 +38,7 @@ import BancoDados.Usuario;
          private JLabel titulo; 
          private JLabel perg1, perg2,perg3, perg4, perg5, perg6, perg7, perg8,perg9,perg10;
          private Color azul = new Color(18,10,143); 
-         private Color azulc = new Color(65,105,225); 
+         private Color azulc = new Color(10,57,101); 
          private Color ouro = new Color(238,201,0); 
          private Color verde = new Color(0, 187, 45);
          private Color vermelho = new Color(207, 14, 14);
@@ -46,10 +48,12 @@ import BancoDados.Usuario;
          private Font font2 = new Font("Arial",Font.BOLD,14); 
          private RadioButtonHandler handler; 
          String nivel;
+         ImageIcon fundo = new ImageIcon(getClass().getResource("fundo.quest.png"));
 
          private JPanel painel ; 
          private JPanel painel1 = new JPanel();
          private JLabel resul;
+         private Panel panel = new Panel();
          
          private JButton btOk;
          private ButtonGroup quest1, quest2,quest3,quest4, quest5,quest6,quest7,quest8,quest9,quest10; 
@@ -89,7 +93,7 @@ import BancoDados.Usuario;
                  titulo = new JLabel("QUESTIONARIO"); 
                  titulo.setFont(font1); 
                  titulo.setForeground(ouro); 
-//configurando a primeira questÃƒÆ’Ã‚Â£o 
+//configurando a primeira questÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o 
                  perg1 = new JLabel("1 - Qual o metodo para abrir um arquivo em C?"); 
                  perg1.setFont(font); 
                  perg1.setForeground(branco); 
@@ -128,7 +132,7 @@ import BancoDados.Usuario;
                  P1op5.setForeground(branco); 
                  P1op5.setFont(font2);
 
-//configurando a segunda questÃƒÆ’Ã‚Â£o 
+//configurando a segunda questÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o 
                  perg2 = new JLabel("2 - Como se declara um Struct em C ?"); 
                  perg2.setFont(font); 
                  perg2.setForeground(branco); 
@@ -167,7 +171,7 @@ import BancoDados.Usuario;
                  P2op5.setFont(font2);
                                
 
-//configurando a terceira questÃƒÆ’Ã‚Â£o 
+//configurando a terceira questÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o 
                  perg3 = new JLabel("3 - Que tipo de variavel e lida com o comando %s ?"); 
                  perg3.setFont(font); 
                  perg3.setForeground(branco); 
@@ -208,7 +212,7 @@ import BancoDados.Usuario;
                  P3op5.setFont(font2);
 
 
-//configurando a quarta questÃƒÆ’Ã‚Â£o 
+//configurando a quarta questÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o 
                  perg4 = new JLabel("4 - Qual dos comandos abaixo e uma estrutura de repeticao?"); 
                  perg4.setFont(font); 
                  perg4.setForeground(branco); 
@@ -239,7 +243,7 @@ import BancoDados.Usuario;
                  P4op3.setForeground(branco); 
                  P4op3.setFont(font2); 
 
-//configurando a quinta questÃƒÆ’Ã‚Â£o 
+//configurando a quinta questÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o 
                  perg5 = new JLabel("5.Qual a forma correta de declarar um vetor?"); 
                  perg5.setFont(font); 
                  perg5.setForeground(branco); 
@@ -272,7 +276,7 @@ import BancoDados.Usuario;
                  P5op4.setForeground(branco); 
                  P5op4.setFont(font2); 
 
-//configurando a sexta questÃƒÆ’Ã‚Â£o 
+//configurando a sexta questÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o 
                  perg6 = new JLabel("6.Qual a forma correta de declarar um vetor?"); 
                  perg6.setFont(font); 
                  perg6.setForeground(branco); 
@@ -338,7 +342,7 @@ import BancoDados.Usuario;
                  P7op4.setForeground(branco); 
                  P7op4.setFont(font2);
 
-//configurando a oitava questÃƒÆ’Ã‚Â£o 
+//configurando a oitava questÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o 
                  perg8 = new JLabel("8.Qual e a funcao da seguinte declaracao?"
                  		+ "Scanf (str, '% d', & i);"); 
                  perg8.setFont(font); 
@@ -365,7 +369,7 @@ import BancoDados.Usuario;
                  P8op3.setForeground(branco); 
                  P8op3.setFont(font2);  
 
-//configurando a nona questÃƒÆ’Ã‚Â£o 
+//configurando a nona questÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o 
                  perg9 = new JLabel("9.Para que serve o \"\t \"?"); 
                  perg9.setFont(font); 
                  perg9.setForeground(branco); 
@@ -399,12 +403,12 @@ import BancoDados.Usuario;
                  P9op4.setFont(font2); 
 
 //configurando a decima  questao 
-                 perg10 = new JLabel("10.Qual o significado desse operador lógico '&&'?"); 
+                 perg10 = new JLabel("10.Qual o significado desse operador lÃ³gico '&&'?"); 
                  perg10.setFont(font); 
                  perg10.setForeground(branco); 
 
 
-                 P10op1 = new JRadioButton("não",false); 
+                 P10op1 = new JRadioButton("nÃ£o",false); 
                  P10op2 = new JRadioButton("ou",false); 
                  P10op3 = new JRadioButton("diferente",false); 
                  P10op4 = new JRadioButton("e",false); 
@@ -504,9 +508,14 @@ import BancoDados.Usuario;
                  cont.add(titulo); 
                  cont.add(finalizar); 
                  cont.add(cancelar); 
+                 painel.add(painel1);
+                 
+                // painel.add(panel);
+		          panel.setBounds(0, 0, 1000, 2500);
+
                 // cont.add(painel1);
 
-//definindo a posiÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â£o dos elementos no painel
+//definindo a posiÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o dos elementos no painel
                  titulo.setBounds(533,40,300,100); 
 //1
                  perg1.setBounds(35,5,500,100); 
@@ -573,7 +582,7 @@ import BancoDados.Usuario;
                  P10op3.setBounds(45,1785,300,50); 
                  P10op4.setBounds(45,1815,300,50); 
 
-//definindo a posiÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â£o dos elementos na tela principal 
+//definindo a posiÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o dos elementos na tela principal 
                  scroll.setBounds(183,160,1000,450);
                  finalizar.setBounds(413,640,250,50); 
                  cancelar.setBounds(683,640,250,50); 
@@ -643,6 +652,9 @@ import BancoDados.Usuario;
                          } 
 
                } 
+               
+
+               
   
             private class AcionaFinal implements ActionListener{
             	//Usuario objusuario = new Usuario();
@@ -651,7 +663,7 @@ import BancoDados.Usuario;
 				public void actionPerformed(ActionEvent arg0) {
 							
             		if(cont>=0 && cont <=5){
-            			resul = new JLabel("Seu nivel é iniciante");
+            			resul = new JLabel("Seu nivel e iniciante");
 				nivel = "iniciante";
 						btOk = new JButton("OK");
 						///objusuario.setResultadoQuest(resul.getText());
@@ -663,22 +675,22 @@ import BancoDados.Usuario;
 						  new Menu();
 						  setVisible(false);
 					}					
-				});
+				}); 
 								
-					  add(painel1);
+					 
 					  painel1.setBackground(azul);
 					  painel1.setLayout(null);
 					  painel1.setVisible(true);
 					  painel1.add(resul);
 					  painel1.add(btOk);
 								
-					  painel1.setBounds(488,184,400,400);
+					  painel1.setBounds(400,300,400,400);
 					  resul.setBounds(50,100,200,50);
 					  btOk.setBounds(100,200,100,50);
 
 								
             	} else if(cont>=6 && cont <=8){
-            		resul = new JLabel("Seu nivel é intermediário");
+            		resul = new JLabel("Seu nivel e intermediario");
 				nivel = "intermerdiario";
 					btOk = new JButton("OK");
 					//objusuario.setResultadoQuest(resul.getText());
@@ -692,7 +704,7 @@ import BancoDados.Usuario;
 					}		
 				});
 						
-					 add(painel1);
+					 
 					 painel1.setBackground(azul);
 					 painel1.setLayout(null);
 					 painel1.setVisible(true);
@@ -702,12 +714,12 @@ import BancoDados.Usuario;
 								
 					 painel1.setBounds(600,200,400,400);
 					 resul.setBounds(50,100,200,50);
-					 btOk.setBounds(100,200,100,50);
+					 btOk.setBounds(200,200,400,400);
 
 								
             	} else if(cont>=9){
-            		resul = new JLabel("Seu nivel é Avançado");
-				nivel = "avançado";
+            		resul = new JLabel("Seu nivel Ã© AvanÃ§ado");
+				nivel = "avanÃ§ado";
 					btOk = new JButton("OK");
 					//objusuario.setResultadoQuest(resul.getText());
 					
@@ -720,6 +732,8 @@ import BancoDados.Usuario;
 					}
 									
 				});
+
+
 						
 					  add(painel1);
 					  painel1.setBackground(azul);
@@ -732,7 +746,9 @@ import BancoDados.Usuario;
 					  painel1.setBounds(600,200,400,400);
 					  resul.setBounds(50,100,200,50);
 					  btOk.setBounds(100,200,100,50);
-
+					  
+					  //config fundo
+			        
 								
 				}
 							
@@ -740,9 +756,21 @@ import BancoDados.Usuario;
 
                     	   
         }
+            
+            public class Panel extends JPanel{
+
+                public void paintComponent(Graphics g){
+                
+                super.paintComponent(g);
+                Image img = fundo.getImage();
+                g.drawImage(img, 0,0, this);   
+
+                }
+            }
                        
          public static void main(String[]args) { 
                       Questionario ex = new Questionario(); 
                       ex.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
         } 
  }
+
