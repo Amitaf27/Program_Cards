@@ -1,4 +1,3 @@
-
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -61,6 +60,7 @@ import javax.swing.border.Border;
          private Border b = BorderFactory.createLineBorder(Color.black, 2);
          int cont = 0;
          public Questionario() { 
+        	         	     
                  handler = new RadioButtonHandler(); 
                  finalizar = new JButton("Finalizar"); 
                  finalizar.setFont(font); 
@@ -508,7 +508,8 @@ import javax.swing.border.Border;
                  cont.add(titulo); 
                  cont.add(finalizar); 
                  cont.add(cancelar); 
-                 painel.add(painel1);
+                 add(painel1);
+                 painel1.setBackground(Color.black);
                  
                 // painel.add(panel);
 		          panel.setBounds(0, 0, 1000, 2500);
@@ -663,8 +664,15 @@ import javax.swing.border.Border;
 				public void actionPerformed(ActionEvent arg0) {
 							
             		if(cont>=0 && cont <=5){
+            			
+            			scroll.setVisible(false);
+            			painel.setVisible(false);
             			resul = new JLabel("Seu nivel e iniciante");
 				nivel = "iniciante";
+
+                resul.setFont(font1);
+                resul.setForeground(branco);
+
 						btOk = new JButton("OK");
 						///objusuario.setResultadoQuest(resul.getText());
 						
@@ -678,19 +686,24 @@ import javax.swing.border.Border;
 				}); 
 								
 					 
-					  painel1.setBackground(azul);
+					  painel1.setBackground(new Color(99, 188, 255));
+					  painel1.setBorder(BorderFactory.createLineBorder(new Color(255, 242, 171), 2));
 					  painel1.setLayout(null);
 					  painel1.setVisible(true);
 					  painel1.add(resul);
 					  painel1.add(btOk);
 								
-					  painel1.setBounds(400,300,400,400);
-					  resul.setBounds(50,100,200,50);
-					  btOk.setBounds(100,200,100,50);
+					  painel1.setBounds(475,200,400,400);
+					  resul.setBounds(50,100,400,50);
+					  btOk.setBounds(150,300,100,50);
 
 								
             	} else if(cont>=6 && cont <=8){
             		resul = new JLabel("Seu nivel e intermediario");
+
+                    resul.setFont(font1);
+                    resul.setForeground(branco);
+
 				nivel = "intermerdiario";
 					btOk = new JButton("OK");
 					//objusuario.setResultadoQuest(resul.getText());
@@ -713,12 +726,16 @@ import javax.swing.border.Border;
 					 painel.setFocusable(true);
 								
 					 painel1.setBounds(600,200,400,400);
-					 resul.setBounds(50,100,200,50);
+					 resul.setBounds(50,100,400,50);
 					 btOk.setBounds(200,200,400,400);
 
 								
             	} else if(cont>=9){
             		resul = new JLabel("Seu nivel Ã© AvanÃ§ado");
+
+                    resul.setFont(font1);
+                    resul.setForeground(branco);
+
 				nivel = "avanÃ§ado";
 					btOk = new JButton("OK");
 					//objusuario.setResultadoQuest(resul.getText());
@@ -744,7 +761,7 @@ import javax.swing.border.Border;
 				      painel.setFocusable(true);
 								
 					  painel1.setBounds(600,200,400,400);
-					  resul.setBounds(50,100,200,50);
+					  resul.setBounds(50,100,400,50);
 					  btOk.setBounds(100,200,100,50);
 					  
 					  //config fundo
@@ -773,4 +790,3 @@ import javax.swing.border.Border;
                       ex.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
         } 
  }
-
