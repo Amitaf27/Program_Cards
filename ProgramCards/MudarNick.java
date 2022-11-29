@@ -1,5 +1,8 @@
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -7,6 +10,7 @@ import java.awt.event.MouseEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -25,26 +29,35 @@ public class MudarNick extends JFrame {
 	JButton btSalvar;
 	Font font = new Font("Consolas", 1, 15);
 	JPanel c = (JPanel) getContentPane();
-
-	public MudarNick() {
-		super("Alterando Nome de Usuário");
+	
+	  
+	  public MudarNick() {
+		  
+		super("Alterando Nome de Usuario");
 		setLayout(null);
 		setSize(400, 370);
 		
 		//centralizando no monitor
 		setLocationRelativeTo(null);
-		c.setBackground(Color.CYAN);
-
+		
+		 //corzinha de fundo
+		 c.setBackground(Color.cyan);
+		 Color corDoFundo = new Color(65, 105, 225);
+		 getContentPane().setBackground(corDoFundo);
+		
+        
 		//instanciando componentes utilizados
-		lbNomeAnt = new JLabel("Digite o nome de usuário atual");
-		lbNomeNovo = new JLabel("Digite o novo nome de usuário");
-		lbTitulo = new JLabel("Alterando Nome de Usuário");
+		lbNomeAnt = new JLabel("Digite o nome de usuario atual");
+		lbNomeNovo = new JLabel("Digite o novo nome de usuario");
+		lbTitulo = new JLabel("Alterando Nome de Usuario");
 		txtNomeAnt = new JTextField();
 		txtNomeNovo = new JTextField();
 		btSalvar = new JButton("Salvar");
 		btSalvar.addActionListener(
 			new ActionListener() {
 				@Override
+				
+				
 				public void actionPerformed(ActionEvent evt) {
 					try {
 						String nome_novo, nomeUsuario;
@@ -59,7 +72,7 @@ public class MudarNick extends JFrame {
 						ResultSet rsusubd = objusubd.verificar(objusu);
 							
 					if (rsusubd.next()) {
-						JOptionPane.showMessageDialog(null, "Usuário encontrado! Insira seu novo nome de Usuário");
+						JOptionPane.showMessageDialog(null, "Usuario encontrado! Insira seu novo nome de Usuario");
 						
 					 try {
 						 nome_novo = txtNomeNovo.getText();
@@ -70,14 +83,14 @@ public class MudarNick extends JFrame {
 						 UsuarioBD objusubd2 = new UsuarioBD();
 						  objusubd2.alterarNome(objusu2);
 						
-						//JOptionPane.showMessageDialog(null, "Nome de Usuário alterado com sucesso!");
+						//JOptionPane.showMessageDialog(null, "Nome de UsuÃ¡rio alterado com sucesso!");
 
 				   } catch (Exception err2) {
 						JOptionPane.showMessageDialog(null, "Novo Nick" + err2);
 				   }
    
 				  } else {
-					  JOptionPane.showMessageDialog(null, "Usuário não encontrado!");
+					  JOptionPane.showMessageDialog(null, "Usuario nÃ£o encontrado!");
 				  }
 						   
 				} catch (SQLException err) {
@@ -101,7 +114,8 @@ public class MudarNick extends JFrame {
 		lbNomeNovo.setBounds(20, 160, 250, 30);
 		txtNomeNovo.setBounds(18, 185, 350, 30);
 		btSalvar.setBounds(120, 250, 150, 30);
-
+	
+		
 		//configurando fonte das letras
 		lbTitulo.setFont(new Font("Consolas", 1, 20));
 		lbNomeAnt.setFont(font);
@@ -111,8 +125,8 @@ public class MudarNick extends JFrame {
 		btSalvar.setFont(font);
 		
 		//configurando mensagem "fantasma" 
-		txtNomeAnt.setText("Digite o seu antigo nome de usuário aqui");
-		txtNomeNovo.setText("Digite o seu novo nome de usuário aqui");
+		txtNomeAnt.setText("Digite o seu antigo nome de usuario aqui");
+		txtNomeNovo.setText("Digite o seu novo nome de usuario aqui");
 		
 		//alterando cor da mensagem
 		txtNomeAnt.setForeground(Color.LIGHT_GRAY);
@@ -154,7 +168,7 @@ public class MudarNick extends JFrame {
 
 		setVisible(true);
 	}
-
+	 
 	public static void main(String[] args) {
 		new MudarNick();
 	}
