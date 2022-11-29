@@ -47,7 +47,7 @@ import javax.swing.border.Border;
          private Font font2 = new Font("Arial",Font.BOLD,14); 
          private RadioButtonHandler handler; 
          String nivel;
-         ImageIcon fundo = new ImageIcon(getClass().getResource("fundo.quest.png"));
+         ImageIcon fundo = new ImageIcon(getClass().getResource("funda de abertura.png"));
 
          private JPanel painel ; 
          private JPanel painel1 = new JPanel();
@@ -511,10 +511,9 @@ import javax.swing.border.Border;
                  add(painel1);
                  painel1.setBackground(Color.black);
                  
-                // painel.add(panel);
-		          panel.setBounds(0, 0, 1000, 2500);
-
-                // cont.add(painel1);
+                 add(panel);
+                 panel.setBounds(0, 0, 1366, 768);
+                 
 
 //definindo a posiÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o dos elementos no painel
                  titulo.setBounds(533,40,300,100); 
@@ -790,3 +789,4 @@ import javax.swing.border.Border;
                       ex.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
         } 
  }
+
