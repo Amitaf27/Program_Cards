@@ -38,7 +38,7 @@ public class TelaPartida extends JFrame {
      private JMenuBar  barra;
      private JMenu opcao;
      private JMenuItem config, voltar;
-     ImageIcon fundo = new ImageIcon(getClass().getResource("funda de partida.png"));
+     ImageIcon fundo = new ImageIcon(getClass().getResource("funda de abertura.png"));
      ImageIcon painelGanha = new ImageIcon(getClass().getResource("painelGanha.png"));
      ImageIcon painelPerde = new ImageIcon(getClass().getResource("painelPerde.png"));
      ImageIcon a = new ImageIcon(getClass().getResource("vai.png"));
