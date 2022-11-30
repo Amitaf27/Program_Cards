@@ -93,7 +93,7 @@ import javax.swing.border.Border;
                  titulo = new JLabel("QUESTIONARIO"); 
                  titulo.setFont(font1); 
                  titulo.setForeground(ouro); 
-//configurando a primeira questÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o 
+//configurando a primeira questÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o 
                  perg1 = new JLabel("1 - Qual o metodo para abrir um arquivo em C?"); 
                  perg1.setFont(font); 
                  perg1.setForeground(branco); 
@@ -132,7 +132,7 @@ import javax.swing.border.Border;
                  P1op5.setForeground(branco); 
                  P1op5.setFont(font2);
 
-//configurando a segunda questÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o 
+//configurando a segunda questÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o 
                  perg2 = new JLabel("2 - Como se declara um Struct em C ?"); 
                  perg2.setFont(font); 
                  perg2.setForeground(branco); 
@@ -171,7 +171,7 @@ import javax.swing.border.Border;
                  P2op5.setFont(font2);
                                
 
-//configurando a terceira questÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o 
+//configurando a terceira questÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o 
                  perg3 = new JLabel("3 - Que tipo de variavel e lida com o comando %s ?"); 
                  perg3.setFont(font); 
                  perg3.setForeground(branco); 
@@ -212,7 +212,7 @@ import javax.swing.border.Border;
                  P3op5.setFont(font2);
 
 
-//configurando a quarta questÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o 
+//configurando a quarta questÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o 
                  perg4 = new JLabel("4 - Qual dos comandos abaixo e uma estrutura de repeticao?"); 
                  perg4.setFont(font); 
                  perg4.setForeground(branco); 
@@ -243,7 +243,7 @@ import javax.swing.border.Border;
                  P4op3.setForeground(branco); 
                  P4op3.setFont(font2); 
 
-//configurando a quinta questÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o 
+//configurando a quinta questÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o 
                  perg5 = new JLabel("5.Qual a forma correta de declarar um vetor?"); 
                  perg5.setFont(font); 
                  perg5.setForeground(branco); 
@@ -276,7 +276,7 @@ import javax.swing.border.Border;
                  P5op4.setForeground(branco); 
                  P5op4.setFont(font2); 
 
-//configurando a sexta questÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o 
+//configurando a sexta questÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o 
                  perg6 = new JLabel("6.Qual a forma correta de declarar um vetor?"); 
                  perg6.setFont(font); 
                  perg6.setForeground(branco); 
@@ -342,7 +342,7 @@ import javax.swing.border.Border;
                  P7op4.setForeground(branco); 
                  P7op4.setFont(font2);
 
-//configurando a oitava questÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o 
+//configurando a oitava questÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o 
                  perg8 = new JLabel("8.Qual e a funcao da seguinte declaracao?"
                  		+ "Scanf (str, '% d', & i);"); 
                  perg8.setFont(font); 
@@ -369,7 +369,7 @@ import javax.swing.border.Border;
                  P8op3.setForeground(branco); 
                  P8op3.setFont(font2);  
 
-//configurando a nona questÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o 
+//configurando a nona questÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o 
                  perg9 = new JLabel("9.Para que serve o \"\t \"?"); 
                  perg9.setFont(font); 
                  perg9.setForeground(branco); 
@@ -403,12 +403,12 @@ import javax.swing.border.Border;
                  P9op4.setFont(font2); 
 
 //configurando a decima  questao 
-                 perg10 = new JLabel("10.Qual o significado desse operador lÃ³gico '&&'?"); 
+                 perg10 = new JLabel("10.Qual o significado desse operador lÃƒÂ³gico '&&'?"); 
                  perg10.setFont(font); 
                  perg10.setForeground(branco); 
 
 
-                 P10op1 = new JRadioButton("nÃ£o",false); 
+                 P10op1 = new JRadioButton("nÃƒÂ£o",false); 
                  P10op2 = new JRadioButton("ou",false); 
                  P10op3 = new JRadioButton("diferente",false); 
                  P10op4 = new JRadioButton("e",false); 
@@ -515,7 +515,7 @@ import javax.swing.border.Border;
                  panel.setBounds(0, 0, 1366, 768);
                  
 
-//definindo a posiÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o dos elementos no painel
+//definindo a posiÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o dos elementos no painel
                  titulo.setBounds(533,40,300,100); 
 //1
                  perg1.setBounds(35,5,500,100); 
@@ -582,7 +582,7 @@ import javax.swing.border.Border;
                  P10op3.setBounds(45,1785,300,50); 
                  P10op4.setBounds(45,1815,300,50); 
 
-//definindo a posiÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â£o dos elementos na tela principal 
+//definindo a posiÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â§ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o dos elementos na tela principal 
                  scroll.setBounds(183,160,1000,450);
                  finalizar.setBounds(413,640,250,50); 
                  cancelar.setBounds(683,640,250,50); 
@@ -730,12 +730,12 @@ import javax.swing.border.Border;
 
 								
             	} else if(cont>=9){
-            		resul = new JLabel("Seu nivel Ã© AvanÃ§ado");
+            		resul = new JLabel("Seu nivel ÃƒÂ© AvanÃƒÂ§ado");
 
                     resul.setFont(font1);
                     resul.setForeground(branco);
 
-				nivel = "avanÃ§ado";
+				nivel = "avanÃƒÂ§ado";
 					btOk = new JButton("OK");
 					//objusuario.setResultadoQuest(resul.getText());
 					
@@ -787,7 +787,6 @@ import javax.swing.border.Border;
          public static void main(String[]args) { 
                       Questionario ex = new Questionario(); 
                       ex.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-		 
         } 
  }
 
