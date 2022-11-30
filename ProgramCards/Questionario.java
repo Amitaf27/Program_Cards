@@ -787,6 +787,7 @@ import javax.swing.border.Border;
          public static void main(String[]args) { 
                       Questionario ex = new Questionario(); 
                       ex.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+		 
         } 
  }
 
