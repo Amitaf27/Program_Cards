@@ -38,12 +38,15 @@ public class TelaPartida extends JFrame {
      private JMenuBar  barra;
      private JMenu opcao;
      private JMenuItem config, voltar;
-     ImageIcon fundo = new ImageIcon(getClass().getResource("funda de abertura.png"));
+     ImageIcon fundo = new ImageIcon(getClass().getResource("funda de partida.png"));
      ImageIcon painelGanha = new ImageIcon(getClass().getResource("painelGanha.png"));
      ImageIcon painelPerde = new ImageIcon(getClass().getResource("painelPerde.png"));
      ImageIcon a = new ImageIcon(getClass().getResource("vai.png"));
      ImageIcon b = new ImageIcon(getClass().getResource("menuu.png"));
-     ImageIcon c = new ImageIcon(getClass().getResource("painelGanha.png"));
+     ImageIcon aa = new ImageIcon(getClass().getResource("volt.png"));
+     ImageIcon bb = new ImageIcon(getClass().getResource("menu.png"));
+
+     
      JButton bt, bt2, bt3, bt4;
 
 
@@ -60,9 +63,11 @@ public class TelaPartida extends JFrame {
     	  bt = new JButton(a);
     	  bt2 = new JButton(b);
     	  
+    	  
       //config o panel 
     	 	 painel2 = new JPanel();
     	  add(painel2);
+    	  
     	  painel2.setLayout(null);
           painel2.setBounds(500, 100,400,450);
 		  painel2.setVisible(ativo);  
@@ -87,16 +92,64 @@ public class TelaPartida extends JFrame {
          bt2.setBounds(30, 340, 100, 100);
      	 
          //config o panel 
+         
+         
+         bt3 = new JButton(aa);
+         bt4 = new JButton(bb);
+         
+         
+     
 	 	 painel3 = new JPanel();
 	  add(painel3);
+	  
+	     p1.setSize(400,450);
 	  painel3.setLayout(null);
       painel3.setBounds(500, 100,400,450);
 	  painel3.setVisible(ativo);  
      painel3.setBackground(new Color(34, 13, 47));  
+     
+     
+     painel3.add(bt3);
+     bt3.setOpaque(false);  
+     bt3.setFocusable(false);  
+     bt3.setContentAreaFilled(false); 
+     bt3.setBorderPainted(false);
+     
+    
+     painel3.add(bt4);
+     bt4.setOpaque(false);  
+     bt4.setFocusable(false);  
+     bt4.setContentAreaFilled(false); 
+     bt4.setBorderPainted(false);
+     
+     bt3.setBounds(280, 340, 100, 100);
+     bt4.setBounds(30, 340, 100, 100);
      painel3.add(p1);
-     p1.setSize(400,450);
+     
 
     	
+     bt3.addActionListener(  
+     		 new ActionListener(){  
+     			 public void actionPerformed(ActionEvent e) { 
+     			
+     				 
+     				  new TelaPartida();
+                      dispose();
+     				
+     			 }       
+     		 });                 
+      
+     bt4.addActionListener(  
+     		 new ActionListener(){  
+     			 public void actionPerformed(ActionEvent e) { 
+     			
+                   
+                     new Menu();
+                     dispose();
+    
+     				
+     			 }       
+     		 });                 
          
          
     	 
