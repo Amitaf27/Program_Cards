@@ -19,7 +19,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
-//falta os imports e estÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ incompleto por enquanto
+//falta os imports e estÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ incompleto por enquanto
 
 public class TelaPartida extends JFrame { 
   
@@ -38,7 +38,7 @@ public class TelaPartida extends JFrame {
      private JMenuBar  barra;
      private JMenu opcao;
      private JMenuItem config, voltar;
-     ImageIcon fundo = new ImageIcon(getClass().getResource("fundoo.png"));
+     ImageIcon fundo = new ImageIcon(getClass().getResource("funda de abertura.png"));
      ImageIcon painelGanha = new ImageIcon(getClass().getResource("painelGanha.png"));
      ImageIcon painelPerde = new ImageIcon(getClass().getResource("painelPerde.png"));
      ImageIcon a = new ImageIcon(getClass().getResource("vai.png"));
