@@ -152,7 +152,7 @@ private static final long serialVersionUID = 1L;
            cont.add(fundo);
            
            fundo.setBounds(0,0,1366,768 );     
-           botao2.setBounds(10,10, 100, 50);
+           botao2.setBounds(15, 650,100, 50);
          
            loginT.setBounds(170, 80, 200, 30 );
            rotulo2.setBounds(70, 150, 30, 30);
