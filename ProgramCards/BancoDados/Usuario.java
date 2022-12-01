@@ -4,6 +4,20 @@ public class Usuario {
 	private String nomeUsuario, nome, nomeNovo;
 	private String senha, email, resultadoQuest;
 	
+	public Usuario(String nomeUsuario, String nome, String nomeNovo, String senha, String email, String resultadoQuest) {
+		super();
+		this.nomeUsuario = nomeUsuario;
+		this.nome = nome;
+		this.nomeNovo = nomeNovo;
+		this.senha = senha;
+		this.email = email;
+		this.resultadoQuest = resultadoQuest;
+	}
+	
+	public Usuario() {
+		
+	}
+
 	public String getNomeUsuario() {
 		return nomeUsuario;
 	}
