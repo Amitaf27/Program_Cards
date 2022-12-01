@@ -31,7 +31,7 @@ public class TelaEntrada extends JFrame {
         private Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();
         static Musica mu = new Musica();
         static SomEfeito ef = new SomEfeito();
-        ImageIcon fundo = new ImageIcon (getClass().getResource("funda de abertura2.png"));
+        ImageIcon fundo = new ImageIcon (getClass().getResource("funda de abertura.png"));
         Panel painel = new Panel (); 
         
         public TelaEntrada(){
