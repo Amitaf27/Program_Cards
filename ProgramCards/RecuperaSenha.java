@@ -290,8 +290,9 @@ public class RecuperaSenha extends JFrame{
   					@Override
   					public void actionPerformed(ActionEvent arg0) {
   						try {
-  							String novaSenha;
+  							String novaSenha, repetir;
   							novaSenha = nvSenha.getText();
+  							repetir = repS.getText();
   							
   							Usuario objusuarions = new Usuario();
   							objusuarions.setSenha(novaSenha);
@@ -299,7 +300,7 @@ public class RecuperaSenha extends JFrame{
   							UsuarioBD objusuariobdns = new UsuarioBD();
   							objusuariobdns.alterarSenha(objusuarions);
   							
-  							if (objusuarions.getSenha().equals(novaSenha)) {
+  							if (objusuariobdns.countAlter >= 1 && novaSenha == repetir) {
   								JOptionPane.showMessageDialog(null, "Senha alterada com sucesso!");
   								
   								new TelaLogin();
@@ -307,7 +308,7 @@ public class RecuperaSenha extends JFrame{
   	  	       					
   	  	       					dispose();
 							} else {
-								JOptionPane.showMessageDialog(null, "NÃ£o foi possÃ­vel alterar a senha :(");
+								JOptionPane.showMessageDialog(null, "Não foi possível alterar a senha :(");
 							}
   					
 						} catch (Exception erronew) {
