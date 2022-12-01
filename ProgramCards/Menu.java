@@ -8,8 +8,6 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.border.Border;
-
-
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -49,11 +47,7 @@ public class Menu extends JFrame {
 	     private JMenuBar  barrinha;
 	     private JMenu opcao;
 	     private JMenuItem config, sair;
-	     private JPanel painel = new JPanel();
-	   //Dimension dimensao = Toolkit.getDefaultToolkit().getScreenSize();	  
-	     
-	     
-
+	     private JPanel painel = new JPanel(); 
 	     Color azulclaro = new Color(135,206,250);
 	     Color ouroclaro = new Color(238,232,1);
 	     Color CornflowerBlue = new Color(100, 149, 237);
@@ -61,39 +55,24 @@ public class Menu extends JFrame {
 	     Border borda = BorderFactory.createLineBorder(Color.BLACK);
          SomEfeito ef = new SomEfeito();
          Musica musica = new Musica();
-         
-
-        
 	    
 
 	     public Menu() {
 	    	 
 	    Panel p = new Panel();	 
-	
-	 
-		       
-	    
-	    
-	    
-	    
 	    label5 = new JLabel(band1);
 	    label6 = new JLabel(band2);
 	    label7 = new JLabel(band3);
-	    label8 = new JLabel(band4);
-	   
+	    label8 = new JLabel(band4);	   
 	    label5.setBounds(-320, 220, 1100, 500);
 	    label6.setBounds(-25, 220, 1100, 500);
 	    label7.setBounds(280, 220, 1100, 500);
 	    label8.setBounds(580, 220, 1100, 500);
-	   
+
 	    	 
 	  //configurando textos das ilhas 
-	  
-	    
-	  
-	   
 
-	      setTitle("ILHAS");  
+	 setTitle("ILHAS");  
          barrinha = new JMenuBar();  
          setJMenuBar(barrinha);  
          opcao = new JMenu("OpÃ§Ãµes");  
@@ -113,7 +92,7 @@ public class Menu extends JFrame {
          config.setFont(texto);
          sair.setFont(texto);
                 
-        //configurando os botÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âµes do panel  
+        //configurando os botao do panel  
 
           btSom = new JButton(imagem5); 
       
@@ -135,11 +114,11 @@ public class Menu extends JFrame {
           btConfirmar.setFont(new Font("Arial", Font.BOLD, 14));  
                      
          //configurando o panel de configuracoes  
-          label = new JLabel("ConfiguraÃ§Ãµes");  
+          label = new JLabel("Configuracoes");  
            label.setFont(titulo);  
            label.setForeground(Color.BLACK);  
                      
-          label2 = new JLabel("MÃºsica");  
+          label2 = new JLabel("Musica");  
            label2.setForeground(Color.BLACK);  
            label2.setFont(texto);  
                      
@@ -169,10 +148,7 @@ public class Menu extends JFrame {
                      
           btSom.setBounds(90, 80, 90, 90);  
         //configurando botao de som
-
-                     
-        //configurando botoes 
-                    
+		     
          btSom.addActionListener(  
         		 new ActionListener(){  
         			 public void actionPerformed(ActionEvent e) {  
@@ -333,11 +309,6 @@ public class Menu extends JFrame {
         		System.exit(0);        
            }  
       }  
-        
-        
-      //fundo Ã© um imageIcon
-      //faz na msm classe, mais fÃ¡cil
-      // no construtor da classe principal, instancia Panel e add ele (na ordem)
 
       public class Panel extends JPanel{
 
@@ -352,21 +323,6 @@ public class Menu extends JFrame {
          
         public static void main(String[]args) {
         	Menu menu = new Menu();  
-            menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);     
-            
-     
-       }   
-        
- 
-         
+            menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);         
+       }       
 }
-
-
-
-
-
-
-
-
-
-
