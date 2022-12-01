@@ -466,7 +466,7 @@ public class TelaPartida3 extends JFrame {
              		 new ActionListener(){  
              			 public void actionPerformed(ActionEvent e) {  
              				
-             				 new TelaPartida2();
+             				 new TelaPartida4();
              			     dispose();   
                                            
              			 }   
