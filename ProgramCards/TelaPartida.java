@@ -53,7 +53,8 @@ public class TelaPartida extends JFrame {
      
      boolean mouseP = false; 
   
-      public TelaPartida(){ 
+      @SuppressWarnings("deprecation")
+	public TelaPartida(){ 
     	  
 
     	  Panel p = new Panel();
@@ -174,7 +175,7 @@ public class TelaPartida extends JFrame {
           barra.add(opcao);  
           barra.setBackground(ouro);  
           opcao.add(config);  
-          opcao.add(voltar);          
+          opcao.add(voltar);    
   
               painel = new JPanel(); 
               painel.setLayout(null); 
@@ -209,6 +210,8 @@ public class TelaPartida extends JFrame {
                                  imaFor.setBounds(590,400-100,170,300); 
   
                                      if (cont >=2){ 
+                                    	 
+                 
                                    imaFor.setBounds(590,400,170,300);
                                    painel3.setVisible(!ativo);
                                    painel3.requestFocus();
