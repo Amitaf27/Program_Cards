@@ -11,10 +11,11 @@ public class UsuarioBD {
 	
 	Connection connCads, connLogin, connAlter;
 	PreparedStatement pstm, pstm2, pstm3;
+	public int countAlter;
 	
 	//Cadastro de Usuário
 		public void cadastrar(Usuario usu) {
-			String sqlCads = "insert into Usuario (nome, nomeUsuario, email, senha) values (?, ?, ?, ?)";
+			String sqlCads = "insert into Usuario (nome, nomeUsuario, email, senha, resultado_quest) values (?, ?, ?, ?, ?)";
 		
 			connCads = new ConexaoBD().conectaBD();
 		
@@ -24,6 +25,7 @@ public class UsuarioBD {
 			  pstm.setString(2, usu.getNomeUsuario());
 			  pstm.setString(3, usu.getEmail());
 			  pstm.setString(4, usu.getSenha());
+			  pstm.setString(5, usu.getResultadoQuest());
 			 
 			  pstm.execute();
 			  pstm.close();
@@ -69,17 +71,22 @@ public class UsuarioBD {
 				return null;
 			}
 		}
-		
+
 		//Alterar nome - MudarNick
         public void alterarNome(Usuario objusu) {
-        	String sqlAlter = "update Usuario set nomeUsuario = ? where nomeUsuario = ?";
+        	String sqlAlter = "UPDATE Usuario SET nomeUsuario = ? WHERE nomeUsuario = ?";
         	
         	connAlter = new ConexaoBD().conectaBD();
-    		
-  		  try {
-  			  pstm3 = connAlter.prepareStatement(sqlAlter);
-  			  pstm3.setString(1, objusu.getNomeNovo());
-  			  pstm3.setString(2, objusu.getNomeUsuario());
+        	
+        	try {
+        	  pstm3 = connAlter.prepareStatement(sqlAlter);
+        	  pstm3.setString(1, objusu.getNomeNovo());
+        	  pstm3.setString(2, objusu.getNomeUsuario());
+        	  
+  			  countAlter = pstm3.executeUpdate();
+  			   System.out.println(countAlter);
+  			  pstm3.close();
+  			  connAlter.close();
   			 
   		  } catch (SQLException e) {
   			  JOptionPane.showMessageDialog(null, "UsuarioBD - AlterarNome" + e);
@@ -115,7 +122,9 @@ public class UsuarioBD {
   			  pstm.setString(1, objususenha.getSenha());
   			  pstm.setString(2, objususenha.getEmail());
   			  
-  			  pstm.executeUpdate();
+  			  countAlter = pstm.executeUpdate();
+  			  System.out.print(countAlter);
+  			  pstm.close();
   			  
   		 } catch (SQLException erro) {
   			JOptionPane.showMessageDialog(null, "UsuarioBD AlterarSenha" + erro);
